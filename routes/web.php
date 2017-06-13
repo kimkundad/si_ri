@@ -13,7 +13,9 @@
 
 
 
-
+/*Route::get('/', function () {
+    return view('error');
+}); */
 
 Route::get('/category', function () {
     return view('category');
