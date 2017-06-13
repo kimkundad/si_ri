@@ -19,6 +19,12 @@ Route::get('/category', function () {
     return view('category');
 });
 
+Route::post('/contact', 'ContactController@store');
+
+Route::get('/contact_success', function () {
+    return view('contact_success');
+});
+
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::group(['middleware' => 'admin'], function() {

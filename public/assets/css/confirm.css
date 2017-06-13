@@ -1,0 +1,237 @@
+.respon-button{
+	display: block;
+	/*margin-top: 10px;*/
+	/*margin-left: 10px;*/
+}
+.respon-button button{
+	width :30px;
+	height :30px;
+}
+.title-crouse h1{
+	font-size: 24px;
+}
+@media(min-width:615px) {
+	.respon-button{
+		/*display: none;*/
+		margin-top: 10px;
+		margin-left: 10px;
+	}
+	.title-crouse h1{
+		font-size: 38px;
+	}
+}
+
+
+
+.con{
+	padding: 5%;
+	padding-top: 10px;
+	padding-left: 0%;
+}
+
+.c-left,.c-right{
+	padding-bottom: 10px;
+	float: left;
+	width: 100%;
+	height:auto;
+	background: #fff;
+	margin: 10px;
+	border: 1px solid #E8E8E8;
+	/*padding-right: 5%;*/
+}
+.input-c .inputa{
+	width: 100%;
+}
+.c-right{
+	height: auto;
+	padding-bottom: 20px;
+}
+.input-c select{
+	width: 80px;
+}
+.datetime_input,.input-c{
+	width: 100% !important;
+}
+.space {
+	padding-top: 10px;
+	width: 100%;
+	display: block;
+}
+@media(min-width:798px) {
+	.c-left,.c-right{
+		padding-bottom: 10px;
+		float: left;
+		width: 45%;
+		height:auto;
+		background: #fff;
+		margin: 10px;
+		border: 1px solid #E8E8E8;
+	}
+	.input-c .inputa{
+		width: 100%;
+	}
+	.input-c select{
+		width: 23%;
+	}
+	.space {
+		padding-top: 10px;
+	width: 100%;
+	display: block;
+	}
+	.con{
+		padding: 5%;
+		padding-top: 10px;
+		padding-left: 8%;
+	}
+}
+@media(min-width:1100px) {
+	.c-left,.c-right{
+		float: left;
+		width: 45%;
+		height:480px;
+		background: #fff;
+		margin: 10px;
+		border: 1px solid #E8E8E8;
+	}
+	.input-c .inputa{
+		width: 50%;
+	}
+	.input-c select{
+		width: 23%;
+	}
+.space {
+	display: none;
+}
+
+}
+.title-crouse img{
+	width: 60px;
+	height: 58px;
+}
+.title-crouse h1{
+	padding-left: 20px;
+	color:#26B899;
+}
+
+.c-left,.c-right{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.c-left .name{
+	font-weight: bold;
+}
+.line1-l{
+	float: left;
+	text-align: left;
+	/*display: block;*/
+}
+.line1-r{
+	float: right;
+	text-align: right;
+	/*display: block;*/
+}
+
+.inline2 {
+	display: inline-block;
+}
+
+.c-left h5,.c-right h5{
+	line-height: 30%;
+}
+
+.c-left .com {
+	padding-bottom: 15px;
+	border-bottom: 2px solid #E8E8E8;
+}
+.c-right .com{
+	padding-bottom: 15px;
+	/*border-bottom: 1px solid #E8E8E8;*/
+}
+.c-right .com1{
+	/*padding-bottom: 15px;*/
+	border-bottom: 1px solid #E8E8E8;
+}
+
+.com img,.bank1 img{
+	width: 80px;
+	height: 78px;
+}
+.com2{
+	margin-top: 10px;
+}
+.com2 .title{
+	font-size: 16px;
+	margin-bottom: 15px;
+}
+.com2 .price{
+	color:gray;
+}
+.com3{
+	margin-top: 10px;
+}
+
+.com4{
+	margin-top: 20px;
+}
+
+.inputs{
+	margin-top: 20px;
+
+}
+.inputa{
+	height: 40px;
+}
+
+.date{
+	background: #EAEAEA;
+	width: 70%;
+}
+.date2{
+	width: 13%;
+	height: 40px;
+}
+/*.form-control{}*/
+.upload{
+	width: 100%;
+	height: 40px;
+}
+
+ select,.input-c input{
+	cursor: pointer;
+}
+
+.input-c{
+	margin-top: 8px;
+}
+.input-b{
+	margin-top: 38px;
+}
+
+.near-img{
+	margin-left: 20px;
+}
+h5{
+	font-size: 14px;
+}
+
+.bank1{
+	width:100%;
+	float:left;
+	padding: 10px;
+}
+.b1{
+	width: 100% !important;
+}
+.input-con{
+	margin-top:7px !important;
+}
+@media(min-width:615px) {
+	.bank1{
+		width:50%;
+		padding: 0px;
+	}
+}
+.line-input{
+	margin-top: 10px;
+	/*border-top: 1px solid #E8E8E8;*/
+}
