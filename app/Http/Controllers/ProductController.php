@@ -82,6 +82,34 @@ class ProductController extends Controller
       ->where('product_image.product_id', $id)
       ->count();
 
+
+      $comment_course = DB::table('comments')
+          ->select(
+             'comments.*',
+             'comments.id as c_id',
+             'comments.created_at as created_att',
+             'users.*',
+             'users.id as u_id'
+             )
+          ->leftjoin('users', 'users.id', '=', 'comments.user_id')
+          ->where('comments.course_id', $id)
+          ->orderBy('c_id', 'desc')
+          ->paginate(8);
+
+
+          $comment_count = DB::table('comments')
+              ->select(
+                 'comments.*',
+                 'comments.id as c_id',
+                 'comments.created_at as created_att'
+                 )
+              ->where('comments.course_id', $id)
+              ->count();
+
+
+          //dd($comment_course);
+      $data['comment_count'] = $comment_count;    
+      $data['comment_course'] = $comment_course;
       $data['home_image_all'] = $home_image_all;
       $data['home_image'] = $home_image;
       $data['home_image_count'] = $home_image_count;

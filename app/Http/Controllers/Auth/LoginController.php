@@ -26,7 +26,7 @@ class LoginController extends Controller
         $request->session()->regenerate();
 
         $this->clearLoginAttempts($request);
-        if ($request->user()->role == 'admin') {
+        if ($request->user()->is_admin == 1) {
           return redirect('admin/dashboard');
         }
         return $this->authenticated($request, $this->guard()->user())

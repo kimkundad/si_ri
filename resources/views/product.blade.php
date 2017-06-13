@@ -1,4 +1,9 @@
 @extends('layouts.template')
+@section('stylesheet')
+<link href="{{url('assets/bootstrap-sweetalert-master/dist/sweetalert.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{url('assets/css/css-stars.css')}}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{{url('assets/css/fontawesome-stars.css')}}">
+@stop('stylesheet')
 @section('content')
 
 <div id="position">
@@ -151,7 +156,7 @@
   <div class="start-detail">
 
     {!! $home->detail !!}
-    <p><strong></strong></p>
+    <hr>
     <p><strong>Size :</strong> Land area {{$home->Size}} square</p>
 
 
@@ -219,204 +224,440 @@ ul.list_ok {
   <hr>
 </div>
 
-
 <style>
-
+.detail-footer h3 {
+    font-size: 22px;
+    margin-top: 5px;
+}
+#score_detail {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+#score_detail span {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border: 2px solid #555;
+    line-height: 42px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #555;
+    margin-right: 5px;
+    text-align: center;
+}
+#score_detail small {
+    color: #999;
+}
+small, .small {
+    font-size: 85%;
+}
+.review_strip_single {
+    position: relative;
+    padding: 30px 0 20px;
+    margin: 30px 0 25px;
+    border-bottom: 1px solid #ddd;
+}
+.review_strip_single img {
+    top: -15px;
+    position: absolute;
+    left: 0;
+    border: 4px solid #fff;
+}
+.review_strip_single small {
+    float: right;
+    font-size: 12px;
+    margin-top: -10px;
+    font-style: italic;
+}
+#single_tour_desc h4 {
+    line-height: 20px;
+    font-size: 18px;
+}
+.review_strip_single h4 {
+    font-size: 18px;
+    margin: -12px 0 35px 90px;
+    padding: 0;
+}
+.ap-avatar {
+    margin-right: 10px;
+}
+.ap-pull-left {
+    float: left !important;
+}
+.br-theme-fontawesome-stars .br-widget a.br-selected:after {
+    color: #F90;
+}
 </style>
+
 
 <div class="detail-footer">
 
-  <div class="container">
 
-  <div class="row">
-    <div class="col-sm-3">
-      <div class="rating-block">
-        <h4>Average user rating</h4>
-        <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
-        <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <h4>Rating breakdown</h4>
-      <div class="pull-left">
-        <div class="pull-left" style="width:35px; line-height:1;">
-          <div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
-        </div>
-        <div class="pull-left" style="width:180px;">
-          <div class="progress" style="height:9px; margin:8px 0;">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
-            <span class="sr-only">80% Complete (danger)</span>
-            </div>
-          </div>
-        </div>
-        <div class="pull-right" style="margin-left:10px;">1</div>
-      </div>
-      <div class="pull-left">
-        <div class="pull-left" style="width:35px; line-height:1;">
-          <div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
-        </div>
-        <div class="pull-left" style="width:180px;">
-          <div class="progress" style="height:9px; margin:8px 0;">
-            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
-            <span class="sr-only">80% Complete (danger)</span>
-            </div>
-          </div>
-        </div>
-        <div class="pull-right" style="margin-left:10px;">1</div>
-      </div>
-      <div class="pull-left">
-        <div class="pull-left" style="width:35px; line-height:1;">
-          <div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
-        </div>
-        <div class="pull-left" style="width:180px;">
-          <div class="progress" style="height:9px; margin:8px 0;">
-            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
-            <span class="sr-only">80% Complete (danger)</span>
-            </div>
-          </div>
-        </div>
-        <div class="pull-right" style="margin-left:10px;">0</div>
-      </div>
-      <div class="pull-left">
-        <div class="pull-left" style="width:35px; line-height:1;">
-          <div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
-        </div>
-        <div class="pull-left" style="width:180px;">
-          <div class="progress" style="height:9px; margin:8px 0;">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
-            <span class="sr-only">80% Complete (danger)</span>
-            </div>
-          </div>
-        </div>
-        <div class="pull-right" style="margin-left:10px;">0</div>
-      </div>
-      <div class="pull-left">
-        <div class="pull-left" style="width:35px; line-height:1;">
-          <div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
-        </div>
-        <div class="pull-left" style="width:180px;">
-          <div class="progress" style="height:9px; margin:8px 0;">
-            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
-            <span class="sr-only">80% Complete (danger)</span>
-            </div>
-          </div>
-        </div>
-        <div class="pull-right" style="margin-left:10px;">0</div>
-      </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-sm-8">
-      <hr/>
-      <div class="review-block">
-        <div class="row">
-          <div class="col-sm-3">
-            <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-            <div class="review-block-name"><a href="#">nktailor</a></div>
-            <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-          </div>
-          <div class="col-sm-9">
-            <div class="review-block-rate">
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="review-block-title">this was nice in buy</div>
-            <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-          </div>
-        </div>
-        <hr/>
-        <div class="row">
-          <div class="col-sm-3">
-            <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-            <div class="review-block-name"><a href="#">nktailor</a></div>
-            <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-          </div>
-          <div class="col-sm-9">
-            <div class="review-block-rate">
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="review-block-title">this was nice in buy</div>
-            <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-          </div>
-        </div>
-        <hr/>
-        <div class="row">
-          <div class="col-sm-3">
-            <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-            <div class="review-block-name"><a href="#">nktailor</a></div>
-            <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-          </div>
-          <div class="col-sm-9">
-            <div class="review-block-rate">
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="review-block-title">this was nice in buy</div>
-            <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="row" style="margin-left: 0px;">
 
-  </div> <!-- /container -->
+    <div class="col-md-2">
+                    <h3>Reviews</h3>
+                </div>
 
+                <div class="col-md-10" style="    padding-left: 0px;">
+
+                  <div class="row">
+
+                    <div class="col-md-6" id="score_detail" style="margin-bottom: 3px;"><span>5.0</span>
+
+
+                      <small>(Based on {{$comment_count}} reviews)</small></div><!-- End general_rating -->
+
+
+                   <div class="col-md-6" id="rating_summary" >
+                     <div class="rating" style="font-size: 24px; margin-top: 8px;    float: right;">
+                        
+                     @if($home->rating == 5)
+
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star voted"></i>
+
+                     @endif
+                     @if($home->rating == 4)
+
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star-o"></i>
+
+                     @endif
+                     @if($home->rating == 3)
+
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star-o"></i>
+                         <i class="fa fa-star-o"></i>
+
+                     @endif
+                     @if($home->rating == 2)
+
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star-o"></i>
+                         <i class="fa fa-star-o"></i>
+                         <i class="fa fa-star-o"></i>
+
+                     @endif
+                     @if($home->rating == 1)
+
+                         <i class="fa fa-star voted"></i>
+                         <i class="fa fa-star-o"></i>
+                         <i class="fa fa-star-o"></i>
+                         <i class="fa fa-star-o"></i>
+                         <i class="fa fa-star-o"></i>
+
+                     @endif
+                      </div>
+
+                   </div><!-- End row -->
+
+
+                  </div>
+<hr>
+
+
+@if (Auth::guest())
+<div style="margin-top:20px;background: #fff none repeat scroll 0 0; border: 1px solid #eee; padding: 15px 15px 5px 15px;">
+    <p><i class="fa fa-lock"></i> โปรดทำการ <a href="{{url('login')}}">เข้าสู่ระบบ</a> หรือ <a href="{{url('register')}}">สมัครสมาชิก</a> เพื่อแสดงความคิดเห็น</p>
 </div>
+<hr>
+@else
+
+
+<div style="margin-top:40px;background: #fff none repeat scroll 0 0; border: 1px solid #eee; padding: 15px;">
+                              <div class="clearfix">
+                                <div class="ap-avatar ap-pull-left">
+                                  <a href="user_profile-2.html" title="">
+                                  <!-- TODO: OPTION - Avatar size -->
+        @if(Auth::user()->provider == 'email')
+        <img style="max-height:50px;" class="img-circle avatar avatar-30 photo ap-dynamic-avatar" src="{{url('assets/image/avatar/'.Auth::user()->avatar)}}"></a>
+        @else
+        <img style="max-height:50px;" class="img-circle avatar avatar-30 photo ap-dynamic-avatar" src="//{{Auth::user()->avatar}}"></a>
+        @endif
+
+
+                                </div><!-- close .ap-avatar -->
+
+
+                                <form method="post" action="{{url('/comment')}}" enctype="multipart/form-data">
+                                  <input type="hidden" name="_method" value="post">
+                                  <input type="hidden" name="product_id" class="form-control" value="{{$home->id_pro}}">
+                                  {{ csrf_field() }}
+                                <div class="ap-comment-content no-overflow">
+                                  <div class="ap-comment-header">
+                                    <a  class="ap-comment-author"> {{ Auth::user()->name }} </a>
+
+                                   </div><!-- close .ap-comment-header -->
+                                  <div class="ap-comment-texts">
+                                    <textarea class="form-control" name="comment" rows="3" style="width: 89%; margin-top:5px;" required></textarea>
+                                  </div>
+                                  <div class="col-sm-12" style="margin-top:10px; padding-right: 0px;">
+                                    <div class="col-sm-1">
+                                    </div>
+                                  <div class="col-sm-5">
+                                    <select id="example" name="ratting" required>
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="5">5</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-sm-6" style="padding-right: 0px;"><button type="submit" class="btn btn-primary pull-right">แสดงความคิดเห็น</button></div>
+                                  </div>
+                                            </div><!-- close .ap-comment-content -->
+                                            </form>
+                              </div><!-- close #comment-* -->
+                            </div>
+
+@endif
+
+
+
+
+
+
+
+
+
+<?php
+function DateThai($strDate)
+{
+$strYear = date("Y",strtotime($strDate))+543;
+$strMonth= date("n",strtotime($strDate));
+$strDay= date("j",strtotime($strDate));
+$strHour= date("H",strtotime($strDate));
+$strMinute= date("i",strtotime($strDate));
+$strSeconds= date("s",strtotime($strDate));
+$strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+$strMonthThai=$strMonthCut[$strMonth];
+return "$strDay $strMonthThai $strYear";
+}
+ ?>
+
+
+
+
+
+<ul id="myList" style="list-style-type:none; -webkit-padding-start: 1px;">
+
+                @if(isset($comment_course))
+
+                  @foreach($comment_course as $cm)
+                  <li style="display: list-item;">
+                    <div class="review_strip_single" id="comment-{{$cm->c_id}}">
+
+                        @if($cm->provider == 'facebook')
+                        <img src="//{{$cm->avatar}}" alt="{{$cm->name}}" style="width:76px; border: 1px solid #E4E1E1;" class="img-circle">
+                        @else
+                        <img src="{{url('assets/image/avatar/'.$cm->avatar)}}" alt="{{$cm->name}}" style="width:76px; border: 1px solid #E4E1E1;" class="img-circle">
+                        @endif
+
+
+                        <small> - <?php echo DateThai($cm->created_att); ?> -</small>
+                        <h4>{{$cm->name}}</h4>
+                        <p>
+                             "{{$cm->comment}}"
+                        </p>
+
+
+
+                        <div class="rating">
+                        @if($cm->ratting == 5)
+
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star voted"></i>
+                            <span style="color: #777; font-size: 13px;">{{$cm->ratting}}.0</span>
+
+                        @endif
+                        @if($cm->ratting == 4)
+
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star-o"></i>
+                            <span style="color: #777; font-size: 13px;">{{$cm->ratting}}.0</span>
+
+
+                        @endif
+                        @if($cm->ratting == 3)
+
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <span style="color: #777; font-size: 13px;">{{$cm->ratting}}.0</span>
+
+                        @endif
+                        @if($cm->ratting == 2)
+
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <span style="color: #777; font-size: 13px;">{{$cm->ratting}}.0</span>
+
+                        @endif
+                        @if($cm->ratting == 1)
+
+                            <i class="fa fa-star voted"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <span style="color: #777; font-size: 13px;">{{$cm->ratting}}.0</span>
+
+                        @endif
+
+                        @if(isset(Auth::user()->id))
+                        @if($cm->u_id == Auth::user()->id)
+                        <div class="pull-right">
+                                                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                           <i class="fa fa-cog"></i>
+                                                         </a>
+                                                         <ul class="dropdown-menu" style="top: inherit !important; min-width: 100px;" role="menu" aria-labelledby="dLabel">
+                                                          <li><a href="#" data-toggle="modal" data-target="#editer-{{$cm->c_id}}"><i class="fa fa-wrench"></i>  แก้ไข</a></li>
+                                                          <li><a href="#" data-toggle="modal" data-target="#myModal-{{$cm->c_id}}"><i class="fa fa-trash-o"></i> ลบทิ้ง</a></li>
+                                                         </ul>
+                                                         </div>
+
+                                                         <div class="modal fade" id="editer-{{$cm->c_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                            <div class="modal-dialog " role="document">
+                                                              <div class="modal-content">
+
+                                                                <div class="modal-header">
+                                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">×</span>
+                                                                  </button> <h4 class="modal-title" style="margin:auto" id="myModalLabel">ทำการแก้ไข ?</h4>
+                                                                </div>
+
+                                                                <div class="panel-body">
+                                                                                  <div id="showalert2"></div>
+                                                                                  <div class="modal-wrapper">
+
+                                                                                <form method="post" action="{{url('comment/'.$cm->c_id)}}" enctype="multipart/form-data">
+                                                                                    <div class="modal-text">
+                                                                                      <input type="hidden" name="_method" value="put">
+                                                                                      <input type="hidden" name="product_id" class="form-control" value="{{$home->id_pro}}">
+                                                                                      {{ csrf_field() }}
+                                                                                      <div class="form-group" style="margin-bottom: 1px;">
+
+                                                                                        <textarea class="form-control" name="comment" rows="3">{{$cm->comment}}</textarea>
+                                                                                      </div>
+
+
+
+                                                                                    </div>
+                                                                                  </form></div>
+                                                                                </div>
+
+                                                                                <footer class="panel-footer" style="margin-top: 0px;">
+                                                                                  <div class="row">
+                                                                                    <div class="col-md-12 text-right">
+
+
+                                                                                      <button type="submit" class="btn btn-primary ">แก้ไข</button>
+                                                                                      <button class="btn btn-default modal-dismiss" data-dismiss="modal" aria-label="Close">ยกเลิก</button>
+
+
+                                                                                    </div>
+
+                                                                                  </div>
+                                                                                </footer>
+
+
+                                                              </div>
+                                                            </div>
+                                                          </div>
+
+
+
+
+
+
+                                                         <div class="modal fade bs-example-modal-sm" id="myModal-{{$cm->c_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                           <div class="modal-dialog modal-sm" role="document">
+                                                             <div class="modal-content">
+
+                                                               <div class="modal-header">
+                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                   <span aria-hidden="true">×</span>
+                                                                 </button> <h4 class="modal-title" style="margin:auto" id="myModalLabel">ต้องการลบ ?</h4>
+                                                               </div>
+
+                                                               <div class="panel-body">
+                                                                                 <div id="showalert2"></div>
+                                                                                 <div class="modal-wrapper">
+
+                                                                                   <div class="modal-text">
+                                                                                     <h4 style="margin:auto">ต้องการลบความคิดเห็นนี้ ใช่ไหม ?</h4>
+                                                                                   </div>
+                                                                                 </div>
+                                                                               </div>
+
+                                                                               <footer class="panel-footer" style="margin-top: 10px;">
+                                                                                 <div class="row">
+                                                                                   <div class="col-md-12 text-right">
+                                                                                     <form method="post" action="{{url('comment/'.$cm->c_id)}}" enctype="multipart/form-data">
+
+                                                                                      <input type="hidden" name="_method" value="DELETE">
+                                                                                      {{ csrf_field() }}
+
+                                                                                     <button type="submit" class="btn btn-primary ">ลบ</button>
+                                                                                     <button class="btn btn-default modal-dismiss" data-dismiss="modal" aria-label="Close">ยกเลิก</button>
+
+                                                                                   </form>
+                                                                                   </div>
+                                                                                 </div>
+                                                                               </footer>
+
+
+                                                             </div>
+                                                           </div>
+                                                         </div>
+
+
+
+                        @endif
+                        @endif
+                        </div>
+
+
+
+
+                    </div><!-- End review strip -->
+                </li>
+                  @endforeach
+                @endif
+
+</ul>
+  {{ $comment_course->links() }}
+  </div>
+
+
+
+  </div>
+</div><!-- end detail-footer -->
 
 
 
@@ -555,7 +796,7 @@ ul.list_ok {
                 </div>
 
                 <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
-                  
+
 
                               <div class="g-recaptcha" data-sitekey="6LdHOiUUAAAAAAobn_eaNZe6ieq_s1aE9fXK26_y" style="width:100%"></div>
                               @if ($errors->has('g-recaptcha-response'))
@@ -573,7 +814,7 @@ ul.list_ok {
 
 
           <div class="box_style_2">
-            <i class="fa fa-user" aria-hidden="true"></i>
+            <i class="icon_set_1_icon-57" aria-hidden="true"></i>
             <h4 style="margin-bottom: 0px;">Need <span style="color: #00c402;">Help?</span></h4>
             <a href="tel://0940547728" class="phone">0940547728</a>
             <small>Monday to Friday 9.00am - 7.30pm</small>
@@ -601,6 +842,7 @@ ul.list_ok {
 
 <script language=javascript src='http://maps.google.com/maps/api/js?key=AIzaSyDawi5qne05jM6TOClvpuN673ChaNoMVxs&callback=initMap'></script>
 <script>
+
 function initialize(){
      var myLatlng = new google.maps.LatLng({{$home->lat}},{{$home->lng}});
      var myOptions = {
@@ -632,5 +874,25 @@ $(this).magnificPopup({
 });
 });
 </script>
+
+
+<script src="{{url('assets/js/jquery.barrating.js')}}"></script>
+<script type="text/javascript">
+   $(function() {
+      $('#example').barrating({
+        theme: 'fontawesome-stars'
+      });
+
+   });
+</script>
+
+
+<script src="{{url('assets/bootstrap-sweetalert-master/dist/sweetalert.js')}}"></script>
+
+@if ($message = Session::get('success_comment'))
+<script>
+    swal("ส่งข้อความสำเร็จ!", "ขอบคุณที่ร่วมแสดงความความคิดเห็น!", "success")
+  </script>
+@endif
 
 @stop('scripts')

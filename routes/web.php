@@ -21,6 +21,10 @@ Route::get('/category', function () {
     return view('category');
 });
 
+
+Route::get('/redirect', 'SocialAuthController@redirect');
+Route::get('/callback', 'SocialAuthController@callback');
+
 Route::post('/contact', 'ContactController@store');
 
 Route::get('/contact_success', function () {
@@ -47,3 +51,10 @@ Route::group(['middleware' => 'web'], function () {
 Route::get('/asset-{id}', 'ProductController@show');
 
 });
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+  Route::resource('comment', 'CommentController');
+
+  });
