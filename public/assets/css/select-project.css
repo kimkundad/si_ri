@@ -1,0 +1,350 @@
+.postMetaInline-avatar {
+    display: table-cell;
+
+}
+.descript-t{
+
+	    height: 40px;
+}
+.readingPrice{
+	color: #ff2e63;
+	font-weight: bold;
+}
+.link{
+	color: #333;
+}
+.avatar-image{
+	height: 36px;
+}
+.postMetaInline-authorLockup {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 1.4;
+    padding-left: 10px;
+    text-rendering: auto;
+}
+.space-project{
+	width: 100%;
+	margin-left: 0px;
+    /*background: red;*/
+}
+
+.list-project{
+	width: 100%;
+	margin-top: 15px;
+}
+@media(min-width:768px) {
+	.space-project{
+		width: 100%;
+		/*margin-left: 0px;*/
+	}
+	.list-project{
+		width: 100%;
+		padding-left: 3%;
+		padding-right: 3%;
+		/*background: red;*/
+		/*padding: 0%;*/
+		margin-top: 35px;
+	}
+	.pull-right .chevron{
+		margin-left: 10px;
+	}
+	.project-head{
+		margin-right: 15px;
+	}
+	.col-md-3{
+		padding: 0px;
+		padding-right: 15px;
+		margin-top: 10px;
+	}
+}
+
+
+.pull-right button{
+	margin-top: 10px;
+	background: #fff;
+	border: 0px;
+
+}
+
+.sameline{
+	display: inline-block;
+}
+
+.body-project{
+	margin-top: 20px;
+}
+
+.pane{
+	margin-right: 8px;
+	/*margin-left: 8px;*/
+	margin-bottom: 8px;
+	width: 100%;
+	float: left;
+	background: #fff;
+	height:auto;
+	box-shadow: 0px 1px 1px #B6B6B6;
+}
+.pane2{
+	height:auto;
+}
+.head-pane img{
+	max-width:100%;
+	max-height:200px;
+	margin: 0 auto;
+	display: block;
+}
+.head-pane {
+	height:auto;
+}
+.pane-add{
+	height:300px;
+}
+@media(min-width:520px){
+	.pane{
+		/*width: 220px; */
+		width: 23.5%;
+		height:300px;
+		margin-left: 8px;
+	}
+	.pane2{
+		height:280px;
+	}
+	.head-pane img{
+		max-width:100%;
+
+	}
+	.head-pane {
+		height:140px;
+	}
+}
+.pane-add{
+	padding: 5px;
+
+}
+.pane-add :hover{
+	color:#26B899;
+	/*background:gray;*/
+	cursor: pointer;
+}
+.pane-add :focus{
+	outline: 0 none;
+}
+.pane-add .body-add{
+	width: 100%;
+	height: 100%;
+
+	display: block;
+	padding-top: 110px;
+	/*margin-left: 3%;*/
+	/*padding-top: 50px !important;*/
+	/*display: block;*/
+	background: #E0E0E0;
+}
+
+
+.pane-add .body-add i{
+	text-align: center;
+	display: block;
+	font-size: 70px;
+}
+.pane-add a{
+	text-decoration: none;
+	color:gray;
+	/*display: none;*/
+}
+.col-last{
+	/*padding-right: 0px !important;*/
+}
+
+.descript a {
+	color:#000;
+	/*text-decoration: none;*/
+}
+
+.descript{
+	/*height: 35px; */
+	margin-left: 8px;
+	margin-right: 8px;
+	margin-top: 6px;
+	line-height: 1.2em;
+	/*margin-bottom: 12px !important;*/
+}
+.bold{
+	font-weight: bold;
+}
+.star{
+	color:#26B899;
+}
+.thin{
+	color: #A7A7A7;
+}
+
+
+/*login*/
+
+.space{
+  padding-top: 13px;
+}
+
+.forgot{
+  padding-top: 10px;
+}
+
+
+footer {
+	margin-top: 50px;
+	background-color: #26B899;
+	height: 70px;
+	width: 100%;
+}
+.footer{
+	padding-top: 28px;
+	padding-left: 10%;
+	/*text-align: center;*/
+	color:#fff;
+	font-size: 12px;
+}
+
+
+
+.modal-body .row{
+	padding: 15px;
+}
+
+
+
+.project-head .next-page{
+	display: none;
+}
+@media(min-width:520px){
+	.project-head .next-page{
+		display: block;
+	}
+}
+
+.uploads-course{
+	font-size: 16px !important;
+	font-family: supermarket !important;
+}
+
+.photo{
+	width:100%;
+	height:auto;
+	margin-bottom: 10px;
+}
+
+.photo img{
+	max-width:100%;
+	max-height:230px;
+	height:auto;
+	margin: auto;
+	display: block;
+}
+.course-title h3{
+	margin-top: 0px !important;
+	text-align: center;
+}
+.modal-body{
+	/*margin-top: 0px !important;*/
+	padding-top: 0px !important;
+	/*background: red;*/
+}
+.inline2 {
+    display: inline-block;
+}
+.line1-r {
+    float: right;
+    text-align: right;
+    /* display: block; */
+}
+
+.rating {
+    margin: 15px 0 3px -3px;
+    font-size: 15px;
+}
+.rating .voted {
+    color: #F90;
+}
+.rating {
+    margin: 1px 0 3px -3px;
+    font-size: 15px;
+}
+
+.a_sd_move:hover{
+  box-shadow:0 4px 12px 0 rgba(0,0,0,0.12);
+}
+
+ /*.a_sd_move:hover{-webkit-transform:translateY(-4px);transform:translateY(-4px); transition:all 0.5s; box-shadow:0 4px 12px 0 rgba(0,0,0,0.12) !important} */
+
+
+.promo_full {
+    height: auto;
+    background: url(../image/67545293-bangkok-wallpapers.jpg) center center no-repeat fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    position: relative;
+}
+.promo_full_wp {
+    display: table;
+    width: 100%;
+    height: auto;
+}
+.promo_full_wp>div {
+    display: table-cell;
+    padding: 10% 15%;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+.promo_full_wp div h3 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+#search .nav-tabs, .badge_save, .plan-title, .promo_full_wp div h3, .ribbon_3 span {
+    text-transform: uppercase;
+}
+.promo_full_wp div a i {
+    color: #fff;
+    opacity: .5;
+    font-size: 72px;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.g_l_box div:last-child {
+    background-color: rgba(0,0,0,0.6);
+    border-bottom-right-radius: 2px;
+}
+.g_l_box div {
+    padding: 6px 16px;
+}
+.g_l_box p {
+    margin: 0 0 0px;
+}
+
+.g_l_box div:first-child {
+    border-top-right-radius: 2px;
+}
+.t_white {
+    color: #ffffff;
+}
+ .g_l_box {
+   bottom: 20px;
+    overflow: hidden;
+    position: absolute;
+}
+.g_l_box {
+    bottom: 110px;
+    overflow: hidden;
+}
+.g_l_box {
+  /*top:20px; */
+    left: 0;
+}
