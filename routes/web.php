@@ -13,9 +13,9 @@
 
 
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('error');
-}); */
+});
 
 Route::get('/category', function () {
     return view('category');
@@ -43,7 +43,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'web'], function () {
 
-Route::get('/', 'HomeController@index');
+//Route::get('/', 'HomeController@index');
 Route::get('/asset-{id}', 'ProductController@show');
 
 });
