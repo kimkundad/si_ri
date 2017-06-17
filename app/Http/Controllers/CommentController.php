@@ -89,8 +89,19 @@ class CommentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+    $this->validate($request, [
+         'product_id' => 'required',
+         'comment' => 'required'
+     ]);
+
+     $obj = DB::table('comments')
+            ->where('id', $id)
+            ->update([
+              'comment' => $request['comment']
+           ]);
+
+     return redirect(url('asset-'.$request['product_id'].'#comment-'.$id))->with('success_comment_edit','แก้ไขความคิดเห็นสำเร็จ');
+  }
 
     /**
      * Remove the specified resource from storage.
@@ -100,6 +111,10 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $obj = DB::table('comments')
+      ->where('comments.id', $id)
+      ->delete();
+
+      return Redirect::back()->with('delete','ลบความคิดเห็นสำเร็จ');
     }
 }

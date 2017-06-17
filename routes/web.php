@@ -13,23 +13,37 @@
 
 
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('error');
-});
+});*/
 
-Route::get('/category', function () {
-    return view('category');
-});
 
+Route::get('/property-{type}-{rent}', 'CategoryController@property');
+Route::get('/sort_property-{type}-{rent}-{sort}', 'CategoryController@sort_property');
 
 Route::get('/redirect', 'SocialAuthController@redirect');
 Route::get('/callback', 'SocialAuthController@callback');
 
 Route::post('/contact', 'ContactController@store');
 
+Route::get('/classifieds_siri', 'ClassifiedsController@index');
+
+Route::get('classifieds_siri/{id}', 'ClassifiedsController@show');
+
 Route::get('/contact_success', function () {
     return view('contact_success');
 });
+
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+
+Route::get('/contact_us', function () {
+    return view('contact');
+});
+
 
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -47,7 +61,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'web'], function () {
 
-//Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 Route::get('/asset-{id}', 'ProductController@show');
 
 });
@@ -56,5 +70,4 @@ Route::get('/asset-{id}', 'ProductController@show');
 Route::group(['middleware' => 'auth'], function () {
 
   Route::resource('comment', 'CommentController');
-
   });

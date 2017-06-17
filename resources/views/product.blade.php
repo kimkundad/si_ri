@@ -56,6 +56,8 @@
 
 <div class="row magnific-gallery">
 
+  @if($home_image_count > 4)
+
 <div class="col-md-6 col-sm-6" style="padding-right: 3px;">
 
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[0]->image)}}" >
@@ -82,14 +84,26 @@
 
 
 <div class="col-md-4 col-sm-4" style="padding-left: 0px; padding-top:5px">
-
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[4]->image)}}" >
   <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[4]->image)}}" alt="">
   <div class="see-all-overlay"><span class="see-all-overlay-text">ดูทั้งหมด {{$home_image_count}} รูป</span></div></a>
 </div>
 
+@else
 
+<div class="col-md-6 col-sm-6" style="padding-right: 3px;">
 
+<a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[0]->image)}}" >
+  <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[0]->image)}}" alt=""></a>
+</div>
+
+<div class="col-md-6 col-sm-6" style="padding-left: 3px;">
+
+<a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[1]->image)}}" >
+  <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[1]->image)}}" alt=""></a>
+</div>
+
+@endif
 
 <div class="hidden">{{$i = 0}}</div>
 @foreach ($home_image_all as $image)
@@ -290,6 +304,9 @@ small, .small {
 .br-theme-fontawesome-stars .br-widget a.br-selected:after {
     color: #F90;
 }
+.text-muted {
+    color: #777;
+}
 </style>
 
 
@@ -307,15 +324,19 @@ small, .small {
 
                   <div class="row">
 
-                    <div class="col-md-6" id="score_detail" style="margin-bottom: 3px;"><span>5.0</span>
+                    <div class="col-md-6" id="score_detail" style="margin-bottom: 3px;"><span>{{$home->rating}}.0</span>
 
 
-                      <small>(Based on {{$comment_count}} reviews)</small></div><!-- End general_rating -->
+                      <small>(Based on
+                        @if(isset($comment_count))
+                        {{$comment_count}} reviews)
+                        @endif
+                      </small></div><!-- End general_rating -->
 
 
                    <div class="col-md-6" id="rating_summary" >
                      <div class="rating" style="font-size: 24px; margin-top: 8px;    float: right;">
-                        
+
                      @if($home->rating == 5)
 
                          <i class="fa fa-star voted"></i>
@@ -550,12 +571,12 @@ return "$strDay $strMonthThai $strYear";
                                                                     <span aria-hidden="true">×</span>
                                                                   </button> <h4 class="modal-title" style="margin:auto" id="myModalLabel">ทำการแก้ไข ?</h4>
                                                                 </div>
-
+                                                                <form method="post" action="{{url('comment/'.$cm->c_id)}}" enctype="multipart/form-data">
                                                                 <div class="panel-body">
                                                                                   <div id="showalert2"></div>
                                                                                   <div class="modal-wrapper">
 
-                                                                                <form method="post" action="{{url('comment/'.$cm->c_id)}}" enctype="multipart/form-data">
+
                                                                                     <div class="modal-text">
                                                                                       <input type="hidden" name="_method" value="put">
                                                                                       <input type="hidden" name="product_id" class="form-control" value="{{$home->id_pro}}">
@@ -568,7 +589,7 @@ return "$strDay $strMonthThai $strYear";
 
 
                                                                                     </div>
-                                                                                  </form></div>
+                                                                                  </div>
                                                                                 </div>
 
                                                                                 <footer class="panel-footer" style="margin-top: 0px;">
@@ -585,7 +606,7 @@ return "$strDay $strMonthThai $strYear";
                                                                                   </div>
                                                                                 </footer>
 
-
+                                                                                </form>
                                                               </div>
                                                             </div>
                                                           </div>
@@ -762,9 +783,9 @@ return "$strDay $strMonthThai $strYear";
             <form action="{{url('/contact')}}" method="post" enctype="multipart/form-data" name="product">
             <h3 class="inner" style="margin-top: 10px;">24 Hours Confirmation</h3>
 
-                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}" style="position:relative">
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} form-group-sm" style="position:relative">
                     <label>Name</label>
-                    <input class="form-control " name="id" name="name" type="text" required="">
+                    <input class="form-control " name="id"  name="name" type="text" required="">
                     @if ($errors->has('name'))
                                   <span class="help-block">
                                       <strong>ใส่ ชื่อ-นามสกุล ด้วยนะ</strong>
@@ -772,22 +793,22 @@ return "$strDay $strMonthThai $strYear";
                               @endif
                 </div>
 
-                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}" style="position:relative">
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} form-group-sm" style="position:relative">
                     <label>Email</label>
-                    <input class="form-control required" type="email" name="email" id="email_hotel_booking" required="">
+                    <input class="form-control required" type="email" placeholder="Enter email address" name="email" id="email_hotel_booking" required="">
                     @if ($errors->has('email'))
                                   <span class="help-block">
                                       <strong>ใส่ อีเมล์ ด้วยนะ</strong>
                                   </span>
                               @endif
                 </div>
-                <div class="form-group" style="position:relative">
+                <div class="form-group form-group-sm" style="position:relative">
                     <label>Telephone</label>
-                    <input class="form-control required" type="text" name="phone" id="phone_hotel_booking" required="">
+                    <input class="form-control required" type="text" placeholder="Enter phone number" name="phone" id="phone_hotel_booking" required="">
                 </div>
                 <div class="form-group{{ $errors->has('detail') ? ' has-error' : '' }}" style="position:relative">
                     <label>Description</label>
-                    <textarea class="form-control" name="detail" rows="4" id="textareaAutosize" data-plugin-textarea-autosize="" required=""></textarea>
+                    <textarea class="form-control" name="detail" rows="4" placeholder="Please enter your question" id="textareaAutosize" data-plugin-textarea-autosize="" required=""></textarea>
                     @if ($errors->has('detail'))
                                 <span class="help-block">
                                     <strong>ใส่ข้อความติดต่อด้วยนะ!</strong>
@@ -894,5 +915,19 @@ $(this).magnificPopup({
     swal("ส่งข้อความสำเร็จ!", "ขอบคุณที่ร่วมแสดงความความคิดเห็น!", "success")
   </script>
 @endif
+
+@if ($message = Session::get('success_comment_edit'))
+<script>
+    swal("แก้ไขข้อความสำเร็จ!", "ขอบคุณที่ร่วมแสดงความความคิดเห็น!", "success")
+  </script>
+@endif
+
+
+@if ($message = Session::get('delete'))
+<script>
+    swal("ลบข้อความสำเร็จ!", "ขอบคุณที่ร่วมแสดงความความคิดเห็น!", "success")
+  </script>
+@endif
+
 
 @stop('scripts')

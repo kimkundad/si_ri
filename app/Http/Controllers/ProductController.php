@@ -107,8 +107,8 @@ class ProductController extends Controller
               ->count();
 
 
-          //dd($comment_course);
-      $data['comment_count'] = $comment_count;    
+        //  dd($home_image_all);
+      $data['comment_count'] = $comment_count;
       $data['comment_course'] = $comment_course;
       $data['home_image_all'] = $home_image_all;
       $data['home_image'] = $home_image;

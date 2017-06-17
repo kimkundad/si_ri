@@ -1,10 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.template')
+<style>
+.login_box {
 
+  margin-top: 56px;
+  margin-bottom: 56px;
+
+}
+.panel {
+    margin-bottom: 56px;
+  }
+</style>
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="panel panel-default login_box" style="margin-bottom: 56px;">
                 <div class="panel-heading">Reset Password</div>
                 <div class="panel-body">
                     @if (session('status'))

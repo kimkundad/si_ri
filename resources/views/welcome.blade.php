@@ -198,6 +198,7 @@
           <p>Discover tours, attractions and activities for your next adventure</p>
 
 
+
           <div class="body-project">
 
                     <div class="row">
@@ -332,7 +333,7 @@
                           <div class="col-sm-4 col-md-3">
 
                                 <div class="thumbnail a_sd_move">
-                                  <a href="#" >
+                                  <a href="{{url('asset-'.$home_tops->id)}}" >
                                   <img src="{{url('assets/cusimage/'.$home_tops->image)}}" >
                                   <div class="g_l_box">
                                         <div class="t_white">
@@ -344,7 +345,7 @@
                                   </a>
                                   <div class="caption" style="padding: 3px;">
                                     <div class="descript bold">
-                                        <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#show_detail54"><?=mb_strimwidth($home_tops->name, 0, 29, '...');?></a>
+                                        <a href="{{url('asset-'.$home_tops->id)}}" data-dismiss="modal" data-toggle="modal" data-target="#show_detail54"><?=mb_strimwidth($home_tops->name, 0, 29, '...');?></a>
                                     </div>
                                     <div class="descript" style="padding-bottom: 5px;color: #777; font-size: 12px;border-bottom: 1px dashed #dff0d8;">
                                       <?=mb_strimwidth($home_tops->shortdetail, 0, 38, '...');?>
