@@ -786,7 +786,7 @@ return "$strDay $strMonthThai $strYear";
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} form-group-sm" style="position:relative">
                     <label>Name</label>
-                    <input class="form-control " name="id"  name="name" type="text" required="">
+                    <input class="form-control "  name="name" value="{{ old('name') }}" type="text" required="">
                     @if ($errors->has('name'))
                                   <span class="help-block">
                                       <strong>ใส่ ชื่อ-นามสกุล ด้วยนะ</strong>
