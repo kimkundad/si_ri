@@ -781,6 +781,7 @@ return "$strDay $strMonthThai $strYear";
 
           <div class="border_gray pay_info">
             <form action="{{url('/contact')}}" method="post" enctype="multipart/form-data" name="product">
+              {{ csrf_field() }}
             <h3 class="inner" style="margin-top: 10px;">24 Hours Confirmation</h3>
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} form-group-sm" style="position:relative">
