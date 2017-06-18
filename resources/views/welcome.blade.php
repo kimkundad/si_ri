@@ -7,12 +7,20 @@
     background: url(assets/image/arrow_black_bottom.png) no-repeat right;
     background-size: 12px 6px;
     width: 150px;
-    border: none;
+    border: none !important;
     font-family: "Tahoma", "Geneva", "sans-serif";
     font-size: 14px;
     color: #555555;
     font-weight: normal;
-    line-height: 1em;
+    line-height: 1.2em;
+    outline: none !important;
+    padding: 5px;
+}
+.list_menu_y select:hover{
+  border: none;
+}
+option{
+
 }
 </style>
                 <div id="first-slider">
@@ -76,23 +84,34 @@
                             <div class="container-fluid" style=" bottom: 60px; background: rgba(255, 255, 255, 0); position: relative;">
                               <div class="col-sm-2"></div>
                               <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
+                                <form action="{{url('/search')}}" method="post" enctype="multipart/form-data" name="product">
+                                  {{ csrf_field() }}
                             <div class="row">
-                              <input class="flipkart-navbar-input col-xs-9" type="" placeholder="Search for Products, Brands and more" name="">
-                              <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
-                                                                            <select name="r_house_type_id" class="list_menu_y" style="height:43px; width:120px;     padding: 1px 18px;">
-                                                                                <option value="">ประเภทที่พัก</option>
-                                                                                    @foreach($category as $u_cat)
-                                                                                    <option value="{{$u_cat->id}}">{{$u_cat->name}}</option>
-                                                                                    @endforeach
+                              <input class="flipkart-navbar-input col-xs-7" type="" placeholder="Search for Products, Brands and more" name="ark">
 
-                                                                            </select>
-                                                                        </div>
-                              <button class="flipkart-navbar-button col-xs-1">
+                              <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
+                                  <select name="type_ark" class="list_menu_y" style="height:43px; width:120px;     padding: 1px 18px;">
+                                      <option value="2" >เลือกเช่า</option>
+                                      <option value="1">เลือกซื้อ</option>
+                                  </select>
+                              </div>
+
+                              <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
+                                  <select name="type_home" class="list_menu_y" style="height:43px; width:120px;     padding: 1px 18px;">
+                                      <option value="">ประเภทที่พัก</option>
+                                          @foreach($category as $u_cat)
+                                      <option value="{{$u_cat->id}}">{{$u_cat->name}}</option>
+                                          @endforeach
+                                  </select>
+                              </div>
+
+                              <button class="flipkart-navbar-button col-xs-1" type="submit">
                                   <svg width="15px" height="15px">
                                       <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
                                   </svg>
                               </button>
                             </div>
+                            </form>
                             </div>
                             <div class="col-sm-2"></div>
                               </div>

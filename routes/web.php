@@ -26,6 +26,8 @@ Route::post('/contact', 'ContactController@store');
 
 Route::get('/classifieds_siri', 'ClassifiedsController@index');
 
+Route::post('/search', 'HomeController@search');
+
 Route::get('classifieds_siri/{id}', 'ClassifiedsController@show');
 
 Route::get('/contact_success', function () {
