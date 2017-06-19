@@ -31,7 +31,7 @@ color: #ccc;
                   <li><a href="{{url('contact_us')}}" ><span class="text-gray">Contact</span>   </a></li>
                   <li><a href="{{url('login')}}" ><span class="text-gray">Login</span>   </a></li>
                   <li><a href="{{url('register')}}" ><span class="text-gray">Register</span> </a>  </li>
-                  <li><span>Classifieds</span>   </li>
+                  <li><a href="{{url('classifieds_siri')}}"><span>Classifieds</span>   </a></li>
 
                 </ul>
             </div>
@@ -40,8 +40,8 @@ color: #ccc;
                 <h4>TERMS OF USE<span class="head-line"></span></h4>
                 <ul>
 
-                 <li><span>Privacy</span>   </li>
-                 <li><span>Terms and condition</span> </li>
+                 <li><a href="{{url('privacy')}}"><span>Privacy</span></a>   </li>
+                 <li><a href="{{url('terms_condition')}}"><span>Terms and condition</span></a> </li>
 
                 </ul>
             </div>
