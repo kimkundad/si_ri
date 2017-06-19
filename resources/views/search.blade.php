@@ -58,7 +58,13 @@ ul#cat_nav li a  {
                           <form action="{{url('/search')}}" method="post" enctype="multipart/form-data" name="product">
                             {{ csrf_field() }}
                       <div class="row">
+
+                        @if(isset($ark))
                         <input class="flipkart-navbar-input col-xs-7" type="" placeholder="Search for Products, Brands and more" value="{{$ark}}" name="ark">
+                        @else
+                        <input class="flipkart-navbar-input col-xs-7" type="" placeholder="Search for Products, Brands and more" name="ark">
+                        @endif
+
 
                         <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
                             <select name="type_ark" class="list_menu_y" style="height:43px; width:120px;     padding: 1px 18px;">
@@ -71,6 +77,9 @@ ul#cat_nav li a  {
                                   @endif>เลือกซื้อ</option>
                             </select>
                         </div>
+
+
+
 
                         <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
                             <select name="type_home" class="list_menu_y" style="height:43px; width:120px;     padding: 1px 18px;">
@@ -167,16 +176,19 @@ ul#cat_nav li a  {
                       <div class="col-lg-4 col-md-4">
 
 
-                                    <div class="widget">
-                                            <form name="Search" method="post" action="Search">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" name="name" placeholder="Search name property...">
-                                                <span class="input-group-btn">
-                                                <button class="btn btn-default" type="submit" style="margin-left:0;"><i class="fa fa-search"></i></button>
-                                                </span>
-                                            </div><!-- /input-group -->
-                                        </form>
-                                        </div>
+                        <div class="widget">
+                                <form method="post" action="{{url('/search')}}">
+                                  {{ csrf_field() }}
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="ark" placeholder="Search name property...">
+                                    <input type="hidden" class="form-control" name="type_ark" value="{{$type_ark}}">
+                                    <input type="hidden" class="form-control" name="type_home" value="{{$type_home}}">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" style="margin-left:0;"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </form>
+                            </div>
                                         <br>
 
 
@@ -188,48 +200,180 @@ ul#cat_nav li a  {
 
 
 @if(isset($sort))
-  <div class="box_style_cat">
-    <ul id="cat_nav">
 
-      <li><a href="{{url('sort_property-'.$rent.'-'.$type.'-100#fix-location')}}" @if($sort == 100)
-        class="active_li"
-          @endif><i class="fa fa-thumbs-o-up"></i>Most popular </a>
-      </li>
-      <li><a href="{{url('sort_property-'.$rent.'-'.$type.'-101#fix-location')}}" @if($sort == 101)
-        class="active_li"
-          @endif><i class="fa fa-star-o"></i>Best reviewed </a>
-      </li>
-      <li><a href="{{url('sort_property-'.$rent.'-'.$type.'-102#fix-location')}}" @if($sort == 102)
-        class="active_li"
-          @endif><i class="fa fa-child"></i>Price (low to high) </a>
-      </li>
-      <li><a href="{{url('sort_property-'.$rent.'-'.$type.'-103#fix-location')}}" @if($sort == 103)
-        class="active_li"
-          @endif><i class="fa fa-street-view "></i>Price (high to low) </a>
-      </li>
-      <li><a href="{{url('sort_property-'.$rent.'-'.$type.'-104#fix-location')}}" @if($sort == 104)
-        class="active_li"
-          @endif ><i class="fa fa-magnet "></i>Top new activities </a>
-      </li>
+@if($type_home != NULL && $ark != NULL)
 
-    </ul>
-  </div>
-@else
-
-
-@if($type_home != NULL)
 <div class="box_style_cat">
   <ul id="cat_nav">
 
-    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-100#fix-location')}}" ><i class="fa fa-thumbs-o-up"></i>Most popular </a>
+    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-'.$ark.'-100#fix-location')}}" @if($sort == 100)
+      class="active_li"
+        @endif><i class="fa fa-thumbs-o-up"></i>Most popular </a>
     </li>
-    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-101#fix-location')}}"><i class="fa fa-star-o"></i>Best reviewed </a>
+    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-'.$ark.'-101#fix-location')}}" @if($sort == 101)
+      class="active_li"
+        @endif><i class="fa fa-star-o"></i>Best reviewed </a>
     </li>
-    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-102#fix-location')}}"><i class="fa fa-child"></i>Price (low to high) </a>
+    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-'.$ark.'-102#fix-location')}}" @if($sort == 102)
+      class="active_li"
+        @endif><i class="fa fa-child"></i>Price (low to high) </a>
     </li>
-    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-103#fix-location')}}"><i class="fa fa-street-view "></i>Price (high to low) </a>
+    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-'.$ark.'-103#fix-location')}}" @if($sort == 103)
+      class="active_li"
+        @endif><i class="fa fa-street-view "></i>Price (high to low) </a>
     </li>
-    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-104#fix-location')}}"><i class="fa fa-magnet "></i>Top new activities </a>
+    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-'.$ark.'-104#fix-location')}}" @if($sort == 104)
+      class="active_li"
+        @endif ><i class="fa fa-magnet "></i>Top new activities </a>
+    </li>
+
+  </ul>
+</div>
+
+@elseif($type_home == NULL && $ark != NULL)
+
+<div class="box_style_cat">
+  <ul id="cat_nav">
+
+    <li><a href="{{url('sort_search_property1-'.$type_ark.'-'.$ark.'-100#fix-location')}}" @if($sort == 100)
+      class="active_li"
+        @endif><i class="fa fa-thumbs-o-up"></i>Most popular </a>
+    </li>
+    <li><a href="{{url('sort_search_property1-'.$type_ark.'-'.$ark.'-101#fix-location')}}" @if($sort == 101)
+      class="active_li"
+        @endif><i class="fa fa-star-o"></i>Best reviewed </a>
+    </li>
+    <li><a href="{{url('sort_search_property1-'.$type_ark.'-'.$ark.'-102#fix-location')}}" @if($sort == 102)
+      class="active_li"
+        @endif><i class="fa fa-child"></i>Price (low to high) </a>
+    </li>
+    <li><a href="{{url('sort_search_property1-'.$type_ark.'-'.$ark.'-103#fix-location')}}" @if($sort == 103)
+      class="active_li"
+        @endif><i class="fa fa-street-view "></i>Price (high to low) </a>
+    </li>
+    <li><a href="{{url('sort_search_property1-'.$type_ark.'-'.$ark.'-104#fix-location')}}" @if($sort == 104)
+      class="active_li"
+        @endif ><i class="fa fa-magnet "></i>Top new activities </a>
+    </li>
+
+  </ul>
+</div>
+
+@elseif($type_home != NULL && $ark == NULL)
+
+<div class="box_style_cat">
+  <ul id="cat_nav">
+
+    <li><a href="{{url('sort_search_property2-'.$type_ark.'-'.$type_home.'-100#fix-location')}}" @if($sort == 100)
+      class="active_li"
+        @endif><i class="fa fa-thumbs-o-up"></i>Most popular </a>
+    </li>
+    <li><a href="{{url('sort_search_property2-'.$type_ark.'-'.$type_home.'-101#fix-location')}}" @if($sort == 101)
+      class="active_li"
+        @endif><i class="fa fa-star-o"></i>Best reviewed </a>
+    </li>
+    <li><a href="{{url('sort_search_property2-'.$type_ark.'-'.$type_home.'-102#fix-location')}}" @if($sort == 102)
+      class="active_li"
+        @endif><i class="fa fa-child"></i>Price (low to high) </a>
+    </li>
+    <li><a href="{{url('sort_search_property2-'.$type_ark.'-'.$type_home.'-103#fix-location')}}" @if($sort == 103)
+      class="active_li"
+        @endif><i class="fa fa-street-view "></i>Price (high to low) </a>
+    </li>
+    <li><a href="{{url('sort_search_property2-'.$type_ark.'-'.$type_home.'-104#fix-location')}}" @if($sort == 104)
+      class="active_li"
+        @endif ><i class="fa fa-magnet "></i>Top new activities </a>
+    </li>
+
+  </ul>
+</div>
+
+
+@else
+
+
+<div class="box_style_cat">
+  <ul id="cat_nav">
+
+    <li><a href="{{url('sort_search_property3-'.$type_ark.'-100#fix-location')}}" @if($sort == 100)
+      class="active_li"
+        @endif><i class="fa fa-thumbs-o-up"></i>Most popular </a>
+    </li>
+    <li><a href="{{url('sort_search_property3-'.$type_ark.'-101#fix-location')}}" @if($sort == 101)
+      class="active_li"
+        @endif><i class="fa fa-star-o"></i>Best reviewed </a>
+    </li>
+    <li><a href="{{url('sort_search_property3-'.$type_ark.'-102#fix-location')}}" @if($sort == 102)
+      class="active_li"
+        @endif><i class="fa fa-child"></i>Price (low to high) </a>
+    </li>
+    <li><a href="{{url('sort_search_property3-'.$type_ark.'-103#fix-location')}}" @if($sort == 103)
+      class="active_li"
+        @endif><i class="fa fa-street-view "></i>Price (high to low) </a>
+    </li>
+    <li><a href="{{url('sort_search_property3-'.$type_ark.'-104#fix-location')}}" @if($sort == 104)
+      class="active_li"
+        @endif ><i class="fa fa-magnet "></i>Top new activities </a>
+    </li>
+
+  </ul>
+</div>
+
+
+@endif
+
+
+
+@else
+
+
+@if($type_home != NULL && $ark != NULL)
+<div class="box_style_cat">
+  <ul id="cat_nav">
+
+    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-'.$ark.'-100#fix-location')}}" ><i class="fa fa-thumbs-o-up"></i>Most popular </a>
+    </li>
+    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-'.$ark.'-101#fix-location')}}"><i class="fa fa-star-o"></i>Best reviewed </a>
+    </li>
+    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-'.$ark.'-102#fix-location')}}"><i class="fa fa-child"></i>Price (low to high) </a>
+    </li>
+    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-'.$ark.'-103#fix-location')}}"><i class="fa fa-street-view "></i>Price (high to low) </a>
+    </li>
+    <li><a href="{{url('sort_search_property-'.$type_ark.'-'.$type_home.'-'.$ark.'-104#fix-location')}}"><i class="fa fa-magnet "></i>Top new activities </a>
+    </li>
+
+  </ul>
+</div>
+@elseif($type_home == NULL && $ark != NULL)
+<div class="box_style_cat">
+  <ul id="cat_nav">
+
+    <li><a href="{{url('sort_search_property1-'.$type_ark.'-'.$ark.'-100#fix-location')}}" ><i class="fa fa-thumbs-o-up"></i>Most popular </a>
+    </li>
+    <li><a href="{{url('sort_search_property1-'.$type_ark.'-'.$ark.'-101#fix-location')}}"><i class="fa fa-star-o"></i>Best reviewed </a>
+    </li>
+    <li><a href="{{url('sort_search_property1-'.$type_ark.'-'.$ark.'-102#fix-location')}}"><i class="fa fa-child"></i>Price (low to high) </a>
+    </li>
+    <li><a href="{{url('sort_search_property1-'.$type_ark.'-'.$ark.'-103#fix-location')}}"><i class="fa fa-street-view "></i>Price (high to low) </a>
+    </li>
+    <li><a href="{{url('sort_search_property1-'.$type_ark.'-'.$ark.'-104#fix-location')}}"><i class="fa fa-magnet "></i>Top new activities </a>
+    </li>
+
+  </ul>
+</div>
+@elseif($type_home != NULL && $ark == NULL)
+<div class="box_style_cat">
+  <ul id="cat_nav">
+
+    <li><a href="{{url('sort_search_property2-'.$type_ark.'-'.$type_home.'-100#fix-location')}}" ><i class="fa fa-thumbs-o-up"></i>Most popular </a>
+    </li>
+    <li><a href="{{url('sort_search_property2-'.$type_ark.'-'.$type_home.'-101#fix-location')}}"><i class="fa fa-star-o"></i>Best reviewed </a>
+    </li>
+    <li><a href="{{url('sort_search_property2-'.$type_ark.'-'.$type_home.'-102#fix-location')}}"><i class="fa fa-child"></i>Price (low to high) </a>
+    </li>
+    <li><a href="{{url('sort_search_property2-'.$type_ark.'-'.$type_home.'-103#fix-location')}}"><i class="fa fa-street-view "></i>Price (high to low) </a>
+    </li>
+    <li><a href="{{url('sort_search_property2-'.$type_ark.'-'.$type_home.'-104#fix-location')}}"><i class="fa fa-magnet "></i>Top new activities </a>
     </li>
 
   </ul>
@@ -239,15 +383,15 @@ ul#cat_nav li a  {
 <div class="box_style_cat">
   <ul id="cat_nav">
 
-    <li><a href="{{url('sort_search_property-'.$type_ark.'-100#fix-location')}}" ><i class="fa fa-thumbs-o-up"></i>Most popular </a>
+    <li><a href="{{url('sort_search_property3-'.$type_ark.'-100#fix-location')}}" ><i class="fa fa-thumbs-o-up"></i>Most popular </a>
     </li>
-    <li><a href="{{url('sort_search_property-'.$type_ark.'-101#fix-location')}}"><i class="fa fa-star-o"></i>Best reviewed </a>
+    <li><a href="{{url('sort_search_property3-'.$type_ark.'-101#fix-location')}}"><i class="fa fa-star-o"></i>Best reviewed </a>
     </li>
-    <li><a href="{{url('sort_search_property-'.$type_ark.'-102#fix-location')}}"><i class="fa fa-child"></i>Price (low to high) </a>
+    <li><a href="{{url('sort_search_property3-'.$type_ark.'-102#fix-location')}}"><i class="fa fa-child"></i>Price (low to high) </a>
     </li>
-    <li><a href="{{url('sort_search_property-'.$type_ark.'-103#fix-location')}}"><i class="fa fa-street-view "></i>Price (high to low) </a>
+    <li><a href="{{url('sort_search_property3-'.$type_ark.'-103#fix-location')}}"><i class="fa fa-street-view "></i>Price (high to low) </a>
     </li>
-    <li><a href="{{url('sort_search_property-'.$type_ark.'-104#fix-location')}}"><i class="fa fa-magnet "></i>Top new activities </a>
+    <li><a href="{{url('sort_search_property3-'.$type_ark.'-104#fix-location')}}"><i class="fa fa-magnet "></i>Top new activities </a>
     </li>
 
   </ul>

@@ -10,18 +10,11 @@
             <div class="container">
                         <ul>
                         <li><a href="{{url('/')}}">Home</a></li>
-                        <li><a href="category-18">{{$home->name_cat}}</a></li>
+                        <li><a href="{{url('property-2-'.$home->id_cat)}}">{{$home->name_cat}}</a></li>
                         <li>{{$home->name_pro}}</li>
                         </ul>
             </div>
     </div>
-
-
-
-
-
-
-
 
 
 

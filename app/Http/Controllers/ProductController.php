@@ -53,6 +53,7 @@ class ProductController extends Controller
       'product.name as name_pro',
       'categorys.*',
       'categorys.name as name_cat',
+      'categorys.id as id_cat',
       'amphures.AMPHUR_NAME_ENG'
       )
       ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')

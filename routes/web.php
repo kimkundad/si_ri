@@ -28,6 +28,14 @@ Route::get('/classifieds_siri', 'ClassifiedsController@index');
 
 Route::post('/search', 'HomeController@search');
 
+Route::get('/sort_search_property-{type_ark}-{type_home}-{ark}-{sort}', 'HomeController@sort_search_property');
+
+Route::get('/sort_search_property1-{type_ark}-{ark}-{sort}', 'HomeController@sort_search_property1');
+
+Route::get('/sort_search_property2-{type_ark}-{type_home}-{sort}', 'HomeController@sort_search_property2');
+
+Route::get('/sort_search_property3-{type_ark}-{sort}', 'HomeController@sort_search_property3');
+
 Route::get('classifieds_siri/{id}', 'ClassifiedsController@show');
 
 Route::get('/contact_success', function () {

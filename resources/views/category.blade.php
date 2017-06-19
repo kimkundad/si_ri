@@ -96,9 +96,12 @@ ul#cat_nav li a  {
 
 
                                     <div class="widget">
-                                            <form name="Search" method="post" action="Search">
+                                            <form method="post" action="{{url('/search')}}">
+                                              {{ csrf_field() }}
                                             <div class="input-group">
-                                                <input type="text" class="form-control" name="name" placeholder="Search name property...">
+                                                <input type="text" class="form-control" name="ark" placeholder="Search name property...">
+                                                <input type="hidden" class="form-control" name="type_ark" value="{{$rent}}">
+                                                <input type="hidden" class="form-control" name="type_home" value="{{$type}}">
                                                 <span class="input-group-btn">
                                                 <button class="btn btn-default" type="submit" style="margin-left:0;"><i class="fa fa-search"></i></button>
                                                 </span>
