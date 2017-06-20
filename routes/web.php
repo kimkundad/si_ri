@@ -24,6 +24,8 @@ Route::get('/callback', 'SocialAuthController@callback');
 
 Route::post('/contact', 'ContactController@store');
 
+Route::post('/wishlist', 'WishlistController@wishlist_up');
+
 Route::get('/classifieds_siri', 'ClassifiedsController@index');
 
 Route::post('/search', 'HomeController@search');

@@ -35,8 +35,13 @@
               	                <h2 class="t14 ">{{$home->address}}, {{$home->AMPHUR_NAME_ENG}}, Bangkok</h2>
                               </div>
               	            <div class="t14 table_cell other">
+                              <form id="cutproduct1">
+                                <input type="hidden" id="product_id" class="form-control" name="id"   value="{{ $home->id_pro }}" >
+                                  <a class="tooltip_flip tooltip-effect-1" id="submit" style="text-decoration:none;">
                                   <i class="fa fa-heart-o t_main j_collect t20" style="top:3px;position:relative;font-size:22px;" ></i>
                                   <span class="icon-label j_collect_txt">Wishlist</span>
+                                  </a>
+                                </form>
                               </div>
                           </div>
 
@@ -923,6 +928,80 @@ $(this).magnificPopup({
     swal("ลบข้อความสำเร็จ!", "ขอบคุณที่ร่วมแสดงความความคิดเห็น!", "success")
   </script>
 @endif
+
+
+<script>
+$(document).ready(function(){
+
+
+
+$('.tooltip_flip.tooltip-effect-1').click(function(e){
+  e.preventDefault();
+
+
+  var $form = $(this).closest("form#cutproduct1");
+            var formData =  $form.serializeArray();
+
+
+            var dataString = {
+                   product_id : $form.find("#product_id").val(),
+                   _token : '{{ csrf_token() }}'
+                 };
+
+
+
+    $.ajax({
+        type: "POST",
+        url: "{{url('wishlist')}}",
+        data: dataString,
+        dataType: "json",
+        cache : false,
+        success: function(data){
+
+          if(data.success == true){
+
+
+
+
+          swal("ส่งข้อความสำเร็จ!", "เพิ่มสิ่งที่ชื่นชอบเพิ่อกลับมาดูภายหลังได้!", "success");
+
+
+
+          } else if(data.success == false){
+
+            swal("เสียใจด้วย!", "เข้าสู่ระบบหรือสมัครสมาชิกก่อนนะ", "error");
+
+            var delayMillis = 4000;
+
+        setTimeout(function() {
+          window.open('{{url('login')}}', '_blank');
+        }, delayMillis);
+
+
+
+        var delayMilli = 6000;
+
+          setTimeout(function() {
+            window.location.reload();
+          }, delayMilli);
+
+
+
+          }
+
+
+
+        } ,error: function(xhr, status, error) {
+          alert(error);
+        },
+
+    });
+
+});
+
+});
+</script>
+
 
 
 @stop('scripts')
