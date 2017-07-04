@@ -84,6 +84,9 @@ Route::group(['middleware' => 'admin'], function() {
   Route::resource('admin/classifieds', 'BlogController');
   Route::post('admin/file/posts', 'UploadFileController@imagess');
 
+  Route::get('admin/recom_property', 'PropertyController@recom_property');
+  Route::get('admin/new_property', 'PropertyController@new_property');
+
 
 });
 

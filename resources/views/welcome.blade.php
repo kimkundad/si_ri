@@ -213,7 +213,7 @@ option{
           <div class="row">
             <br>
         <div class="col-md-12 " >
-          <h3>TOP DESTINATIONS </h3>
+          <h3>SIRI RECOMMENDED </h3>
           <p>Discover tours, attractions and activities for your next adventure</p>
 
 

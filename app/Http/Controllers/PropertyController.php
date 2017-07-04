@@ -37,6 +37,74 @@ class PropertyController extends Controller
       return view('admin.property.index', $data);
     }
 
+    public function recom_property(){
+
+      $cat_count = DB::table('product')->select(
+            'product.*',
+            'product.id as id_p',
+            'product.name as name_p',
+            'product.created_at as created_atss',
+            'categorys.id as id_c',
+            'categorys.name as name_c'
+            )
+            ->leftjoin('categorys', 'categorys.id',  'product.category_id')
+            ->where('product.first_index', 2)
+            ->count();
+
+      $cat = DB::table('product')->select(
+            'product.*',
+            'product.id as id_p',
+            'product.name as name_p',
+            'product.created_at as created_atss',
+            'categorys.id as id_c',
+            'categorys.name as name_c'
+            )
+            ->leftjoin('categorys', 'categorys.id',  'product.category_id')
+            ->where('product.first_index', 2)
+            ->paginate(15);
+
+
+              $data['objs'] = $cat;
+              $data['cat_count'] = $cat_count;
+              $data['datahead'] = "จัดการอสังหา RECOMMENDED";
+      return view('admin.property.recom', $data);
+
+    }
+
+    public function new_property(){
+
+      $cat_count = DB::table('product')->select(
+            'product.*',
+            'product.id as id_p',
+            'product.name as name_p',
+            'product.created_at as created_atss',
+            'categorys.id as id_c',
+            'categorys.name as name_c'
+            )
+            ->leftjoin('categorys', 'categorys.id',  'product.category_id')
+            ->where('product.hot_index', 2)
+            ->count();
+
+      $cat = DB::table('product')->select(
+            'product.*',
+            'product.id as id_p',
+            'product.name as name_p',
+            'product.created_at as created_atss',
+            'categorys.id as id_c',
+            'categorys.name as name_c'
+            )
+            ->leftjoin('categorys', 'categorys.id',  'product.category_id')
+            ->where('product.hot_index', 2)
+            ->paginate(15);
+
+
+              $data['objs'] = $cat;
+              $data['cat_count'] = $cat_count;
+              $data['datahead'] = "จัดการอสังหา NEW";
+      return view('admin.property.new', $data);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

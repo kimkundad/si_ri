@@ -56,6 +56,21 @@ html.no-overflowscrolling .nano > .nano-pane > .nano-slider {
 										</a>
 									</li>
 
+                  <li {{ (Request::is('admin/recom_property*') ? 'class=nav-expanded' : '') }} >
+										<a href="{{url('admin/recom_property/')}}"  >
+											<i class="fa fa-cubes" aria-hidden="true"></i>
+											<span>จัดการอสังหา Recom</span>
+										</a>
+									</li>
+
+
+                  <li {{ (Request::is('admin/new_property*') ? 'class=nav-expanded' : '') }} >
+										<a href="{{url('admin/new_property/')}}"  >
+											<i class="fa fa-cubes" aria-hidden="true"></i>
+											<span>จัดการอสังหา New</span>
+										</a>
+									</li>
+
                   <li {{ (Request::is('admin/classifieds*') ? 'class=nav-expanded' : '') }} >
 										<a href="{{url('admin/classifieds/')}}"  >
 											<i class="fa fa-bullseye" aria-hidden="true"></i>
