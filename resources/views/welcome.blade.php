@@ -146,11 +146,13 @@ option{
                     <div class="t_v_mid ">
                         <div class="g_ib">
                             <div class="t_v_mid_box">
-                                <div class="t_v_mid"><img src="http://www.learnsbuy.com/assets/images/free_point.png"></div>
-                                <div class="t_v_mid t_left">
-                                    <p class="t16 g_ma_8">Get CashBack</p>
-                                    <p class="t14 t_gray g_ma_8">Receive When Contract Signed.</p>
-                                </div>
+                              <div class="t_v_mid"><img src="{{url('assets/image/person-girl-flat.png')}}"></div>
+                              <div class="t_v_mid t_left">
+                                  <p class="t16 g_ma_8">Sign up to Sirispace</p>
+                                  <p class="t14 t_gray g_ma_8">Create your account to Sirispace</p>
+                              </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -159,7 +161,7 @@ option{
                     <div class="t_v_mid ">
                         <div class="g_ib">
                           <div class="t_v_mid_box">
-                            <div class="t_v_mid"><img src="http://www.learnsbuy.com/assets/images/free_point2.png"></div>
+                            <div class="t_v_mid"><img src="{{url('assets/image/288744.png')}}"></div>
                             <div class="t_v_mid t_left">
                                     <p class="t16 g_ma_8">Rent Buy a Property</p>
                                     <p class="t14 t_gray g_ma_8">Search Properties in Thailand.</p>
@@ -172,11 +174,12 @@ option{
                     <div class="t_v_mid ">
                         <div class="g_ib">
                             <div class="t_v_mid_box">
-                                <div class="t_v_mid"><img src="http://www.learnsbuy.com/assets/images/free_point3.png"></div>
-                                <div class="t_v_mid t_left">
-                                    <p class="t16 g_ma_8">H24 Support</p>
-                                    <p class="t14 t_gray g_ma_8">For businesses that operate on a continuous</p>
-                                </div>
+                              <div class="t_v_mid"><img src="http://www.learnsbuy.com/assets/images/free_point.png"></div>
+                              <div class="t_v_mid t_left">
+                                  <p class="t16 g_ma_8">Get CashBack</p>
+                                  <p class="t14 t_gray g_ma_8">Receive When Contract Signed.</p>
+                              </div>
+
                             </div>
                         </div>
                     </div>
