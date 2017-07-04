@@ -6730,13 +6730,13 @@
 			var data = new FormData();
 		    data.append('files', files[0]);
 		    $.ajax({
-		        url: 'http://localhost/new_siri/public/admin/file/posts',
+		        url: 'http://103.253.147.118/admin/file/posts',
 		        method: 'POST',
 		        data: data,
 		        processData: false,
 		        contentType: false,
 		        success: function(response) {
-              var image1 = 'http://localhost/new_siri/public/assets/blog/'+response;
+              var image1 = 'http://103.253.147.118/assets/blog/'+response;
 		          $editor.summernote('insertImage', image1);
 		        }
 		    });
