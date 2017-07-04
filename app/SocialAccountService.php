@@ -35,7 +35,8 @@ class SocialAccountService
                               'name' => $providerUser->getName(),
                               'position' => 'student',
                               'avatar' => 'graph.facebook.com/'.$providerUser->getId().'/picture?width=300&height=300',
-                              'provider' => 'facebook'
+                              'provider' => 'facebook',
+                              'is_admin' => 0
                           ]);
           		}else{
 
@@ -44,7 +45,8 @@ class SocialAccountService
                               'name' => $providerUser->getName(),
                               'position' => 'student',
                               'avatar' => 'graph.facebook.com/'.$providerUser->getId().'/picture?width=300&height=300',
-                              'provider' => 'facebook'
+                              'provider' => 'facebook',
+                              'is_admin' => 0
                           ]);
 
           }
