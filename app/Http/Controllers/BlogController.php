@@ -74,6 +74,7 @@ class BlogController extends Controller
      $package->image = $input['imagename'];
      $package->subject = $request['title'];
      $package->detail = $request['detail'];
+     $package->view = 0;
      $package->email = $request['blog_type'];
      $package->save();
 
