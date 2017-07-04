@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'position' => 'student',
             'avatar' => 'blank_avatar_240x240.gif',
             'provider' => 'email',
-            'is_admin' => 1
+            'is_admin' => 0
         ]);
     }
 }
