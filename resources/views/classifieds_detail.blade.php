@@ -219,13 +219,13 @@ return "$strDay $strMonthThai $strYear";
                 <div class="row" style="margin-right: -1px;     margin-left: -1px;">
              <div class="col-md-4">
                <div class="img_list">
-                 <a href="{{url('classifieds_siri/'.$uu->id)}}">
+                 <a href="{{url('News/'.$uu->id)}}">
                <img src="{{url('assets/blog/'.$uu->image)}}" class="img-responsive">
              </a>
               </div>
              </div>
              <div class="col-md-8 text-content">
-               <a href="{{url('classifieds_siri/'.$uu->id)}}"><?=mb_strimwidth($uu->subject, 0, 65, '...');?> </a><br><span style="font-size:11px;"> <i class="fa fa-clock-o"></i>
+               <a href="{{url('News/'.$uu->id)}}"><?=mb_strimwidth($uu->subject, 0, 65, '...');?> </a><br><span style="font-size:11px;"> <i class="fa fa-clock-o"></i>
              <?php echo DateThai($uu->created_at); ?></span></div>
            </div>
              </li>
