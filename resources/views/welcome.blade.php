@@ -213,8 +213,8 @@ option{
           <div class="row">
             <br>
         <div class="col-md-12 " >
-          <h3>SIRI RECOMMENDED </h3>
-          <p>Discover tours, attractions and activities for your next adventure</p>
+          <h3>SIRI RECOMMEND</h3>
+          <p>Find the hottest property in Bangkok</p>
 
 
 
@@ -338,8 +338,8 @@ option{
               <div class="row">
                 <br>
             <div class="col-md-12 " >
-              <h3>SIRI RECOMMENDED </h3>
-              <p>Activities handpicked by our travel curators</p>
+              <h3>RECENT UPDATES </h3>
+              <p>We're update a fresh listing everyday!</p>
 
 
               <div class="body-project">
