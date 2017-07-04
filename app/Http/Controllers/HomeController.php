@@ -94,6 +94,12 @@ class HomeController extends Controller
         ->orderBy('product.id', 'desc')
         ->count();
 
+
+
+
+
+
+
       }elseif($ark != NULL && $type_home == NULL){
         $home = DB::table('categorys')
         ->select(
@@ -199,11 +205,17 @@ class HomeController extends Controller
 
       //dd($home);
 
+      $pagination = $home->appends ( array (
+              'ark' => $ark,
+              'type_ark' => $type_ark,
+              'type_home' => $type_home
+      ) );
+
 
       $data['ark'] = $ark;
       $data['type_ark'] = $type_ark;
       $data['type_home'] = $type_home;
-
+      $data['$pagination'] = $pagination;
 
       $data['home_count'] = $home_count;
       $data['home'] = $home;

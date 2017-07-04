@@ -55,7 +55,7 @@ ul#cat_nav li a  {
                       <div class="container-fluid" style=" margin-top: 220px; background: rgba(255, 255, 255, 0); position: relative;">
                         <div class="col-sm-2"></div>
                         <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
-                          <form action="{{url('/search')}}" method="post" enctype="multipart/form-data" name="product">
+                          <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product">
                             {{ csrf_field() }}
                       <div class="row">
 
@@ -526,7 +526,7 @@ ul#cat_nav li a  {
 
                     <div class="text-center">
 
-                                {{ $home->links() }}
+                                {{ $home->render() }}
                               </div>
 
 

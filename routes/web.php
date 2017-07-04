@@ -28,7 +28,7 @@ Route::post('/wishlist', 'WishlistController@wishlist_up');
 
 Route::get('/News', 'ClassifiedsController@index');
 
-Route::post('/search', 'HomeController@search');
+Route::get('/search', 'HomeController@search');
 
 
 
