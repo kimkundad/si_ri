@@ -31,8 +31,7 @@ class HomeController extends Controller
       'amphures.AMPHUR_NAME_ENG'
       )
       ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-      ->where('product.rating', '>', 3)
-      ->where('product.Status', 1)
+      ->where('product.first_index', 2)
       ->limit(8)
       ->get();
       //dd($home);
@@ -45,7 +44,7 @@ class HomeController extends Controller
       'amphures.AMPHUR_NAME_ENG'
       )
       ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-      ->where('product.rating', 5)
+      ->where('product.hot_index', 2)
       ->inRandomOrder()
       ->limit(4)
       ->get();
