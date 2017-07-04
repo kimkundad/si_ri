@@ -169,7 +169,7 @@ ol, ul, li {
              <div class="col-md-4">
              <div class="thumbnail a_sd_move">
                <a href="{{url('classifieds_siri/'.$u->id)}}" >
-               <img src="{{url('assets/cusimage/'.$u->image)}}" >
+               <img src="{{url('assets/blog/'.$u->image)}}" >
 
                </a>
                <div class="caption" style="padding: 3px;">
@@ -178,7 +178,7 @@ ol, ul, li {
                  </div>
                  <div class="descript" style="margin-top: 5px;border-bottom: 1px dashed #dff0d8; padding-bottom: 3px; font-size: 12px;">
                    <span><i class="fa fa-folder-o "></i> {{$u->email}} <i class="fa fa-caret-right"></i> <i class="fa fa-user"></i> admin <i class="fa fa-caret-right"></i> <i class="fa fa-clock-o"></i>
-                   <?php echo DateThai($u->insert_date); ?></span>
+                   <?php echo DateThai($u->created_at); ?></span>
                  </div>
                  <div class="descript" style="padding-bottom: 5px;color: #777; font-size: 12px; height: 76px;">
                    <?=mb_substr(strip_tags($u->detail),0,200,'UTF-8')?>...

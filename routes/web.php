@@ -65,17 +65,27 @@ Route::get('/contact_us', function () {
 
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::group(['middleware' => 'admin'], function() {
 
-  Route::get('admin/profile', function () {
-    return 'wefewfwef';
-  });
-    //Route::resource('admin/profile', 'PostTypeController');
 
-    //space_type
-});
 
 Auth::routes();
+
+
+Route::group(['middleware' => 'admin'], function() {
+
+  Route::resource('admin/dashboard', 'DashboardController');
+  Route::resource('admin/user', 'StudentController');
+  Route::resource('admin/category', 'CatController');
+  Route::resource('admin/property', 'PropertyController');
+  Route::post('admin/searchproperty', 'PropertyController@searchproperty');
+  Route::get('admin/searchproperty', 'PropertyController@searchproperty');
+  Route::post('admin/model_x', 'ProvincesController@exampleModel');
+  Route::post('admin/property_image_del', 'PropertyController@property_image_del');
+  Route::resource('admin/classifieds', 'BlogController');
+  Route::post('admin/file/posts', 'UploadFileController@imagess');
+
+
+});
 
 Route::group(['middleware' => 'web'], function () {
 

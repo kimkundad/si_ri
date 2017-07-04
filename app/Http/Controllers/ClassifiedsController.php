@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\blog;
 
 class ClassifiedsController extends Controller
 {
@@ -25,6 +26,12 @@ class ClassifiedsController extends Controller
 
     public function show($id)
     {
+
+      $package = blog::find($id);
+      $package->view += 1;
+      $package->save();
+
+
       $home = DB::table('webboard_post')
       ->select(
       'webboard_post.*'
@@ -38,7 +45,7 @@ class ClassifiedsController extends Controller
       'webboard_post.*'
       )
       ->where('id', '!=', $id)
-      ->orderBy('insert_date', 'desc')
+      ->orderBy('created_at', 'desc')
       ->limit(6)
       ->get();
 

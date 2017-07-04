@@ -193,10 +193,10 @@ return "$strDay $strMonthThai $strYear";
              <h3>{{$objs->subject}} </h3>
 
              <hr>
-             <img src="{{url('assets/cusimage/'.$objs->image)}}" class="img-responsive">
+             <img src="{{url('assets/blog/'.$objs->image)}}" class="img-responsive">
              <div class="descript" style="margin-top: 10px;border-bottom: 1px dashed #dff0d8; padding-bottom: 5px; font-size: 14px;">
                <span><i class="fa fa-folder-o "></i> {{$objs->email}} <i class="fa fa-caret-right"></i> <i class="fa fa-user"></i> admin <i class="fa fa-caret-right"></i> <i class="fa fa-clock-o"></i>
-               <?php echo DateThai($objs->insert_date); ?></span>
+               <?php echo DateThai($objs->created_at); ?></span>
              </div>
              <br>
              <div class="detail">
@@ -220,13 +220,13 @@ return "$strDay $strMonthThai $strYear";
              <div class="col-md-4">
                <div class="img_list">
                  <a href="{{url('classifieds_siri/'.$uu->id)}}">
-               <img src="{{url('assets/cusimage/'.$uu->image)}}" class="img-responsive">
+               <img src="{{url('assets/blog/'.$uu->image)}}" class="img-responsive">
              </a>
               </div>
              </div>
              <div class="col-md-8 text-content">
-               <a href="{{url('classifieds_siri/'.$uu->id)}}"><?=mb_strimwidth($uu->subject, 0, 75, '...');?> </a><br><span style="font-size:11px;"> <i class="fa fa-clock-o"></i>
-             <?php echo DateThai($uu->insert_date); ?></span></div>
+               <a href="{{url('classifieds_siri/'.$uu->id)}}"><?=mb_strimwidth($uu->subject, 0, 65, '...');?> </a><br><span style="font-size:11px;"> <i class="fa fa-clock-o"></i>
+             <?php echo DateThai($uu->created_at); ?></span></div>
            </div>
              </li>
              @endforeach

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\product;
 
 class ProductController extends Controller
 {
@@ -60,6 +61,10 @@ class ProductController extends Controller
       ->leftjoin('categorys', 'categorys.id', '=', 'product.category_id')
       ->where('product.id', $id)
       ->first();
+
+      $package = product::find($id);
+      $package->view += 1;
+      $package->save();
 
       $home_image = DB::table('product_image')
       ->select(
