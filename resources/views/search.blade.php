@@ -419,7 +419,7 @@ ul#cat_nav li a  {
                         @foreach($home as $homes)
 
 
-                        <div class="col-sm-6 col-md-6">
+                        <div class="col-sm-6 col-md-6" style="max-height:303px;">
 
                           <div class="thumbnail a_sd_move">
                             <a href="{{url('asset-'.$homes->id)}}" >

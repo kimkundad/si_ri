@@ -31,7 +31,7 @@ color: #ccc;
                   <li><a href="{{url('contact_us')}}" ><span class="text-gray">Contact</span>   </a></li>
                   <li><a href="{{url('login')}}" ><span class="text-gray">Login</span>   </a></li>
                   <li><a href="{{url('register')}}" ><span class="text-gray">Register</span> </a>  </li>
-                  <li><a href="{{url('classifieds_siri')}}"><span>Classifieds</span>   </a></li>
+                  <li><a href="{{url('News')}}"><span>News</span>   </a></li>
 
                 </ul>
             </div>
