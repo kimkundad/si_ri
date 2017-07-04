@@ -168,13 +168,13 @@ ol, ul, li {
 @foreach($objs as $u)
              <div class="col-md-4">
              <div class="thumbnail a_sd_move">
-               <a href="{{url('classifieds_siri/'.$u->id)}}" >
+               <a href="{{url('News/'.$u->id)}}" >
                <img src="{{url('assets/blog/'.$u->image)}}" >
 
                </a>
                <div class="caption" style="padding: 3px;">
                  <div class="descript bold" style="height: 34px;border-bottom: 1px dashed #dff0d8; margin-bottom:3px;">
-                     <a href="{{url('classifieds_siri/'.$u->id)}}"><?=mb_strimwidth($u->subject, 0, 80, '...');?></a>
+                     <a href="{{url('News/'.$u->id)}}"><?=mb_strimwidth($u->subject, 0, 80, '...');?></a>
                  </div>
                  <div class="descript" style="margin-top: 5px;border-bottom: 1px dashed #dff0d8; padding-bottom: 3px; font-size: 12px;">
                    <span><i class="fa fa-folder-o "></i> {{$u->email}} <i class="fa fa-caret-right"></i> <i class="fa fa-user"></i> admin <i class="fa fa-caret-right"></i> <i class="fa fa-clock-o"></i>

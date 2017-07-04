@@ -26,7 +26,7 @@ Route::post('/contact', 'ContactController@store');
 
 Route::post('/wishlist', 'WishlistController@wishlist_up');
 
-Route::get('/classifieds_siri', 'ClassifiedsController@index');
+Route::get('/News', 'ClassifiedsController@index');
 
 Route::post('/search', 'HomeController@search');
 
@@ -38,7 +38,7 @@ Route::get('/sort_search_property2-{type_ark}-{type_home}-{sort}', 'HomeControll
 
 Route::get('/sort_search_property3-{type_ark}-{sort}', 'HomeController@sort_search_property3');
 
-Route::get('classifieds_siri/{id}', 'ClassifiedsController@show');
+Route::get('News/{id}', 'ClassifiedsController@show');
 
 Route::get('/contact_success', function () {
     return view('contact_success');
