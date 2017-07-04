@@ -243,7 +243,7 @@ option{
                                 <a href="{{url('asset-'.$homes->id)}}"><?=mb_strimwidth($homes->name, 0, 29, '...');?></a>
                             </div>
                             <div class="descript" style="padding-bottom: 5px;color: #777; font-size: 12px;border-bottom: 1px dashed #dff0d8;">
-                              <?=mb_strimwidth($homes->shortdetail, 0, 38, '...');?>
+                              <?=mb_strimwidth($homes->shortdetail, 0, 32, '...');?>
                             </div>
 
                             <div class="descript" style="height: 20px;">
