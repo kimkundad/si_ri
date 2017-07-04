@@ -33,7 +33,7 @@ option{
                             <div class="item active slide1">
                                 <div class="row"><div class="container">
                                     <div class="col-md-3 text-right">
-                                        <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="{{url('assets/image/AW_ICONWEB5_480.png')}}">
+                                        <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="{{url('assets/image/19251074_1441521582596293_1718490065_n.png')}}">
                                     </div>
                                     <div class="col-md-9 text-left">
                                         <h3 data-animation="animated bounceInDown">ให้ Siri เป็นเสมือนผู้ช่วยส่วนตัวของคุณ</h3>
@@ -320,10 +320,10 @@ option{
 <section class="promo_full">
 			<div class="promo_full_wp magnific">
 				<div>
-					<h3>BELONG ANYWHERE</h3>
-					<p>
-						Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
-					</p>
+					<h3>#1 RENTAL PROFESIONAL</h3>
+					<h4 style="font-size: 28px;">
+						Welcome to your new home...
+					</h4>
 
 				</div>
 			</div>

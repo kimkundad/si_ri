@@ -99,6 +99,6 @@ Route::get('/asset-{id}', 'ProductController@show');
 
 
 Route::group(['middleware' => 'auth'], function () {
-
+  Route::get('/my_wishlist', 'WishlistController@my_wishlist');
   Route::resource('comment', 'CommentController');
   });
