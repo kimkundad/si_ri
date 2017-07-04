@@ -36,8 +36,8 @@ option{
                                         <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="{{url('assets/image/19251074_1441521582596293_1718490065_n.png')}}">
                                     </div>
                                     <div class="col-md-9 text-left">
-                                        <h3 data-animation="animated bounceInDown">ให้ Siri เป็นเสมือนผู้ช่วยส่วนตัวของคุณ</h3>
-                                        <h4 data-animation="animated bounceInUp">ไม่ว่าจะอยู่ที่ไหน คุณก็สามารถจัดการให้เช่าที่พักได้ทันที</h4>
+                                        <h3 data-animation="animated bounceInDown">Let Siri Space be your personal assistant</h3>
+                                        <h4 data-animation="animated bounceInUp"></h4>
                                      </div>
                                 </div></div>
                              </div>

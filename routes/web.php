@@ -30,6 +30,8 @@ Route::get('/News', 'ClassifiedsController@index');
 
 Route::post('/search', 'HomeController@search');
 
+
+
 Route::get('/sort_search_property-{type_ark}-{type_home}-{ark}-{sort}', 'HomeController@sort_search_property');
 
 Route::get('/sort_search_property1-{type_ark}-{ark}-{sort}', 'HomeController@sort_search_property1');
