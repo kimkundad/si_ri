@@ -76,7 +76,24 @@ ul#cat_nav li a  {
 .feature p {
   font-size: 13px;
 }
-
+.feature img {
+    margin: 0;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding: 0;
+    margin: 0;
+    width: 65px;
+    height: 65px;
+    line-height: 60px;
+    text-align: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px dashed #ccc;
+    font-size: 34px;
+    color: #F90;
+}
 </style>
 
 <div class="jumbotron" style="margin-bottom: 10px;">
@@ -131,7 +148,7 @@ ul#cat_nav li a  {
                       <div class="col-md-6">
 
                         <div class="feature">
-                            <i class="icon_set_1_icon-36"></i>
+                            <img src="{{url('assets/image/288744.png')}}" style="height:65px">
                             <h3><span style="color:#08a00a">WHAT </span> IS CASH BACK?</h3>
                             <p>
                                 How it works is anyone who registers an account with Siri Space is offered a 20% cash back of the applicable agent fees on a transaction. Basically, Siri Space is giving the customer back 20% of the commission.
