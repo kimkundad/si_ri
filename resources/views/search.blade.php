@@ -520,6 +520,7 @@ ul#cat_nav li a  {
                         <div class="col-sm-6 col-md-6" style="min-height:303px;">
 
                           <div class="thumbnail a_sd_move">
+                            <div style="max-height: 204px; overflow: hidden; position: relative;">
                             <a href="{{url('asset-'.$homes->id)}}" >
                             <img src="{{url('assets/cusimage/'.$homes->image)}}" >
                             <div class="g_l_box">
@@ -529,7 +530,7 @@ ul#cat_nav li a  {
                                   </p>
                                     </div>
                                 </div>
-                            </a>
+                            </a></div>
                             <div class="caption" style="padding: 3px;">
                               <div class="descript bold">
                                   <a href="{{url('asset-'.$homes->id)}}"><?=mb_strimwidth($homes->name, 0, 29, '...');?></a>
