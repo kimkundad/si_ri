@@ -125,7 +125,7 @@
 
                 <hr>
                 <div class="form-group">
-                <label for="category_id" class="col-sm-3 control-label">index page</label>
+                <label for="category_id" class="col-sm-3 control-label">SIRI RECOMMEND หน้าแรกบน</label>
                 <div class="col-sm-9">
                     <select  name="findex" id="findex" class="form-control " required="">
 
@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="form-group">
-                <label for="category_id" class="col-sm-3 control-label">Hot property</label>
+                <label for="category_id" class="col-sm-3 control-label">RECENT UPDATES หน้าแรกล่าง</label>
                 <div class="col-sm-9">
                     <select  name="hot_property" class="form-control " required="">
 
