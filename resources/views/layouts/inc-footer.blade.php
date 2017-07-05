@@ -19,7 +19,7 @@ color: #ccc;
                 <li><span>Tel:</span>  <span style="color:#00c402">094-054-7728</span> </li>
                 <li><span>Email:</span>  <span style="color:#00c402">siri@sirispace.com</span></li>
                 <li><span>Website:</span>  <span style="color:#00c402">www.sirispace.com</span> </li>
-                <li><span>Line Id:</span> <a href="http://line.me/ti/p/sirispace" target="_blank" style="color:#00c402">Siri Space </a></li>
+                <li><span>Line Id:</span> <a href="http://line.me/ti/p/kL8POWgHU9" target="_blank" style="color:#00c402">Siri Space </a></li>
                </ul>
 
             </div>
