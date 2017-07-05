@@ -94,8 +94,8 @@ class ContactController extends Controller
                         // Set the mailer as gmail
                         \Mail::setSwiftMailer($gmail);
 
-                        $data['emailto'] = $email_sender;
-                        $data['sender'] = $email_to;
+                        $data['emailto'] = $email_to;
+                        $data['sender'] = $email_sender;
                         //Sender dan Reply harus sama
 
                         Mail::send('mails.contact', $data_toview, function($message) use ($data)
