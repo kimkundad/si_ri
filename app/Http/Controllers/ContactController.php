@@ -70,7 +70,7 @@ class ContactController extends Controller
             $data_toview['detail'] = $request['detail'];
             $data_toview['datatime'] = date("d-m-Y H:i:s");
 
-            $email_sender   = 'siri@sirispace.com';
+            $email_sender   = 'infosirispace@gmail.com';
             $email_pass     = 'siri2017';
 
         /*    $email_sender   = 'info@acmeinvestor.com';
