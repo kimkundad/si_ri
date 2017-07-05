@@ -296,7 +296,7 @@
         <div class="container" >
 
           <div class="row hidden-sm hidden-xs">
-        <div class="col-md-12 " style="background-image:url('https://klook-res.cloudinary.com/image/upload/v1495246947/banner/pdxr3bty9gqeiwvflaik.jpg'); border: 1px solid #e0e0e0;">
+        <div class="col-md-12 " style="background-image:url('{{url('assets/image/938_180.png')}}'); border: 1px solid #e0e0e0;">
           <a href="#" style="width:100%;height:180px;display:block;">&nbsp</a>
         </div>
         </div>
@@ -319,6 +319,7 @@
                   <div class="col-sm-4 col-md-3">
 
                         <div class="thumbnail a_sd_move">
+                          <div style="max-height: 184px; overflow: hidden; position: relative;">
                           <a href="{{url('asset-'.$homes->id)}}" >
                           <img src="{{url('assets/cusimage/'.$homes->image)}}" >
                           <div class="g_l_box">
@@ -328,7 +329,7 @@
                                 </p>
                                   </div>
                               </div>
-                          </a>
+                          </a></div>
                           <div class="caption" style="padding: 3px;">
                             <div class="descript bold">
                                 <a href="{{url('asset-'.$homes->id)}}"><?=mb_strimwidth($homes->name, 0, 29, '...');?></a>
@@ -443,7 +444,7 @@
                           <div class="col-sm-4 col-md-3">
 
                                 <div class="thumbnail a_sd_move">
-                                  <div style="max-height: 155px; overflow: hidden; position: relative;">
+                                  <div style="max-height: 184px; overflow: hidden; position: relative;">
                                   <a href="{{url('asset-'.$home_tops->id)}}" >
                                   <img src="{{url('assets/cusimage/'.$home_tops->image)}}" >
                                   <div class="g_l_box">
