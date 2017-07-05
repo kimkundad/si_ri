@@ -326,6 +326,9 @@
                   <option value="19">19</option><option value="20">20</option>
                 </select>
                 </div>
+
+
+                <label for="name" class="col-sm-3 control-label"> </label>
                 <div class="col-sm-2">
                   <label for="name" class=" control-label">*Bathrooms</label>
                     <select id="Bathrooms" name="Bathrooms" class="form-control " required="">
@@ -342,8 +345,7 @@
                   <option value="19">19</option><option value="20">20</option>
                 </select>
                 </div>
-
-                <label for="name" class="col-sm-3 control-label"> </label>
+                
                 <div class="col-sm-2">
                   <label for="name" class=" control-label">*Living Rooms</label>
                     <select id="Living" name="Living" class="form-control " >
