@@ -151,7 +151,7 @@ ol, ul, li {
 
          <div class="col-md-12" >
 
-           <h3>Classifieds </h3>
+           <h3>News </h3>
            <p>Siri Space has a Classifieds community to share anything when you
              live in Thailand, looking for someone to take over a lease, short term rentals,
              space sharing also selling furniture, buy or sell anything you want when you move to your new place.</p>
