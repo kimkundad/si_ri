@@ -170,7 +170,7 @@ ol, ul, li {
                <a href="{{url('News/'.$u->id)}}" >
                <img src="{{url('assets/blog/'.$u->image)}}" >
                </a>
-               <div>
+             </div>
                <div class="caption" style="padding: 3px;">
                  <div class="descript bold" style="height: 34px;border-bottom: 1px dashed #dff0d8; margin-bottom:3px;">
                      <a href="{{url('News/'.$u->id)}}"><?=mb_strimwidth($u->subject, 0, 80, '...');?></a>
