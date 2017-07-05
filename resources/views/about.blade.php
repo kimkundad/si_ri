@@ -109,7 +109,12 @@ ul#cat_nav li a  {
              </h2>
 
                 <div class="meta" style="padding-left:2px;">
-                  <p class="published-at" style="font-size: 14px;">Please reach out through our online chat or through email inquiry using below form. Service is available 24 hours 7 days a week</p>
+                  <p class="published-at" style="font-size: 14px;">
+                    SIRISPACE.com
+                      is a real estate company located in Bangkok, Thailand that helps connect property hunters with the most current database of
+                      commercial and residential properties for sale and rent, with property news and all the resources a buyer, renter or seller needs to
+                      make their next real estate decision. SIRISPACE.com
+                       offer the first cash back program for renters, buyers or referrals in Asia..</p>
 
                 </div>
               </div>
@@ -127,13 +132,8 @@ ul#cat_nav li a  {
           <div class="row">
             <br>
 
-          <h3 id="fix-location" >ABOUT SIRISPACE </h3>
-          <hr style="margin-top: 10px; margin-bottom: 10px;">
-          <p style="font-size: 14px; text-align:left; color:#666"><span style="color: #08a00a; font-weight: 700;">SIRISPACE.com</span>
-            is a real estate company located in Bangkok, Thailand that helps connect property hunters with the most current database of
-            commercial and residential properties for sale and rent, with property news and all the resources a buyer, renter or seller needs to
-            make their next real estate decision.  <span style="color: #08a00a; font-weight: 700;">SIRISPACE.com</span>
-             offer the first cash back program for renters, buyers or referrals in Asia..</p>
+          
+          <p style="font-size: 14px; text-align:left; color:#666"></p>
 
 
           <div class="body-project">
@@ -188,7 +188,7 @@ ul#cat_nav li a  {
                       <div class="col-md-6">
 
                           <div class="feature">
-                              <img src="{{url('assets/image/288744.png')}}" style="height:65px">
+                              <img src="{{url('assets/image/19668278_1451671071581344_996143722_n.jpg')}}" style="height:65px">
                               <h3>REFERRING A <span style="color:#08a00a">FRIEND</span> </h3>
                               <p>
                                 A person has a friend moving to Thailand for a new job. The friend has a budget of 100,000 THB per month for a condo. The person refers their friend to Siri Space.
