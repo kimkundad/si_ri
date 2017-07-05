@@ -144,8 +144,8 @@ class SlideshowsController extends Controller
          $package->name = $request['name'];
          $package->first_text = $request['first_text'];
          $package->secend_text = $request['secend_text'];
-         $package->icon = $filename;
-         $package->bg_image = $filename_icon;
+         $package->icon = $filename_icon;
+         $package->bg_image = $filename;
          $package->save();
 
          return redirect(url('admin/slideshows/'.$id.'/edit'))->with('success_slideshows','แก้ไข slideshows สำเร็จแล้วค่ะ');

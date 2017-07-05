@@ -19,18 +19,15 @@
 .list_menu_y select:hover{
   border: none;
 }
-#first-slider .slide1 {
-    background-image: url(http://s20.postimg.org/h50tgcuz1/image.jpg);
+
+
+@foreach($slide as $slide_show)
+#first-slider .{{$slide_show->name}} {
+    background-image: url({{url('assets/uploads/'.$slide_show->bg_image)}});
 }
-#first-slider .slide2 {
-    background-image: url(http://s20.postimg.org/h50tgcuz1/image.jpg);
-}
-#first-slider .slide3 {
-    background-image: url(http://s20.postimg.org/h50tgcuz1/image.jpg);
-}
-#first-slider .slide4 {
-    background-image: url(http://s20.postimg.org/h50tgcuz1/image.jpg);
-}
+@endforeach
+
+/*  */
 </style>
                 <div id="first-slider">
                     <div id="carousel-example-generic" class="carousel slide carousel-fade">
@@ -39,54 +36,23 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox" style="max-height:428px">
                             <!-- Item 1 -->
-                            <div class="item active slide1">
+
+
+                            @foreach($slide as $slide_show)
+
+                            <div class="item @if($slide_show->name == 'slide1') active @endif {{$slide_show->name}}">
                                 <div class="row"><div class="container">
                                     <div class="col-md-3 text-right">
-                                        <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="{{url('assets/image/19251074_1441521582596293_1718490065_n.png')}}">
+                                        <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="{{url('assets/uploads/'.$slide_show->icon)}}">
                                     </div>
                                     <div class="col-md-9 text-left">
-                                        <h3 data-animation="animated bounceInDown">Let Siri Space be your personal assistant</h3>
-                                        <h4 data-animation="animated bounceInUp"></h4>
+                                        <h3 data-animation="animated bounceInDown">{{$slide_show->first_text}}</h3>
+                                        <h4 data-animation="animated bounceInUp">{{$slide_show->secend_text}}</h4>
                                      </div>
                                 </div></div>
                              </div>
-                            <!-- Item 2 -->
-                            <div class="item slide2">
-                                <div class="row"><div class="container">
-                                    <div class="col-md-7 text-left">
-                                        <h3 data-animation="animated bounceInDown"> 50 animation options A beautiful</h3>
-                                        <h4 data-animation="animated bounceInUp">Create beautiful slideshows </h4>
-                                     </div>
-                                    <div class="col-md-5 text-right">
-                                        <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="http://s20.postimg.org/sp11uneml/rack_server_unlock.png">
-                                    </div>
-                                </div></div>
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="item slide3">
-                                <div class="row"><div class="container">
-                                    <div class="col-md-7 text-left">
-                                        <h3 data-animation="animated bounceInDown">Simple Bootstrap Carousel</h3>
-                                        <h4 data-animation="animated bounceInUp">Bootstrap Image Carousel Slider with Animate.css</h4>
-                                     </div>
-                                    <div class="col-md-5 text-right">
-                                        <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="http://s20.postimg.org/eq8xvxeq5/globe_network.png">
-                                    </div>
-                                </div></div>
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="item slide4">
-                                <div class="row"><div class="container">
-                                    <div class="col-md-7 text-left">
-                                        <h3 data-animation="animated bounceInDown">We are creative</h3>
-                                        <h4 data-animation="animated bounceInUp">Get start your next awesome project</h4>
-                                     </div>
-                                    <div class="col-md-5 text-right">
-                                        <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="http://s20.postimg.org/9vf8xngel/internet_speed.png">
-                                    </div>
-                                </div></div>
-                            </div>
-                            <!-- End Item 4 -->
+
+                             @endforeach
 
 
 

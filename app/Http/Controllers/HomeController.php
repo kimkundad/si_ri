@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-//use App\category;
+use App\slideshow;
 
 class HomeController extends Controller
 {
@@ -25,6 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+      $slide = DB::table('slideshows')->select(
+            'slideshows.*'
+            )
+            ->orderBy('id', 'asc')
+            ->get();
+          //  dd($slide);
+
+      $data['slide'] = $slide;
+
       $home = DB::table('product')
       ->select(
       'product.*',
