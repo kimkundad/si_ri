@@ -148,7 +148,7 @@ ul#cat_nav li a  {
                       <div class="col-md-6">
 
                         <div class="feature">
-                            <img src="{{url('assets/image/288744.png')}}" style="height:65px">
+                            <img src="{{url('assets/images/free_point.png')}}" style="height:65px">
                             <h3><span style="color:#08a00a">WHAT </span> IS CASH BACK?</h3>
                             <p>
                                 How it works is anyone who registers an account with Siri Space is offered a 20% cash back of the applicable agent fees on a transaction. Basically, Siri Space is giving the customer back 20% of the commission.
@@ -162,7 +162,7 @@ ul#cat_nav li a  {
                       <div class="col-md-6">
 
                           <div class="feature">
-                              <i class="icon_set_1_icon-64" style="font-size: 38px;"></i>
+                              <img src="{{url('assets/image/319882852_n.png')}}" style="height:65px">
                               <h3><span style="color:#08a00a">BUYING </span></h3>
                               <p>
                                  For example, a purchase in Bangkok (3% commission) for a condo worth 10M THB. The commission for Siri Space as the agent will be 300,000 THB.
@@ -175,7 +175,7 @@ ul#cat_nav li a  {
                       <div class="col-md-6">
 
                         <div class="feature">
-                            <i class="icon_set_1_icon-68"></i>
+                            <img src="{{url('assets/image/288744.png')}}" style="height:65px">
                             <h3><span style="color:#08a00a">RENTING </span> </h3>
                             <p>
                               For example, a rental in Bangkok (1 month commission) for a condo worth 50,000 THB. The commission for Siri Space as the agent will be 50,000 THB.
@@ -188,7 +188,7 @@ ul#cat_nav li a  {
                       <div class="col-md-6">
 
                           <div class="feature">
-                              <i class="icon_set_1_icon-30"></i>
+                              <img src="{{url('assets/image/288744.png')}}" style="height:65px">
                               <h3>REFERRING A <span style="color:#08a00a">FRIEND</span> </h3>
                               <p>
                                 A person has a friend moving to Thailand for a new job. The friend has a budget of 100,000 THB per month for a condo. The person refers their friend to Siri Space.
