@@ -227,6 +227,7 @@ class PropertyController extends Controller
        $package->lat = $request['lat'];
        $package->lng = $request['lng'];
        $package->Size = $request['Size'];
+       $package->Square_Wah = $request['Square_Wah'];
        $package->Floors = $request['Floors'];
        $package->Bedrooms = $request['Bedrooms'];
        $package->Bathrooms = $request['Bathrooms'];
@@ -482,6 +483,7 @@ class PropertyController extends Controller
          $package->lat = $request['lat'];
          $package->lng = $request['lng'];
          $package->Size = $request['Size'];
+         $package->Square_Wah = $request['Square_Wah'];
          $package->Floors = $request['Floors'];
          $package->Bedrooms = $request['Bedrooms'];
          $package->Bathrooms = $request['Bathrooms'];
@@ -579,6 +581,7 @@ class PropertyController extends Controller
          $package->lat = $request['lat'];
          $package->lng = $request['lng'];
          $package->Size = $request['Size'];
+         $package->Square_Wah = $request['Square_Wah'];
          $package->Floors = $request['Floors'];
          $package->Bedrooms = $request['Bedrooms'];
          $package->Bathrooms = $request['Bathrooms'];
@@ -662,6 +665,7 @@ class PropertyController extends Controller
          $package->lat = $request['lat'];
          $package->lng = $request['lng'];
          $package->Size = $request['Size'];
+         $package->Square_Wah = $request['Square_Wah'];
          $package->Floors = $request['Floors'];
          $package->Bedrooms = $request['Bedrooms'];
          $package->Bathrooms = $request['Bathrooms'];
@@ -751,6 +755,7 @@ class PropertyController extends Controller
          $package->lat = $request['lat'];
          $package->lng = $request['lng'];
          $package->Size = $request['Size'];
+         $package->Square_Wah = $request['Square_Wah'];
          $package->Floors = $request['Floors'];
          $package->Bedrooms = $request['Bedrooms'];
          $package->Bathrooms = $request['Bathrooms'];

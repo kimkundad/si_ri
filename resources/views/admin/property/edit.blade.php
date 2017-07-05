@@ -327,6 +327,12 @@
                 </div>
 
                 <div class="col-sm-2">
+                  <label for="name" class=" control-label">*Square Wah</label>
+                    <input type="text" name="Square_Wah" value="{{$objs->Square_Wah}}" class="form-control" placeholder="Square Wah." >
+
+                </div>
+
+                <div class="col-sm-2">
                   <label for="name" class=" control-label">*Floors</label>
                     <input type="text" name="Floors" value="{{$objs->Floors}}" class="form-control" placeholder="Floors." >
 

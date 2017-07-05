@@ -297,6 +297,13 @@
                     <input type="text" name="Size" value="{{ old('Size') }}" class="form-control" placeholder="Sqm." required>
                 </div>
 
+
+                <div class="col-sm-2">
+                  <label for="name" class=" control-label">*Square Wah</label>
+                    <input type="text" name="Square_Wah" value="{{ old('Square_Wah') }}" class="form-control" placeholder="Square Wah." >
+
+                </div>
+
                 <div class="col-sm-2">
                   <label for="name" class=" control-label">*Floors</label>
                     <input type="text" name="Floors" value="{{ old('Floors') }}" class="form-control" placeholder="Floors." >
