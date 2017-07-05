@@ -65,16 +65,16 @@ ul#cat_nav li a  {
                   <option value="2"
                   @if($type_ark == 2)
                   selected="selected"
-                  @endif >เลือกเช่า</option>
+                  @endif >Rent</option>
                   <option value="1"   @if($type_ark == 1)
                     selected="selected"
-                    @endif>เลือกซื้อ</option>
+                    @endif>Sale</option>
               </select>
           </div>
 
           <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
               <select name="type_home" class="list_menu_y" style="height:43px; width:110px;     padding: 1px 18px;">
-                  <option value="">ประเภทที่พัก</option>
+                  <option value="">Residential</option>
 
                       @if(isset($type_home))
                       @foreach($category as $u_cat)
@@ -275,7 +275,7 @@ ul#cat_nav li a  {
 
 
                         <div class="widget">
-                                <form method="post" action="{{url('/search')}}">
+                                <form method="get" action="{{url('/search')}}">
                                   {{ csrf_field() }}
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="ark" placeholder="Search name property...">

@@ -63,7 +63,7 @@ i{
 
           <hr>
           <div class="col-md-12">
-            <h3 class="text-center">ข้อความของคุณ ถูกส่งไปยัง Sirispace เรียบร้อยแล้ว</h3>
+            <h3 class="text-center">Your message has been successfully sent</h3>
           </div>
         </div>
 
@@ -77,7 +77,7 @@ i{
 
 <script>
 
-    swal("ส่งข้อความสำเร็จ!", "ข้อความถูกส่งไปยังครูพี่โฮมเรียบร้อยแล้ว!", "success")
+    swal("Thank you!", "Your message has been successfully sent!", "success")
     setTimeout(function () {
        window.location.href = "{{url('/')}}"; //will redirect to your blog page (an ex: blog.html)
     }, 3000);
