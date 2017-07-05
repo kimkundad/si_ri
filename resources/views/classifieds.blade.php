@@ -166,7 +166,7 @@ ol, ul, li {
 @foreach($objs as $u)
              <div class="col-md-4">
              <div class="thumbnail a_sd_move">
-               <div style="min-height: 155px; overflow: hidden; position: relative;">
+               <div style="max-height: 155px; overflow: hidden; position: relative;">
                <a href="{{url('News/'.$u->id)}}" >
                <img src="{{url('assets/blog/'.$u->image)}}" >
                </a>
