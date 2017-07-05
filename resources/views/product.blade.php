@@ -171,7 +171,7 @@
     <hr>
     <p>
       @if($home->Size == 0)
-      <strong>Size :</strong> Land area - square</p>
+      <strong>Size :</strong> Land area {{$home->Square_Wah}} Square Wah</p>
       @else
       <strong>Size :</strong> Land area {{$home->Size}} square</p>
       @endif
