@@ -92,14 +92,14 @@
 
                     <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
                         <select name="type_ark" class="list_menu_y" style="height:43px; width:110px;   cursor: pointer;  padding: 1px 18px;">
-                            <option value="2" style="padding: 10px 2px 1px;">เลือกเช่า</option>
-                            <option value="1">เลือกซื้อ</option>
+                            <option value="2" style="padding: 10px 2px 1px;">Rent</option>
+                            <option value="1">Sale</option>
                         </select>
                     </div>
 
                     <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
                           <select name="type_home" class="list_menu_y" style="height:43px; width:110px;   cursor: pointer;  padding: 1px 18px;">
-                              <option value="">ประเภทที่พัก</option>
+                              <option value="">Residential</option>
                                   @foreach($category as $u_cat)
                               <option value="{{$u_cat->id}}">{{$u_cat->name}}</option>
                                   @endforeach
