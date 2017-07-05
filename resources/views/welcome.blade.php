@@ -443,6 +443,7 @@
                           <div class="col-sm-4 col-md-3">
 
                                 <div class="thumbnail a_sd_move">
+                                  <div style="max-height: 155px; overflow: hidden; position: relative;">
                                   <a href="{{url('asset-'.$home_tops->id)}}" >
                                   <img src="{{url('assets/cusimage/'.$home_tops->image)}}" >
                                   <div class="g_l_box">
@@ -453,6 +454,7 @@
                                           </div>
                                       </div>
                                   </a>
+                                </div>
                                   <div class="caption" style="padding: 3px;">
                                     <div class="descript bold">
                                         <a href="{{url('asset-'.$home_tops->id)}}" data-dismiss="modal" data-toggle="modal" data-target="#show_detail54"><?=mb_strimwidth($home_tops->name, 0, 29, '...');?></a>
