@@ -166,10 +166,11 @@ ol, ul, li {
 @foreach($objs as $u)
              <div class="col-md-4">
              <div class="thumbnail a_sd_move">
+               <div style="min-height: 155px; overflow: hidden; position: relative;">
                <a href="{{url('News/'.$u->id)}}" >
                <img src="{{url('assets/blog/'.$u->image)}}" >
-
                </a>
+               <div>
                <div class="caption" style="padding: 3px;">
                  <div class="descript bold" style="height: 34px;border-bottom: 1px dashed #dff0d8; margin-bottom:3px;">
                      <a href="{{url('News/'.$u->id)}}"><?=mb_strimwidth($u->subject, 0, 80, '...');?></a>
