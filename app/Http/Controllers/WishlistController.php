@@ -25,7 +25,27 @@ class WishlistController extends Controller
      */
     public function create()
     {
-        //
+
+    }
+
+    public function my_wishlist(){
+      $home = DB::table('wishlists')
+      ->select(
+      'wishlists.*',
+      'wishlists.id as id_w',
+      'product.*',
+      'product.id as id_p',
+      'amphures.AMPHUR_NAME_ENG'
+      )
+      ->leftjoin('product', 'product.id', '=', 'wishlists.product_id')
+      ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+      ->where('wishlists.user_id', Auth::user()->id)
+      ->limit(8)
+      ->paginate(8);
+      //dd($home);
+      $data['home'] = $home;
+      return view('my_wishlist', $data);
     }
 
     /**
@@ -34,6 +54,27 @@ class WishlistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     public function my_wishlist_del(Request $request)
+     {
+       $gallary = $request->get('product_wish');
+
+       if (sizeof($gallary) > 0) {
+
+         for ($i = 0; $i < sizeof($gallary); $i++) {
+
+           DB::table('wishlists')->where('id', $gallary[$i])->delete();
+
+         }
+
+       }
+       //dd($objs);
+       return redirect(url('my_wishlist'));
+
+     }
+
+
+
     public function wishlist_up(Request $request)
     {
 

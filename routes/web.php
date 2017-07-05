@@ -88,6 +88,8 @@ Route::group(['middleware' => 'admin'], function() {
 
   Route::get('admin/recom_property', 'PropertyController@recom_property');
   Route::get('admin/new_property', 'PropertyController@new_property');
+  Route::resource('admin/envelope', 'EnvelopeController');
+  Route::resource('admin/slideshows', 'SlideshowsController');
 
 
 });
@@ -102,5 +104,7 @@ Route::get('/asset-{id}', 'ProductController@show');
 
 Route::group(['middleware' => 'auth'], function () {
   Route::get('/my_wishlist', 'WishlistController@my_wishlist');
+
+  Route::post('my_wishlist_del', 'WishlistController@my_wishlist_del');
   Route::resource('comment', 'CommentController');
   });

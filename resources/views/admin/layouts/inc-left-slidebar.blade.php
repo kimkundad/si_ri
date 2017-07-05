@@ -84,6 +84,14 @@ html.no-overflowscrolling .nano > .nano-pane > .nano-slider {
 											<span>จัดการข้อความ</span>
 										</a>
 									</li>
+                  <li {{ (Request::is('admin/slideshows*') ? 'class=nav-expanded' : '') }} >
+										<a href="{{url('admin/slideshows/')}}"  >
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<span>จัดการ slideshows</span>
+										</a>
+									</li>
+
+
 
                   <li {{ (Request::is('admin/setting*') ? 'class=nav-expanded' : '') }} >
 										<a href="{{url('admin/setting/')}}"  >

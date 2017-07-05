@@ -63,36 +63,305 @@ class HomeController extends Controller
       $type_ark = $request['type_ark'];
       $type_home = $request['type_home'];
 
+      $min_price = $request['min_price'];
+      $max_price = $request['max_price'];
+      $Bedrooms = $request['Bedrooms'];
+      $Bathroom = $request['Bathroom'];
+
       $categorys = DB::table('categorys')->get();
       $data['category'] = $categorys;
 
       if($ark == NULL && $type_home == NULL){
 
-        $home = DB::table('categorys')
-        ->select(
-        'categorys.*',
-        'categorys.name as cat_name*',
-        'product.*',
-        'amphures.AMPHUR_NAME_ENG'
-        )
-        ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
-        ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-        ->where('product.For_Sale', $type_ark)
-        ->orderBy('product.id', 'desc')
-        ->paginate(8);
 
-        $home_count = DB::table('categorys')
-        ->select(
-        'categorys.*',
-        'categorys.name as cat_name*',
-        'product.*',
-        'amphures.AMPHUR_NAME_ENG'
-        )
-        ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
-        ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-        ->where('product.For_Sale', $type_ark)
-        ->orderBy('product.id', 'desc')
-        ->count();
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        if($min_price != NULL){
+          if($max_price == NULL){
+            $max_price = 100000000;
+          }
+
+
+          if($Bedrooms != null && $Bathroom != null){
+
+            $home = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bedrooms', $Bedrooms)
+            ->where('product.Bathrooms', $Bathroom)
+            ->whereBetween('product.Price', [$min_price, $max_price])
+            ->orderBy('product.id', 'desc')
+            ->paginate(8);
+
+            $home_count = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bedrooms', $Bedrooms)
+            ->where('product.Bathrooms', $Bathroom)
+            ->whereBetween('product.Price', [$min_price, $max_price])
+            ->orderBy('product.id', 'desc')
+            ->count();
+
+          }elseif($Bedrooms == null && $Bathroom != null){
+
+            $home = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bathrooms', $Bathroom)
+            ->whereBetween('product.Price', [$min_price, $max_price])
+            ->orderBy('product.id', 'desc')
+            ->paginate(8);
+
+            $home_count = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bathrooms', $Bathroom)
+            ->whereBetween('product.Price', [$min_price, $max_price])
+            ->orderBy('product.id', 'desc')
+            ->count();
+
+          }elseif($Bedrooms != null && $Bathroom == null){
+
+            $home = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bedrooms', $Bedrooms)
+            ->whereBetween('product.Price', [$min_price, $max_price])
+            ->orderBy('product.id', 'desc')
+            ->paginate(8);
+
+            $home_count = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bedrooms', $Bedrooms)
+            ->whereBetween('product.Price', [$min_price, $max_price])
+            ->orderBy('product.id', 'desc')
+            ->count();
+
+            //dd($home);
+
+          }else{
+
+            $home = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->whereBetween('product.Price', [$min_price, $max_price])
+            ->orderBy('product.id', 'desc')
+            ->paginate(8);
+
+            $home_count = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->whereBetween('product.Price', [$min_price, $max_price])
+            ->orderBy('product.id', 'desc')
+            ->count();
+
+          }
+
+
+
+
+
+        //
+        }else{
+
+          if($Bedrooms != null && $Bathroom != null){
+
+            $home = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bedrooms', $Bedrooms)
+            ->where('product.Bathrooms', $Bathroom)
+            ->orderBy('product.id', 'desc')
+            ->paginate(8);
+
+            $home_count = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bedrooms', $Bedrooms)
+            ->where('product.Bathrooms', $Bathroom)
+            ->orderBy('product.id', 'desc')
+            ->count();
+
+          }elseif($Bedrooms == null && $Bathroom != null){
+
+            $home = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bathrooms', $Bathroom)
+            ->orderBy('product.id', 'desc')
+            ->paginate(8);
+
+            $home_count = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bathrooms', $Bathroom)
+            ->orderBy('product.id', 'desc')
+            ->count();
+
+          }elseif($Bedrooms != null && $Bathroom == null){
+
+            $home = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bedrooms', $Bedrooms)
+            ->orderBy('product.id', 'desc')
+            ->paginate(8);
+
+            $home_count = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->where('product.Bedrooms', $Bedrooms)
+            ->orderBy('product.id', 'desc')
+            ->count();
+
+          }else{
+
+            $home = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->orderBy('product.id', 'desc')
+            ->paginate(8);
+
+            $home_count = DB::table('categorys')
+            ->select(
+            'categorys.*',
+            'categorys.name as cat_name*',
+            'product.*',
+            'amphures.AMPHUR_NAME_ENG'
+            )
+            ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+            ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+            ->where('product.For_Sale', $type_ark)
+            ->orderBy('product.id', 'desc')
+            ->count();
+
+          }
+
+        }
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
 
 
 
@@ -101,104 +370,1021 @@ class HomeController extends Controller
 
 
       }elseif($ark != NULL && $type_home == NULL){
-        $home = DB::table('categorys')
-        ->select(
-        'categorys.*',
-        'categorys.name as cat_name*',
-        'product.*',
-        'amphures.AMPHUR_NAME_ENG'
-        )
-        ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
-        ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-        ->where('product.For_Sale', $type_ark)
-        ->where('product.name', 'like', "%$ark%")
-        ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
-        ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
-        ->orderBy('product.id', 'desc')
-        ->paginate(8);
 
-        $home_count = DB::table('categorys')
-        ->select(
-        'categorys.*',
-        'categorys.name as cat_name*',
-        'product.*',
-        'amphures.AMPHUR_NAME_ENG'
-        )
-        ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
-        ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-        ->where('product.For_Sale', $type_ark)
-        ->where('product.name', 'like', "%$ark%")
-        ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
-        ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
-        ->orderBy('product.id', 'desc')
-        ->count();
+
+
+
+
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+                if($min_price != NULL){
+                  if($max_price == NULL){
+                    $max_price = 100000000;
+                  }
+
+
+                  if($Bedrooms != null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms == null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms != null && $Bathroom == null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                    //dd($home);
+
+                  }else{
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }
+
+
+
+
+
+                //
+                }else{
+
+                  if($Bedrooms != null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms == null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms != null && $Bathroom == null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+                    dd($home);
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }else{
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }
+
+                }
+
+
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       }elseif($ark == NULL && $type_home != NULL){
-        $home = DB::table('categorys')
-        ->select(
-        'categorys.*',
-        'categorys.name as cat_name*',
-        'product.*',
-        'amphures.AMPHUR_NAME_ENG'
-        )
-        ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
-        ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-        ->where('categorys.id', $type_home)
-        ->where('product.For_Sale', $type_ark)
-        ->orderBy('product.id', 'desc')
-        ->paginate(8);
 
-        $home_count = DB::table('categorys')
-        ->select(
-        'categorys.*',
-        'categorys.name as cat_name*',
-        'product.*',
-        'amphures.AMPHUR_NAME_ENG'
-        )
-        ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
-        ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-        ->where('categorys.id', $type_home)
-        ->where('product.For_Sale', $type_ark)
-        ->orderBy('product.id', 'desc')
-        ->count();
+
+
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+                if($min_price != NULL){
+                  if($max_price == NULL){
+                    $max_price = 100000000;
+                  }
+
+
+                  if($Bedrooms != null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms == null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms != null && $Bathroom == null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                    //dd($home);
+
+                  }else{
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }
+
+
+
+
+
+                //
+                }else{
+
+                  if($Bedrooms != null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms == null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms != null && $Bathroom == null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }else{
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }
+
+                }
+
+
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
       }else{
-        $home = DB::table('categorys')
-        ->select(
-        'categorys.*',
-        'categorys.name as cat_name*',
-        'product.*',
-        'amphures.AMPHUR_NAME_ENG'
-        )
-        ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
-        ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-        ->where('categorys.id', $type_home)
-
-        ->where('product.name', 'like', "%$ark%")
-        ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
-        ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
-        ->where('product.For_Sale', $type_ark)
-        ->orderBy('product.id', 'desc')
-        ->paginate(8);
 
 
-        $home_count = DB::table('categorys')
-        ->select(
-        'categorys.*',
-        'categorys.name as cat_name*',
-        'product.*',
-        'amphures.AMPHUR_NAME_ENG'
-        )
-        ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
-        ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-        ->where('categorys.id', $type_home)
 
-        ->where('product.name', 'like', "%$ark%")
-        ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
-        ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
-        ->where('product.For_Sale', $type_ark)
-        ->orderBy('product.id', 'desc')
-        ->count();
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+                if($min_price != NULL){
+                  if($max_price == NULL){
+                    $max_price = 100000000;
+                  }
+
+
+                  if($Bedrooms != null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms == null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms != null && $Bathroom == null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                    //dd($home);
+
+                  }else{
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->whereBetween('product.Price', [$min_price, $max_price])
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }
+
+
+
+
+
+                //
+                }else{
+
+                  if($Bedrooms != null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms == null && $Bathroom != null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bathrooms', $Bathroom)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }elseif($Bedrooms != null && $Bathroom == null){
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->where('product.Bedrooms', $Bedrooms)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }else{
+
+                    $home = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->paginate(8);
+
+                    $home_count = DB::table('categorys')
+                    ->select(
+                    'categorys.*',
+                    'categorys.name as cat_name*',
+                    'product.*',
+                    'amphures.AMPHUR_NAME_ENG'
+                    )
+                    ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+                    ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+                    ->where('categorys.id', $type_home)
+                    ->where('product.name', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
+                    ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->where('product.For_Sale', $type_ark)
+                    ->orderBy('product.id', 'desc')
+                    ->count();
+
+                  }
+
+                }
+
+
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
       }
@@ -208,8 +1394,15 @@ class HomeController extends Controller
       $pagination = $home->appends ( array (
               'ark' => $ark,
               'type_ark' => $type_ark,
-              'type_home' => $type_home
+              'type_home' => $type_home,
+              'min_price' => $min_price,
+              'max_price' => $max_price,
+              'Bedrooms' => $Bedrooms,
+              'Bathroom' => $Bathroom
       ) );
+
+
+
 
 
       $data['ark'] = $ark;
@@ -354,7 +1547,7 @@ $home = DB::table('categorys')
 ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
 ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
 ->where('product.For_Sale', $type_ark)
-->orderBy('product.last_update', 'desc')
+->orderBy('product.updated_at', 'desc')
 ->paginate(8);
 
 
@@ -564,7 +1757,7 @@ $home = DB::table('categorys')
 ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
 ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
 ->where('product.For_Sale', $type_ark)
-->orderBy('product.last_update', 'desc')
+->orderBy('product.updated_at', 'desc')
 ->paginate(8);
 
 
@@ -772,7 +1965,7 @@ return view('search', $data);
     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
     ->where('product.For_Sale', $type_ark)
-    ->orderBy('product.last_update', 'desc')
+    ->orderBy('product.updated_at', 'desc')
     ->paginate(8);
 
 
@@ -954,7 +2147,7 @@ $home = DB::table('categorys')
 ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
 ->where('categorys.id', $type_home)
 ->where('product.For_Sale', $type_ark)
-->orderBy('product.last_update', 'desc')
+->orderBy('product.updated_at', 'desc')
 ->paginate(8);
 
 

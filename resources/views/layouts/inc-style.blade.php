@@ -12,3 +12,4 @@
 <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
 <link href="{{url('assets/css/slide-show.css')}}" rel="stylesheet" type="text/css">
 <link href="{{url('assets/css/golf-style.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url('assets/css/bootstrap-select.css')}}" rel="stylesheet" type="text/css">

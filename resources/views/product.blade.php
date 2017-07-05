@@ -169,8 +169,12 @@
 
     {!! $home->detail !!}
     <hr>
-    <p><strong>Size :</strong> Land area {{$home->Size}} square</p>
-
+    <p>
+      @if($home->Size == 0)
+      <strong>Size :</strong> Land area - square</p>
+      @else
+      <strong>Size :</strong> Land area {{$home->Size}} square</p>
+      @endif
 
     <style>
     ul.list_ok li:before {
@@ -201,17 +205,17 @@ ul.list_ok {
                         <div class="col-md-6 col-sm-6">
                             <ul class="list_ok">
 
-                                <li>Floors : 3</li>
-                                <li>Bedrooms : 2</li>
-                                <li>Bathrooms : 2</li>
+                                <li>Floors : {{$home->Floors}}</li>
+                                <li>Bedrooms : {{$home->Bedrooms}}</li>
+                                <li>Bathrooms : {{$home->Bathrooms}}</li>
 
                             </ul>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <ul class="list_ok">
-                                <li>Living Rooms : 1</li>
-                                <li>Maid Rooms : 0</li>
-                                <li>Parking Lots : 1</li>
+                                <li>Living Rooms : {{$home->Living}}</li>
+                                <li>Maid Rooms : {{$home->Maid}}</li>
+                                <li>Parking Lots : {{$home->Parking}}</li>
 
                             </ul>
                         </div>
