@@ -782,7 +782,7 @@ return "$strDay $strMonthThai $strYear";
 
 
           <div class="border_gray pay_info">
-            <form action="{{url('/contact')}}" method="post" enctype="multipart/form-data" name="product">
+            <form action="{{url('/contact_2')}}" method="post" enctype="multipart/form-data" name="product">
               {{ csrf_field() }}
             <h3 class="inner" style="margin-top: 10px;">Make an Enquiry</h3>
 

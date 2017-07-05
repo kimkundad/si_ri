@@ -125,17 +125,7 @@ ul#cat_nav li a  {
 
 
 
-                      <div class="col-md-6">
 
-                          <div class="feature">
-                              <i class="icon_set_1_icon-30"></i>
-                              <h3><span style="color:#08a00a">Classifieds </span></h3>
-                              <p>
-                                 Siri Space has a Classifieds community to share anything when you live in Thailand, looking for someone to take over a lease, short term rentals,
-                                 space sharing also selling furniture, buy or sell anything you want when you move to your new place.
-                             </p>
-                          </div>
-                      </div>
 
 
                       <div class="col-md-6">
@@ -178,19 +168,22 @@ ul#cat_nav li a  {
                       </div>
 
 
+                      <div class="col-md-6">
 
-                      <div class="col-md-12">
-
-                        <div class="feature">
-                            <i class="icon_set_1_icon-57"></i>
-                            <h3>REFERRING A <span style="color:#08a00a">FRIEND</span> </h3>
-                            <p>
-                              A person has a friend moving to Thailand for a new job. The friend has a budget of 100,000 THB per month for a condo. The person refers their friend to Siri Space.
-                              Siri space finds the friend a condo for 100,000 THB.
-                              The commission for Siri Space as the agent will be 100,000 THB. 10% of the commission (10,000 THB) will be given to the referrer upon completion of the transaction.</p>
-                        </div>
-
+                          <div class="feature">
+                              <i class="icon_set_1_icon-30"></i>
+                              <h3>REFERRING A <span style="color:#08a00a">FRIEND</span> </h3>
+                              <p>
+                                A person has a friend moving to Thailand for a new job. The friend has a budget of 100,000 THB per month for a condo. The person refers their friend to Siri Space.
+                                Siri space finds the friend a condo for 100,000 THB.
+                                The commission for Siri Space as the agent will be 100,000 THB.
+                                10% of the commission (10,000 THB) will be given to the referrer upon completion of the transaction.</p>
+                          </div>
                       </div>
+
+
+
+
 
 
 
