@@ -34,7 +34,7 @@
         <header class="header">
                 <div class="logo-container">
                     <a href="#" class="logo pull-left">
-                    <img src="{{asset('./assets/image/shutterstock_172030709.jpg')}}" height="40"  />
+                    <img src="{{asset('assets/image/SiriSpace-Logo.png')}}" height="40"  />
                 </a>
                     <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened"
                     data-target="html" data-fire-event="sidebar-left-opened">

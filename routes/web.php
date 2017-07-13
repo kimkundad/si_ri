@@ -51,26 +51,21 @@ Route::get('/contact_success', function () {
 });
 
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/privacy', function () {
-    return view('privacy');
-});
-
-Route::get('/terms_condition', function () {
-    return view('terms_condition');
-});
 
 
-Route::get('/contact_us', function () {
-    return view('contact');
-});
 
-Route::get('/Refer', function () {
-    return view('refer');
-});
+
+
+
+
+
+Route::get('/contact_us', 'HomeController@contact_us');
+
+Route::get('/terms_condition', 'HomeController@terms_condition');
+
+Route::get('/privacy', 'HomeController@privacy');
+Route::get('/about', 'HomeController@about');
+Route::get('/Refer', 'HomeController@refer');
 
 
 
@@ -98,6 +93,7 @@ Route::group(['middleware' => 'admin'], function() {
   Route::get('admin/new_property', 'PropertyController@new_property');
   Route::resource('admin/envelope', 'EnvelopeController');
   Route::resource('admin/slideshows', 'SlideshowsController');
+  Route::resource('admin/setting', 'SettingController');
 
 
 });

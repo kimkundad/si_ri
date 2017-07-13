@@ -270,6 +270,8 @@ ul.list_order li span {
             <strong style="color: #333;"><i class="fa fa-facebook"></i> Facebook:</strong> <a target="_blank" href="https://www.facebook.com/sirispace/">sirispace</a><br>
             <strong style="color: #333;"><i class="fa fa-twitter"></i> Twitter:</strong> <a target="_blank" href="https://twitter.com/siri_space">siri_space</a><br>
           </p>
+          <hr>
+          <img src="{{url('assets/image/refer-a-friend.jpg')}}" class="img-responsive">
         </div>
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\setting;
 
 class WishlistController extends Controller
 {
@@ -29,6 +30,10 @@ class WishlistController extends Controller
     }
 
     public function my_wishlist(){
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
+
       $home = DB::table('wishlists')
       ->select(
       'wishlists.*',

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\slideshow;
+use App\setting;
 
 class HomeController extends Controller
 {
@@ -23,8 +24,61 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function contact_us()
+     {
+       $setting_id = 1;
+       $setting = setting::find($setting_id);
+       $data['setting'] = $setting;
+
+       return view('contact', $data);
+     }
+
+     public function terms_condition()
+     {
+       $setting_id = 1;
+       $setting = setting::find($setting_id);
+       $data['setting'] = $setting;
+
+       return view('terms_condition', $data);
+     }
+
+     public function privacy()
+     {
+       $setting_id = 1;
+       $setting = setting::find($setting_id);
+       $data['setting'] = $setting;
+
+       return view('privacy', $data);
+     }
+
+     public function refer()
+     {
+       $setting_id = 1;
+       $setting = setting::find($setting_id);
+       $data['setting'] = $setting;
+
+       return view('refer', $data);
+     }
+
+     public function about()
+     {
+       $setting_id = 1;
+       $setting = setting::find($setting_id);
+       $data['setting'] = $setting;
+
+       return view('about', $data);
+     }
+
+
     public function index()
     {
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
+
+
+
       $slide = DB::table('slideshows')->select(
             'slideshows.*'
             )
@@ -68,6 +122,10 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
+
       $ark = $request['ark'];
       $type_ark = $request['type_ark'];
       $type_home = $request['type_home'];
@@ -1428,6 +1486,10 @@ class HomeController extends Controller
 
     public function sort_search_property3($type_ark = 0, $sort = 0){
 
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
+
       if($sort == 100){
       $home = DB::table('categorys')
       ->select(
@@ -1593,6 +1655,10 @@ $home_count = DB::table('categorys')
 
 
     public function sort_search_property($type_ark = 0, $type_home = 0, $ark = 'text', $sort = 0){
+
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
 
       if($sort == 100){
       $home = DB::table('categorys')
@@ -1812,6 +1878,10 @@ return view('search', $data);
 
     public function sort_search_property1($type_ark = 0, $ark = 'text', $sort = 0){
 
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
+
       if($sort == 100){
       $home = DB::table('categorys')
       ->select(
@@ -2018,6 +2088,10 @@ return view('search', $data);
 
 
     public function sort_search_property2($type_ark = 0, $type_home = 0, $sort = 0){
+
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
 
       if($sort == 100){
       $home = DB::table('categorys')

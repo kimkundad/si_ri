@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\setting;
 
 class CategoryController extends Controller
 {
     public function property($rent = 0, $type = 0){
+
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
 
       $cat_name = DB::table('categorys')
       ->select(
@@ -42,6 +47,10 @@ class CategoryController extends Controller
     }
 
     public function sort_property($rent = 0, $type = 0, $sort = 0){
+
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
 
       $cat_name = DB::table('categorys')
       ->select(

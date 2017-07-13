@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\product;
+use App\setting;
 
 class ProductController extends Controller
 {
@@ -47,6 +48,10 @@ class ProductController extends Controller
      */
     public function show($id)
     {
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
+
       $home = DB::table('product')
       ->select(
       'product.*',

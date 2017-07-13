@@ -75,7 +75,7 @@ ul#cat_nav li a  {
         <div class="container" >
 
           <div class="row hidden-sm hidden-xs">
-        <div class="col-md-12 " style="background-image:url('https://klook-res.cloudinary.com/image/upload/v1495246947/banner/pdxr3bty9gqeiwvflaik.jpg'); border: 1px solid #e0e0e0;">
+        <div class="col-md-12 " style="background-image:url('{{url('assets/banner/'.$setting->image)}}'); border: 1px solid #e0e0e0;">
           <a href="#" style="width:100%;height:180px;display:block;">&nbsp</a>
         </div>
         </div>
@@ -96,7 +96,7 @@ ul#cat_nav li a  {
 
 
                                     <div class="widget">
-                                            <form method="post" action="{{url('/search')}}">
+                                            <form method="get" action="{{url('/search')}}">
                                               {{ csrf_field() }}
                                             <div class="input-group">
                                                 <input type="text" class="form-control" name="ark" placeholder="Search name property...">
