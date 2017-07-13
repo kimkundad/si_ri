@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-The Original Real Estate CASHBACK Network | Siri Space
+RECENT UPDATES | Siri Space
 @stop
 
 @section('description')
