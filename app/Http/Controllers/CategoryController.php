@@ -8,6 +8,47 @@ use App\setting;
 
 class CategoryController extends Controller
 {
+
+
+    public function siri_recommend(){
+
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
+
+      $home = DB::table('product')
+      ->select(
+      'product.*',
+      'amphures.AMPHUR_NAME_ENG'
+      )
+      ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+      ->where('product.first_index', 2)
+      ->paginate(12);
+      $data['home'] = $home;
+      return view('siri_recommend', $data);
+    }
+
+    public function recent_updates(){
+
+      $setting_id = 1;
+      $setting = setting::find($setting_id);
+      $data['setting'] = $setting;
+
+      $home_top = DB::table('product')
+      ->select(
+      'product.*',
+      'amphures.AMPHUR_NAME_ENG'
+      )
+      ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+      ->where('product.hot_index', 2)
+      ->inRandomOrder()
+      ->paginate(12);
+
+      $data['home'] = $home_top;
+      return view('recent_updates', $data);
+
+    }
+
     public function property($rent = 0, $type = 0){
 
       $setting_id = 1;

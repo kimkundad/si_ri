@@ -414,6 +414,54 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 
         </div>
+
+
+<style>
+.view-more-wrapper {
+    margin-bottom: 0px;
+}
+.view-more-wrapper {
+    text-align: center;
+    margin-top: 22px;
+}
+.view-more {
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 30px !important;
+    color: #666 !important;
+    border-color: #666 !important;
+    display: inline-block;
+}
+.view-more .plus-sign {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px solid #666;
+    font-size: 46px;
+    font-weight: 100;
+    line-height: 46px;
+    text-align: center;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+}
+.view-more .view-more-text {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+</style>
+
+        <div class="col-xs-12">
+                <div class="view-more-wrapper"><a href="{{url('siri_recommend')}}" class="view-more"><span class="plus-sign">+</span><span class="view-more-text">View More Posts</span></a></div>
+              </div>
+
+
+
     </div>
 
 
@@ -541,6 +589,11 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 
             </div>
+
+            <div class="col-xs-12">
+                    <div class="view-more-wrapper"><a href="{{url('recent_updates')}}" class="view-more"><span class="plus-sign">+</span><span class="view-more-text">View More Posts</span></a></div>
+                  </div>
+
         </div>
 
 

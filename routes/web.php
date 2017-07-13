@@ -27,6 +27,8 @@ Route::post('/contact', 'ContactController@store');
 Route::post('/contact_2', 'ContactController@contact_2');
 Route::post('/contact_refer', 'ContactController@refer');
 
+Route::get('/siri_recommend', 'CategoryController@siri_recommend');
+Route::get('/recent_updates', 'CategoryController@recent_updates');
 
 Route::post('/wishlist', 'WishlistController@wishlist_up');
 
