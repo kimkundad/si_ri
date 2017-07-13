@@ -6,7 +6,7 @@
 <br>
 <b>มีความสนใจ อสังหาฯนี้</b>
 <br>
-<img src="{{'assets/cusimage/'.$image}}" srtyle="display: block; max-width: 300px; height: auto;">
+<img src="{{url('assets/cusimage/'.$image)}}" srtyle="display: block; max-width: 300px; height: auto;">
 <br>
 <p>อสังหาฯ ไอดี : {{$id}}</p>
 <p>ชื่อ : {{$name_pro}}</p>
