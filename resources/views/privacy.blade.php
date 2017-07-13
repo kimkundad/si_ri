@@ -1,4 +1,7 @@
 @extends('layouts.template')
+@section('title')
+Privacy | Siri Space
+@stop
 @section('content')
 
 <style>

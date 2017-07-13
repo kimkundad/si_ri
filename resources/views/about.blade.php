@@ -1,4 +1,12 @@
 @extends('layouts.template')
+
+@section('title')
+About us | Siri Space
+@stop
+
+
+
+
 @section('content')
 
 <style>
@@ -132,7 +140,7 @@ ul#cat_nav li a  {
           <div class="row">
             <br>
 
-          
+
           <p style="font-size: 14px; text-align:left; color:#666"></p>
 
 

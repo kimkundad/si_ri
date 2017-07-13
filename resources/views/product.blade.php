@@ -1,4 +1,18 @@
 @extends('layouts.template')
+
+@section('title')
+{{$home->name_pro}}
+@stop
+
+@section('description')
+{!! strip_tags(str_limit($home->detail, 150)) !!}
+@stop
+
+@section('ogtags')
+    @include('layouts.og_tags', ['title' => $home->name_pro , 'description' => strip_tags(str_limit($home->detail, 150)),
+    'image' => url('assets/cusimage/'.$home->image) ])
+@stop
+
 @section('stylesheet')
 <link href="{{url('assets/bootstrap-sweetalert-master/dist/sweetalert.css')}}" rel="stylesheet" type="text/css" />
 <link href="{{url('assets/css/css-stars.css')}}" rel="stylesheet" type="text/css" />
@@ -104,12 +118,12 @@
 @endif
 
 <div class="hidden">{{$i = 0}}</div>
-@foreach ($home_image_all as $image)
+@foreach ($home_image_all as $images)
 <div class="hidden">{{$i++}}</div>
 @if($i > 5)
 
 <div class="col-md-4 col-sm-4 hidden " style="padding-left: 0px; padding-top:5px">
-<a class="example-image-link" href="{{url('assets/cusimage/'.$image->image)}}" >
+<a class="example-image-link" href="{{url('assets/cusimage/'.$images->image)}}" >
 </a>
 </div>
 @endif

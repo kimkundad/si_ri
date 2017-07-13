@@ -1,5 +1,8 @@
 
 @extends('layouts.template')
+@section('title')
+My Wishlist | Siri Space
+@stop
 @section('content')
 
 <style>

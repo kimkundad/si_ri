@@ -1,4 +1,7 @@
 @extends('layouts.template')
+@section('title')
+Refer friend | Siri Space
+@stop
 @section('stylesheet')
 <link href="{{url('assets/css/confirm.css')}}" rel="stylesheet" type="text/css" />
 @stop('stylesheet')

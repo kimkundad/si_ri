@@ -1,4 +1,19 @@
 @extends('layouts.template')
+
+@section('title')
+{{$objs->subject}}
+@stop
+
+@section('description')
+{!! strip_tags(str_limit($objs->detail, 150)) !!}
+@stop
+
+@section('ogtags')
+    @include('layouts.og_tags', ['title' => $objs->subject , 'description' => strip_tags(str_limit($objs->detail, 150)),
+    'image' => url('assets/blog/'.$objs->image) ])
+@stop
+
+
 @section('stylesheet')
 
 @stop('stylesheet')

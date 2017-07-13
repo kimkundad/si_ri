@@ -1,4 +1,20 @@
 @extends('layouts.template')
+
+@section('title')
+News | Siri Space
+@stop
+
+@section('description')
+SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps connect property hunters with the most current database of commercial and residential properties for sale and rent, with property news and all the resources a buyer
+@stop
+
+@section('ogtags')
+    @include('layouts.og_tags', ['title' => 'News | Siri Space', 'description' => 'SIRISPACE.com is a real estate company located in Bangkok,
+    Thailand that helps connect property hunters with the most current database of commercial and residential properties for sale and rent, with property news and all the resources a buyer',
+    'image' => url('assets/image/sirispace_facebook.png')])
+@stop
+
+
 @section('stylesheet')
 
 @stop('stylesheet')

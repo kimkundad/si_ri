@@ -1,4 +1,7 @@
 @extends('layouts.template')
+@section('title')
+TERMS AND CONDITION | Siri Space
+@stop
 @section('content')
 
 <style>
