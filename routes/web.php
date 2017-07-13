@@ -24,6 +24,10 @@ Route::get('/callback', 'SocialAuthController@callback');
 
 Route::post('/contact', 'ContactController@store');
 
+Route::post('/contact_2', 'ContactController@contact_2');
+Route::post('/contact_refer', 'ContactController@refer');
+
+
 Route::post('/wishlist', 'WishlistController@wishlist_up');
 
 Route::get('/News', 'ClassifiedsController@index');
@@ -62,6 +66,10 @@ Route::get('/terms_condition', function () {
 
 Route::get('/contact_us', function () {
     return view('contact');
+});
+
+Route::get('/Refer', function () {
+    return view('refer');
 });
 
 

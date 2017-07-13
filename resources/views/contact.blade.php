@@ -7,6 +7,13 @@
 
 
 <style>
+@media (min-width: 1200px)
+{
+
+  .container {
+      width: 970px;
+  }
+}
 .text-green{
       color: #038206;
 }
@@ -86,7 +93,7 @@ a {
 
 
 
-        <div class="col-md-9 " >
+        <div class="col-md-7 " >
           <h3 class="text-success">Ask Sirispace</h3>
 
           <hr>
@@ -100,7 +107,7 @@ a {
                           {{ csrf_field() }}
                           <div class="row" style=" padding-right: 15px; ">
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                               <label >Name <span class="text-danger">*</span></label>
                               <input type="text" class="form-control" name="name" required>
@@ -112,7 +119,7 @@ a {
                             </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                               <label >Email <span class="text-danger">*</span></label>
                               <input type="email" class="form-control" name="email" placeholder="Enter email address" required>
@@ -124,7 +131,7 @@ a {
                             </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                             <div class="form-group">
                               <label >Phone Number <span class="text-danger">*</span></label>
                               <input type="text" class="form-control" name="phone" required>
@@ -178,7 +185,7 @@ a {
 
 
         </div>
-        <div class="col-md-3" style="margin-top: 0px;">
+        <div class="col-md-5" style="margin-top: 0px;">
 
           <h3 class="text-success">About Sirispace</h3>
 

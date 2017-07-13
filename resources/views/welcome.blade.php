@@ -296,8 +296,10 @@
         <div class="container" >
 
           <div class="row hidden-sm hidden-xs">
-        <div class="col-md-12 " style="background-image:url('{{url('assets/image/938_180.png')}}'); border: 1px solid #e0e0e0;">
-          <a href="#" style="width:100%;height:180px;display:block;">&nbsp</a>
+        <div class="col-md-12 " >
+          <a href="#" style="width:100%;height:180px;display:block;">
+            <img src="{{url('assets/image/938_180.png')}}" class="img-responsive" style="border: 1px solid #e0e0e0; margin: 0 auto;">
+          </a>
         </div>
         </div>
 

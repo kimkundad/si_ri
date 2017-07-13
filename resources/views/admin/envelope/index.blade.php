@@ -111,6 +111,14 @@ return "$strDay $strMonthThai $strYear";
                         @else
                         <i class="fa fa-star ap-questions-featured2"></i>
                         @endif
+
+                        @if($u->type_contact == 2)
+                        <i class="fa fa-paper-plane "></i>
+                        @else
+
+                        @endif
+
+
                          {{$u->name}}</td>
                       <td>{{$u->email}}</td>
                       <td>{{$u->phone}}</td>

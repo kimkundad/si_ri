@@ -84,7 +84,12 @@ return "$strDay $strMonthThai $strYear";
                       <tr><td><b>เบอร์โทร</b> : </td><td>{{$u->phone}}</td></tr>
                       <tr><td><b>รายละเอียด</b> : </td><td>{{$u->detail}}</td></tr>
                       <tr><td><b>วันที่ส่งข้อความ</b> : </td><td><?php echo DateThai($u->created_at); ?></td></tr>
-
+                      @if($u->type_contact == 2)
+                      <tr><td colspan="2"><b>Refer ให้เพื่อน</b> </td></tr>
+                      <tr><td><b>ชื่อเพื่อน</b> : </td><td>{{$u->f_name}}</td></tr>
+                      <tr><td><b>อีเมลเพื่อน</b> : </td><td>{{$u->f_email}}</td></tr>
+                      <tr><td><b>เบอร์โทรเพื่อน</b> : </td><td>{{$u->f_phone}}</td></tr>
+                      @endif
 
 
                   </tbody>

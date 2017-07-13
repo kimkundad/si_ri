@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{url('/')}}">
-                <img src="{{url('assets/image/shutterstock_172030709.jpg')}}" height="45" title="logo">
+                <img src="{{url('assets/image/SiriSpace-Logo.png')}}" height="45" title="logo">
             </a>
         </div>
 
@@ -26,7 +26,7 @@
 
 
 
-
+                <li><a href="{{url('Refer')}}"><i class="fa fa-paper-plane "></i> Refer</a></li>
                 <li><a href="{{url('News')}}"><i class="fa fa-bullseye"></i> News</a></li>
 
                 @if (Auth::guest())

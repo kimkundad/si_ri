@@ -16,10 +16,10 @@ color: #ccc;
                    26/58 Orakarn Building, Chidlom Alley, Ploenchit Road, Lumpini, Phathumwan, Bangkok 10330</p>
 
                <ul>
-                <li><span>Tel:</span>  <span style="color:#00c402">094-054-7728</span> </li>
-                <li><span>Email:</span>  <span style="color:#00c402">siri@sirispace.com</span></li>
-                <li><span>Website:</span>  <span style="color:#00c402">www.sirispace.com</span> </li>
-                <li><span>Line Id:</span> <a href="http://line.me/ti/p/kL8POWgHU9" target="_blank" style="color:#00c402">Siri Space </a></li>
+                <li><span>Tel:</span>  <span style="color:#fdf7ac">094-054-7728</span> </li>
+                <li><span>Email:</span>  <span style="color:#fdf7ac">siri@sirispace.com</span></li>
+                <li><span>Website:</span>  <span style="color:#fdf7ac">www.sirispace.com</span> </li>
+                <li><span>Line Id:</span> <a href="http://line.me/ti/p/kL8POWgHU9" target="_blank" style="color:#fdf7ac">Siri Space </a></li>
                </ul>
 
             </div>

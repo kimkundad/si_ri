@@ -787,6 +787,7 @@ return "$strDay $strMonthThai $strYear";
               {{ csrf_field() }}
             <h3 class="inner" style="margin-top: 10px;">Make an Enquiry</h3>
 
+            <input class="form-control "  name="id_product" value="{{$home->id_pro}}" type="hidden" >
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} form-group-sm" style="position:relative">
                     <label>Name</label>
                     <input class="form-control "  name="name" value="{{ old('name') }}" type="text" required="">
@@ -914,6 +915,12 @@ $(this).magnificPopup({
 
 
 <script src="{{url('assets/bootstrap-sweetalert-master/dist/sweetalert.js')}}"></script>
+
+@if ($message = Session::get('success_contact'))
+<script>
+    swal("ส่งข้อความสำเร็จ!", "ทางเจ้าหน้าที่จะรบติดต่อกลับให้เร็วที่สุด!", "success")
+  </script>
+@endif
 
 @if ($message = Session::get('success_comment'))
 <script>
