@@ -157,11 +157,9 @@ class PropertyController extends Controller
 
 
 
-       if($request['Additional'] == null){
-         $Additional = '-';
-       }else{
+
          $Additional = $request['Additional'];
-       }
+
 
        if($request['Cable'] == null){
          $Cable = 0;

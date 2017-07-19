@@ -345,7 +345,7 @@
                   <option value="19">19</option><option value="20">20</option>
                 </select>
                 </div>
-                
+
                 <div class="col-sm-2">
                   <label for="name" class=" control-label">*Living Rooms</label>
                     <select id="Living" name="Living" class="form-control " >

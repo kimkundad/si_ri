@@ -101,7 +101,7 @@
                 <div class="form-group">
                 <label class="col-md-3 control-label" for="textareaAutosize">Additional Contact Information</label>
                 <div class="col-md-9">
-                <textarea class="form-control" name="Additional" placeholder="(Key Location, Local/International Contact if Owner is not in Bangkok, etc.)" rows="3" value="{{ $objs->Additional }}" data-plugin-textarea-autosize ></textarea>
+                <textarea class="form-control" name="Additional" placeholder="(Key Location, Local/International Contact if Owner is not in Bangkok, etc.)" rows="3"  data-plugin-textarea-autosize >{{ $objs->Additional }}</textarea>
                 </div>
                 </div>
 
