@@ -29,6 +29,7 @@ class PropertyController extends Controller
             'categorys.name as name_c'
             )
             ->leftjoin('categorys', 'categorys.id',  'product.category_id')
+            ->orderBy('product.id', 'desc')
             ->paginate(15);
 
 
