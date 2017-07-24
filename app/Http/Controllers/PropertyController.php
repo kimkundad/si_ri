@@ -824,8 +824,8 @@ class PropertyController extends Controller
           ->where('id', $gallary[$i])
           ->first();
 
-          $file_path = 'assets/cusimage/'.$objs->image;
-          unlink($file_path);
+        /*  $file_path = 'assets/cusimage/'.$objs->image;
+          unlink($file_path); */
           DB::table('product_image')->where('id', $objs->id)->delete();
       /*  $path = 'assets/cusimage/';
         $filename = time()."-".$gallary[$i]->getClientOriginalName();
