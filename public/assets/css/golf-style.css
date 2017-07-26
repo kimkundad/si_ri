@@ -452,9 +452,7 @@ color: #ccc;
               -webkit-line-clamp: 2;
               -webkit-box-orient: vertical;
           }
-          ul li {
-              list-style: none;
-          }
+          
           .t_v_mid_box {
               display: table;
               width: 100%;
