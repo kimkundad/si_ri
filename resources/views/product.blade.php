@@ -709,6 +709,11 @@ return "$strDay $strMonthThai $strYear";
 
         <div class="col-md-4 " >
           <div class="border_gray pay_info">
+
+            @if($home->Status == 1)
+            <h1 style="color: #ff1b1b; margin-top: 5px;"><i class="fa fa-frown-o"></i> Rented!</h1>
+            @endif
+
             <p style="color:#666">Price property ID <strong>{{$home->id_pro}} </strong></p>
             <h4 style=" color: #ff5722; font-weight: bold;"><i class="icon_set_1_icon-36" style="font-size:28px;"></i> THB {{ number_format($home->Price) }}</h4>
             <hr>
