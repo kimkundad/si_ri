@@ -282,11 +282,14 @@ return "$strDay $strMonthThai $strYear";
 
 
            <div class="article-tags">
-															<a href="/topic/tech-startups" title="Tech Startups" data-id="related-tagname0">Tech Startups</a>
-																				<a href="/topic/news-and-trends" title="News and Trends" data-id="related-tagname1">News and Trends</a>
-																				<a href="/topic/hiring-employees" title="Hiring Employees" data-id="related-tagname2">Hiring Employees</a>
-																				<a href="/topic/h-1b-visas" title="H-1B Visas" data-id="related-tagname3">H-1B Visas</a>
-																				<a href="/topic/immigrant-entrepreneurs" title="Immigrant Entrepreneurs" data-id="related-tagname4">Immigrant Entrepreneurs</a>
+															<a  title="ข่าวอสังหาริมทรัพย์" data-id="related-tagname0">ข่าวอสังหาริมทรัพย์</a>
+																				<a  title="รอบรู้เรื่องบ้าน" data-id="related-tagname1">รอบรู้เรื่องบ้าน</a>
+																				<a  title="ฤกษ์ขึ้นบ้านใหม่" data-id="related-tagname2">ฤกษ์ขึ้นบ้านใหม่</a>
+																				<a  title="ข่าวทั่วไป" data-id="related-tagname3">ข่าวทั่วไป</a>
+																				<a  title="ตกแต่งบ้าน" data-id="related-tagname4">ตกแต่งบ้าน</a>
+                                        <a  title="รอบรู้เรื่องบ้าน" data-id="related-tagname4">รอบรู้เรื่องบ้าน</a>
+                                        <a  title="บ้าน" data-id="related-tagname4">บ้าน</a>
+                                        <a  title="คอนโด" data-id="related-tagname4">คอนโด</a>
 												</div>
 
 
