@@ -44,7 +44,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 /*  */
 </style>
-                <div id="first-slider">
+                <div id="first-slider" class="hidden-sm hidden-xs">
                     <div id="carousel-example-generic" class="carousel slide carousel-fade">
                         <!-- Indicators -->
 
@@ -97,7 +97,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 
 
-                <div class="container-fluid" style=" bottom: 60px; background: rgba(255, 255, 255, 0); position: relative;">
+                <div class="container-fluid hidden-sm hidden-xs" style=" bottom: 60px; background: rgba(255, 255, 255, 0); position: relative;">
                     <div class="col-sm-2"></div>
                     <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
                       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product">
