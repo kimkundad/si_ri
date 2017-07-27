@@ -144,7 +144,7 @@ font-size: 13px;
 color: #6d7683;
 }
 ol, ul, li {
-    list-style: inside;
+    list-style: none;
         -webkit-padding-start: 0px;
 }
 .block-recent-1 li {
