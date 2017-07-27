@@ -96,7 +96,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
           </select>
         </div>
 
-        <input class="btn btn-default btn-block" style="background: #51bce6; color:#fff" type="submit" value="Search">
+        <input class="btn btn-default btn-block btn-lg" style="background: #51bce6; color:#fff" type="submit" value="Search">
       </form>
     </div>
   </div>
