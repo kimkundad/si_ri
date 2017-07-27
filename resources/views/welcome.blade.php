@@ -61,7 +61,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
     <h4 class="text-center">Siri Space Property Search</h4>
     <div class="bs-example">
       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product2">
-        <div class="form-group"> <input type="text" class="form-control" style="font-size: 14px;"  placeholder="Enter District, Area, BTS station or Property Name..."> </div>
+        <div class="form-group"> <input type="text" class="form-control" style="font-size: 14px;" name="ark" placeholder="Enter District, Area, BTS station or Property Name..."> </div>
 
         <div class="form-group">
         <select name="type_ark" class="form-control" >
