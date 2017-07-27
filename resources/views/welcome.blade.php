@@ -56,12 +56,28 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 </style>
 
 
-<div class="content-section-b visible-sm visible-xs" style="padding: 20px 0 50px;">
+<div class="content-section-b visible-sm visible-xs" style="padding: 20px 0 0px;">
   <div class="container">
     <h4 class="text-center">Siri Space Property Search</h4>
     <div class="bs-example">
       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product">
-        <div class="form-group"> <input type="text" class="form-control"  placeholder="Enter District, Area, BTS station or Property Name..."> </div>
+        <div class="form-group"> <input type="text" class="form-control" style="font-size: 14px;"  placeholder="Enter District, Area, BTS station or Property Name..."> </div>
+
+        <div class="form-group">
+        <select name="type_ark" class="form-control" >
+            <option value="2">Rent</option>
+            <option value="1">Sale</option>
+        </select>
+        </div>
+
+        <div class="form-group">
+          <select name="type_home" class="form-control" >
+              <option value="">Residential</option>
+                  @foreach($category as $u_cat)
+              <option value="{{$u_cat->id}}">{{$u_cat->name}}</option>
+                  @endforeach
+          </select>
+        </div>
 
         <input class="btn btn-default btn-block" type="submit" value="Search">
       </form>
