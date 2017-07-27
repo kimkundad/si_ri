@@ -67,6 +67,10 @@ return "$strDay $strMonthThai $strYear";
 h2 span, h3 span, h4 span, h5 span, h6 span {
     color: #038206;
 }
+ol, ul, li {
+    list-style: none;
+    -webkit-padding-start: 0px;
+}
 ul.list_order {
     margin: 0 0 30px;
     padding: 0;

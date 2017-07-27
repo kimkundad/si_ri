@@ -148,6 +148,10 @@ ol, ul, li {
     text-align: center;
     position: relative;
 }
+ol, ul, li {
+    list-style: none;
+    -webkit-padding-start: 0px;
+}
 .img_list img {
     width: auto;
     height: 70px;
