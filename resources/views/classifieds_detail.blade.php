@@ -159,6 +159,7 @@ ol, ul, li {
     padding-left: 1px;
 }
 .list-blog{
+  list-style: none;
   margin-bottom: 10px;
       border-bottom: 1px dashed #dff0d8;
 }
