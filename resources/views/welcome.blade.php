@@ -57,6 +57,10 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
   .form-group {
     margin-bottom: 8px;
 }
+.logo-style{
+  margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 }
 
@@ -95,6 +99,89 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                   @endforeach
           </select>
         </div>
+
+        <div class="form-group center-block">
+          <button type="button" id='button_open_res' class="btn btn-danger btn-sm center-block" style="background: #e04f67;">More Option <i class="fa fa-plus"></i></button>
+        </div>
+
+
+
+        <div id="newpost_res" style="display: none;">
+
+
+
+
+
+                              <div class="form-group" >
+                                  <select name="min_price" class="form-control">
+                                      <option value="" selected="">No Min Price</option>
+                                      <option value="0">฿0</option>
+                                      <option value="10000">฿10,000</option>
+                                      <option value="20000">฿20,000</option>
+                                      <option value="30000">฿30,000</option>
+                                      <option value="40000">฿40,000</option>
+                                      <option value="50000">฿50,000</option>
+                                      <option value="60000">฿60,000</option>
+                                      <option value="70000">฿70,000</option>
+                                      <option value="80000">฿80,000</option>
+                                      <option value="90000">฿90,000</option>
+                                      <option value="100000">฿100,000</option>
+                                  </select>
+                              </div>
+
+
+                              <div class="form-group" >
+                                  <select name="max_price" class="form-control">
+                                      <option value="">No Max Price</option>
+                                      <option value="10000">฿10,000</option>
+                                      <option value="20000">฿20,000</option>
+                                      <option value="30000">฿30,000</option>
+                                      <option value="40000">฿40,000</option>
+                                      <option value="50000">฿50,000</option>
+                                      <option value="60000">฿60,000</option>
+                                      <option value="70000">฿70,000</option>
+                                      <option value="80000">฿80,000</option>
+                                      <option value="90000">฿90,000</option>
+                                      <option value="100000">฿100,000</option>
+                                      <option value="100000000">MAX</option>
+                                  </select>
+                              </div>
+
+
+                              <div class="form-group" >
+                                  <select name="Bedrooms" class="form-control" data-placeholder="All">
+                                      <option value="">Bedrooms</option>
+                                      <option value="1">1 Bedrooms</option>
+                                      <option value="2">2 Bedrooms</option>
+                                      <option value="3">3 Bedrooms</option>
+                                      <option value="4">4 Bedrooms</option>
+                                      <option value="5">5 Bedrooms</option>
+                                      <option value="6">6 Bedrooms</option>
+                                      <option value="7">7 Bedrooms</option>
+                                  </select>
+                              </div>
+
+
+                              <div class="form-group" >
+                                  <select name="Bathroom" class="form-control" data-placeholder="All">
+                                      <option value="">Bathroom</option>
+                                      <option value="1">1 Bathroom</option>
+                                      <option value="2">2 Bathroom</option>
+                                      <option value="3">3 Bathroom</option>
+                                      <option value="4">4 Bathroom</option>
+                                      <option value="5">5 Bathroom</option>
+                                      <option value="6">6 Bathroom</option>
+                                      <option value="7">7 Bathroom</option>
+                                  </select>
+                              </div>
+
+
+
+        </div>
+
+
+
+
 
         <input class="btn btn-default btn-block btn-lg" style="background: #51bce6; color:#fff" type="submit" value="Search">
       </form>
@@ -286,6 +373,9 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                                     </div>
                                 </div><hr style="margin-bottom: 0px;">
                   </div></div>
+
+
+
                   </form>
                   </div>
                   <div class="col-sm-2"></div>
@@ -675,10 +765,11 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 </div>
 
 
-            <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="col-md-2 col-sm-3 col-xs-6 logo-style">
               <img alt="dealcha.com" src="assets/image/dealcha.png"></a>
             </div>
-            <div class="col-md-2 col-sm-3 col-xs-6" >
+
+            <div class="col-md-2 col-sm-3 col-xs-6 logo-style" >
 
               <div id="Certificate-banners"><a title="กรมพัฒนาธุรกิจการค้า sirispace" style="padding-left: 5px;">
                 <img alt="กรมพัฒนาธุรกิจการค้า sirispace" src="assets/image/bns_registered.png"></a>
@@ -688,18 +779,18 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
             </div>
 
-            <div class="col-md-2 col-sm-3 col-xs-6" >
+            <div class="col-md-2 col-sm-3 col-xs-6 logo-style" >
                 <img alt="กรมพัฒนาธุรกิจการค้า sirispace" src="assets/image/vbv.png"></a>
             </div>
 
-            <div class="col-md-2 col-sm-3 col-xs-6" >
+            <div class="col-md-2 col-sm-3 col-xs-6 logo-style" >
                 <img alt="กรมพัฒนาธุรกิจการค้า sirispace" src="assets/image/jb.png"></a>
             </div>
 
-            <div class="col-md-2 col-sm-3 col-xs-6" >
+            <div class="col-md-2 col-sm-3 col-xs-6 logo-style" >
                 <img alt="กรมพัฒนาธุรกิจการค้า sirispace" src="assets/image/whatsonsukhumvit.png"></a>
             </div>
-            <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="col-md-2 col-sm-3 col-xs-6 logo-style">
               <img alt="dealcha.com" src="assets/image/tccc-logo.png"></a>
             </div>
 
@@ -718,6 +809,20 @@ var button = document.getElementById('button_open');
 
 button.onclick = function() {
     var div = document.getElementById('newpost');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+</script>
+
+<script>
+var button = document.getElementById('button_open_res');
+
+button.onclick = function() {
+    var div = document.getElementById('newpost_res');
     if (div.style.display !== 'none') {
         div.style.display = 'none';
     }
