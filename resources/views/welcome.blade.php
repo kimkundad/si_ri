@@ -44,6 +44,23 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+@media (max-width: 767px){
+
+  .promo_full_wp>div {
+      display: table-cell;
+      padding: 0% 0%;
+      vertical-align: middle;
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+  }
+  .form-group {
+    margin-bottom: 8px;
+}
+
+}
+
+
 
 
 @foreach($slide as $slide_show)
@@ -61,17 +78,17 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
     <h4 class="text-center">Siri Space Property Search</h4>
     <div class="bs-example">
       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product2">
-        <div class="form-group"> <input type="text" class="form-control" style="font-size: 14px;" name="ark" placeholder="Enter District, Area, BTS station or Property Name..."> </div>
+        <div class="form-group"> <input type="text" class="form-control input-lg" style="font-size: 14px;" name="ark" placeholder="Enter District, Area, BTS station or Property Name..."> </div>
 
         <div class="form-group">
-        <select name="type_ark" class="form-control" >
+        <select name="type_ark" class="form-control input-lg" style="font-size: 14px;">
             <option value="2">Rent</option>
             <option value="1">Sale</option>
         </select>
         </div>
 
         <div class="form-group">
-          <select name="type_home" class="form-control" >
+          <select name="type_home" class="form-control input-lg" style="font-size: 14px;">
               <option value="">Residential</option>
                   @foreach($category as $u_cat)
               <option value="{{$u_cat->id}}">{{$u_cat->name}}</option>
@@ -79,7 +96,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
           </select>
         </div>
 
-        <input class="btn btn-default btn-block" type="submit" value="Search">
+        <input class="btn btn-default btn-block" style="background: #51bce6; color:#fff" type="submit" value="Search">
       </form>
     </div>
   </div>
