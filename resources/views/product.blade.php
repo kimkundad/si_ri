@@ -228,8 +228,9 @@
 </style>
 
 <h3 class="visible-sm visible-xs">Facility</h3>
-<ul class="basic_info" style="list-style:none;">
 
+<div class="hidden-sm hidden-xs">
+<ul class="basic_info" style="list-style:none;">
 @if($home->Poll == 1)
 <li> <i class="icon_set_2_icon-110"></i> <div class="t_v_mid_box icon-div"> <div class="t_v_mid"> <div class="t14 hidden-sm hidden-xs" title="Show Mobile E-Voucher">Swimming pool</div> </div> </div> </li>
 @endif
@@ -259,6 +260,7 @@
 @endif
 
 </ul>
+</div>
 
 
 <div>
@@ -329,8 +331,8 @@ ul.list_ok {
 
   </div>
   <hr>
-  <h4>Terms & Conditions</h4>
-  <div class="start-detail conditions">
+  <h4 class="hidden-sm hidden-xs">Terms & Conditions</h4>
+  <div class="start-detail conditions hidden-sm hidden-xs">
     <ul class="conditions">
     <p align="left|right|center|justify">If you do not agree to these Terms, you should not use or access this Site. Sirispace reserves the right to revise these Terms at any time by updating this posting. You are encouraged to review these Terms each time you use the Site because your use of the Site after the posting of changes will constitute your acceptance of the changes. We grant you a personal, limited, non-transferable non-exclusive, license to access and use the Site. We reserve the right, in our sole discretion and without notice to you, to revise the products and services available on the Site and to change, suspend or discontinue any aspect of the Site and we will not be liable to you or to any third party for doing so.  </p>
       </ul>
