@@ -263,6 +263,41 @@
 </div>
 
 
+
+<div class="visible-sm visible-xs">
+<ul style="list-style:none;">
+@if($home->Poll == 1)
+<li> <i class="icon_set_2_icon-110"></i> <div class="t_v_mid_box icon-div"> <div class="t_v_mid"> <div class="t14 hidden-sm hidden-xs" title="Show Mobile E-Voucher">Swimming pool</div> </div> </div> </li>
+@endif
+
+@if($home->Fitness == 1)
+<li><i class="icon_set_2_icon-117" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Join In Group Tour">Fitness Center</div></div></div></li>
+@endif
+
+@if($home->allowed == 1)
+<li><i class="icon_set_1_icon-22" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Minimum 6 Traveler(s)">Pet allowed</div></div></div></li>
+@endif
+
+@if($home->Accessibiliy == 1)
+<li><i class="icon_set_1_icon-13" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Minimum 6 Traveler(s)">Accessibiliy</div></div></div></li>
+@endif
+
+@if($home->Restaurant == 1)
+<li><i class="icon_set_1_icon-58" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Minimum 6 Traveler(s)">Restaurant</div></div></div></li>
+@endif
+
+@if($home->Wifi == 1)
+<li><i class="icon_set_1_icon-86" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Minimum 6 Traveler(s)">Wifi</div></div></div></li>
+@endif
+
+@if($home->Cable == 1)
+<li><i class="icon_set_2_icon-116" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Minimum 6 Traveler(s)">TV with cable</div></div></div></li>
+@endif
+
+</ul>
+</div>
+
+
 <div>
 <h3>Description</h3>
   <div class="start-detail">
