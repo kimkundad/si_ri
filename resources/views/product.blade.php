@@ -210,7 +210,7 @@
 
 
 
-<div class="border_gray pay_info">
+<div class="border_gray pay_info visible-sm visible-xs" style="margin-bottom: 0px;">
 
   @if($home->Status == 1 && $home->For_Sale == 2)
   <h1 style="color: #ff1b1b; margin-top: 5px;"><i class="fa fa-frown-o"></i> Rented!</h1>
@@ -230,7 +230,7 @@
   <hr>
 
   <div class="descript" style="height: 20px;">
-    
+
 
                           <span style="color: #777; font-size: 13px;"><i class="fa fa-user"></i> <?=format_number($home->view)?> review</span>
                           <div class="descript-t">
