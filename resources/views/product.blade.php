@@ -66,7 +66,7 @@
 
 
 
-<div class="row magnific-gallery">
+<div class="row magnific-gallery hidden-sm hidden-xs">
 
   @if($home_image_count > 4)
 
