@@ -136,40 +136,38 @@
 
 <!-- visible-sm visible-xs -->
 <style>
-.example-image-link{
-  margin-top: 8px;
-}
+
 </style>
 <div class="row magnific-gallery visible-sm visible-xs">
 
   @if($home_image_count > 4)
 
-<div class="col-md-6 col-sm-6" >
+<div class="col-md-6 col-sm-6" style="margin-bottom: 8px;">
 
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[0]->image)}}" >
   <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[0]->image)}}" alt=""></a>
 </div>
 
-<div class="col-md-6 col-sm-6" >
+<div class="col-md-6 col-sm-6" style="margin-bottom: 8px;">
 
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[1]->image)}}" >
   <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[1]->image)}}" alt=""></a>
 </div>
 
-<div class="col-md-4 col-sm-4" >
+<div class="col-md-4 col-sm-4" style="margin-bottom: 8px;">
 
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[2]->image)}}" >
   <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[2]->image)}}" alt=""></a>
 </div>
 
-<div class="col-md-4 col-sm-4" >
+<div class="col-md-4 col-sm-4" style="margin-bottom: 8px;">
 
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[3]->image)}}" >
   <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[3]->image)}}" alt=""></a>
 </div>
 
 
-<div class="col-md-4 col-sm-4" >
+<div class="col-md-4 col-sm-4" style="margin-bottom: 8px;">
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[4]->image)}}" >
   <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[4]->image)}}" alt="">
   <div class="see-all-overlay" style="width: 90%;"><span class="see-all-overlay-text">ดูทั้งหมด {{$home_image_count}} รูป</span></div></a>
@@ -177,13 +175,13 @@
 
 @else
 
-<div class="col-md-6 col-sm-6" >
+<div class="col-md-6 col-sm-6" style="margin-bottom: 8px;">
 
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[0]->image)}}" >
   <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[0]->image)}}" alt=""></a>
 </div>
 
-<div class="col-md-6 col-sm-6" >
+<div class="col-md-6 col-sm-6" style="margin-bottom: 8px;">
 
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[1]->image)}}" >
   <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[1]->image)}}" alt=""></a>
@@ -233,31 +231,31 @@
 <ul class="basic_info" style="list-style:none;">
 
 @if($home->Poll == 1)
-<li> <i class="icon_set_2_icon-110"></i> <div class="t_v_mid_box icon-div"> <div class="t_v_mid"> <div class="t14" title="Show Mobile E-Voucher">Swimming pool</div> </div> </div> </li>
+<li> <i class="icon_set_2_icon-110"></i> <div class="t_v_mid_box icon-div"> <div class="t_v_mid"> <div class="t14 hidden-sm hidden-xs" title="Show Mobile E-Voucher">Swimming pool</div> </div> </div> </li>
 @endif
 
 @if($home->Fitness == 1)
-<li><i class="icon_set_2_icon-117" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid"><div class="t14" title="Join In Group Tour">Fitness Center</div></div></div></li>
+<li><i class="icon_set_2_icon-117" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Join In Group Tour">Fitness Center</div></div></div></li>
 @endif
 
 @if($home->allowed == 1)
-<li><i class="icon_set_1_icon-22" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid"><div class="t14" title="Minimum 6 Traveler(s)">Pet allowed</div></div></div></li>
+<li><i class="icon_set_1_icon-22" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Minimum 6 Traveler(s)">Pet allowed</div></div></div></li>
 @endif
 
 @if($home->Accessibiliy == 1)
-<li><i class="icon_set_1_icon-13" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid"><div class="t14" title="Minimum 6 Traveler(s)">Accessibiliy</div></div></div></li>
+<li><i class="icon_set_1_icon-13" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Minimum 6 Traveler(s)">Accessibiliy</div></div></div></li>
 @endif
 
 @if($home->Restaurant == 1)
-<li><i class="icon_set_1_icon-58" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid"><div class="t14" title="Minimum 6 Traveler(s)">Restaurant</div></div></div></li>
+<li><i class="icon_set_1_icon-58" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Minimum 6 Traveler(s)">Restaurant</div></div></div></li>
 @endif
 
 @if($home->Wifi == 1)
-<li><i class="icon_set_1_icon-86" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid"><div class="t14" title="Minimum 6 Traveler(s)">Wifi</div></div></div></li>
+<li><i class="icon_set_1_icon-86" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Minimum 6 Traveler(s)">Wifi</div></div></div></li>
 @endif
 
 @if($home->Cable == 1)
-<li><i class="icon_set_2_icon-116" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid"><div class="t14" title="Minimum 6 Traveler(s)">TV with cable</div></div></div></li>
+<li><i class="icon_set_2_icon-116" style="font-size:26px;"></i><div class="t_v_mid_box icon-div"><div class="t_v_mid hidden-sm hidden-xs"><div class="t14" title="Minimum 6 Traveler(s)">TV with cable</div></div></div></li>
 @endif
 
 </ul>
