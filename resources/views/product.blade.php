@@ -222,10 +222,103 @@
 
 <br>
 
+<div class="border_gray pay_info">
 
-<style>
+  @if($home->Status == 1 && $home->For_Sale == 2)
+  <h1 style="color: #ff1b1b; margin-top: 5px;"><i class="fa fa-frown-o"></i> Rented!</h1>
+  @elseif($home->Status == 1 && $home->For_Sale == 1)
+  <h1 style="color: #ff1b1b; margin-top: 5px;"><i class="fa fa-frown-o"></i> Sold!</h1>
+  @else
+  @endif
 
-</style>
+  <p style="color:#666">Price property ID <strong>{{$home->id_pro}} </strong></p>
+  <h4 style=" color: #ff5722; font-weight: bold;"><i class="icon_set_1_icon-36" style="font-size:28px;"></i> THB {{ number_format($home->Price) }}</h4>
+  <hr>
+  <p>Siri Space is giving <strong style=" color: #ff5722;">cash back</strong>.</p>
+  <button type="button" class="btn btn-success btn-block " style="border-radius: 2px;"><strong style="font-size:20px;">THB {{ number_format($home->Refer) }}</strong></button>
+  <p style="color:#888; font-size:12px; margin-top:10px; margin-bottom:0px;">
+    <i class="fa fa-info-circle"></i> Siri Space is giving the customer back 20% of the commission.</p>
+  <p style="color:#888; font-size:12px;"><i class="fa fa-tag"></i> For 1 year lease</p>
+  <hr>
+
+  <div class="descript" style="height: 20px;">
+    <?php
+
+    function format_number($number) {
+          if($number >= 1000) {
+             return $number/1000 . "k";   // NB: you will want to round this
+          }
+          else {
+              return $number;
+          }
+      }
+
+     ?>
+
+                          <span style="color: #777; font-size: 13px;"><i class="fa fa-user"></i> <?=format_number($home->view)?> review</span>
+                          <div class="descript-t">
+                          <div class="postMetaInline-authorLockup">
+
+                            @if($home->rating == 5)
+                            <div class="rating">
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star voted"></i>
+                                <span style="color: #777; font-size: 13px;">{{$home->rating}}.0</span>
+                            </div>
+                            @endif
+                            @if($home->rating == 4)
+                            <div class="rating">
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span style="color: #777; font-size: 13px;">{{$home->rating}}.0</span>
+                            </div>
+                            @endif
+                            @if($home->rating == 3)
+                            <div class="rating">
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span style="color: #777; font-size: 13px;">{{$home->rating}}.0</span>
+                            </div>
+                            @endif
+                            @if($home->rating == 2)
+                            <div class="rating">
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span style="color: #777; font-size: 13px;">{{$home->rating}}.0</span>
+                            </div>
+                            @endif
+                            @if($home->rating == 1)
+                            <div class="rating">
+                                <i class="fa fa-star voted"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span style="color: #777; font-size: 13px;">{{$home->rating}}.0</span>
+                            </div>
+                            @endif
+
+
+                          </div>
+                          </div>
+                        </div>
+
+</div>
+
+
+
 
 <h3 class="visible-sm visible-xs">Facility</h3>
 
