@@ -144,7 +144,7 @@
 </style>
 
 
-<ul class="basic_info">
+<ul class="basic_info" style="list-style:none;">
 
 @if($home->Poll == 1)
 <li> <i class="icon_set_2_icon-110"></i> <div class="t_v_mid_box icon-div"> <div class="t_v_mid"> <div class="t14" title="Show Mobile E-Voucher">Swimming pool</div> </div> </div> </li>
