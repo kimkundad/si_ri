@@ -543,7 +543,7 @@ ul#cat_nav li a  {
                               </div>
 
                               <div class="descript" style="height: 20px;">
-                                <span style="color: #777; font-size: 12px;"><i class="fa fa-map-marker"></i> <?=mb_strimwidth($homes->AMPHUR_NAME_ENG, 0, 25, '...');?></span>
+                                <span style="color: #e03753; font-size: 12px;"><i class="fa fa-map-marker"></i> <?=mb_strimwidth($homes->AMPHUR_NAME_ENG, 0, 25, '...');?></span>
                                 <div class="descript-t">
                                 <div class="postMetaInline-authorLockup">
 
