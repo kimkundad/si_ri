@@ -227,7 +227,7 @@
 
 </style>
 
-
+<h3 class="visible-sm visible-xs">Facility</h3>
 <ul class="basic_info" style="list-style:none;">
 
 @if($home->Poll == 1)
