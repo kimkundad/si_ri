@@ -210,18 +210,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-<br>
-
 <div class="border_gray pay_info">
 
   @if($home->Status == 1 && $home->For_Sale == 2)
@@ -242,18 +230,7 @@
   <hr>
 
   <div class="descript" style="height: 20px;">
-    <?php
-
-    function format_number($number) {
-          if($number >= 1000) {
-             return $number/1000 . "k";   // NB: you will want to round this
-          }
-          else {
-              return $number;
-          }
-      }
-
-     ?>
+    
 
                           <span style="color: #777; font-size: 13px;"><i class="fa fa-user"></i> <?=format_number($home->view)?> review</span>
                           <div class="descript-t">
@@ -316,6 +293,18 @@
                         </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+<br>
+
+
 
 
 
