@@ -135,7 +135,11 @@
 
 
 <!-- visible-sm visible-xs -->
-
+<style>
+.example-image-link{
+  margin-top: 8px;
+}
+</style>
 <div class="row magnific-gallery visible-sm visible-xs">
 
   @if($home_image_count > 4)
@@ -168,7 +172,7 @@
 <div class="col-md-4 col-sm-4" >
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[4]->image)}}" >
   <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[4]->image)}}" alt="">
-  <div class="see-all-overlay"><span class="see-all-overlay-text">ดูทั้งหมด {{$home_image_count}} รูป</span></div></a>
+  <div class="see-all-overlay" style="width: 90%;"><span class="see-all-overlay-text">ดูทั้งหมด {{$home_image_count}} รูป</span></div></a>
 </div>
 
 @else
