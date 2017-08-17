@@ -185,26 +185,32 @@
                 </div>
 
 
+                <div class="form-group">
+
+                    <label for="Status" class="col-sm-3 control-label">Status</label>
+                   <div class="col-sm-9">
+            <select name="Status" id="Status" class="form-control " >
+                    <option value="0" @if($objs->Status == 0)
+                    selected="selected"
+                    @endif>Available</option>
+                    <option value="1" @if($objs->Status == 1)
+                    selected="selected"
+                    @endif>Rented</option>
+                    <option value="2" @if($objs->Status == 2)
+                    selected="selected"
+                    @endif>Sold</option>
+
+            </select>
+
+
+                </div>
+                     </div>
+
+
                 <div class="typePay2  @if($objs->For_Sale == 1)
                 hide
                 @endif">
-                    <div class="form-group">
 
-                        <label for="Status" class="col-sm-3 control-label">Status</label>
-                       <div class="col-sm-9">
-                <select name="Status" id="Status" class="form-control " >
-                        <option value="0" @if($objs->Status == 0)
-                        selected="selected"
-                        @endif>Available</option>
-                        <option value="1" @if($objs->Status == 1)
-                        selected="selected"
-                        @endif>Rented</option>
-
-                </select>
-
-
-                    </div>
-                         </div>
 
 
 

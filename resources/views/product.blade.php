@@ -214,7 +214,7 @@
 
   @if($home->Status == 1 && $home->For_Sale == 2)
   <h1 style="color: #ff1b1b; margin-top: 5px;"><i class="fa fa-frown-o"></i> Rented!</h1>
-  @elseif($home->Status == 1 && $home->For_Sale == 1)
+  @elseif($home->Status == 2 && $home->For_Sale == 1)
   <h1 style="color: #ff1b1b; margin-top: 5px;"><i class="fa fa-frown-o"></i> Sold!</h1>
   @else
   @endif
