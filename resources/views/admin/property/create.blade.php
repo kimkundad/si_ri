@@ -162,24 +162,28 @@
                 </div>
 
 
+                <div class="form-group">
+
+                    <label for="Status" class="col-sm-3 control-label">Status</label>
+                   <div class="col-sm-9">
+
+
+
+
+            <select name="Status" id="Status" class="form-control " >
+                    <option value="0">Available</option>
+                    <option value="1">Rented</option>
+                    <option value="2">Sold</option>
+
+            </select>
+
+
+                </div>
+                     </div>
+
+
                 <div class="typePay2 hide">
-                    <div class="form-group">
 
-                        <label for="Status" class="col-sm-3 control-label">Status</label>
-                       <div class="col-sm-9">
-
-
-
-
-                <select name="Status" id="Status" class="form-control " >
-                        <option value="0">Available</option>
-                        <option value="1">Rented</option>
-
-                </select>
-
-
-                    </div>
-                         </div>
 
 
 
