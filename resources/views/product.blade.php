@@ -211,7 +211,7 @@
 
 
 <div class="border_gray pay_info visible-sm visible-xs" style="margin-bottom: 0px;">
-
+{{$home->Status}},{{$home->For_Sale}}
   @if($home->Status == 1 && $home->For_Sale == 2)
   <h1 style="color: #ff1b1b; margin-top: 5px;"><i class="fa fa-frown-o"></i> Rented!</h1>
   @elseif($home->Status == 2 && $home->For_Sale == 1)
