@@ -404,7 +404,7 @@
                     <input type="text" name="Price" value="{{ old('Price') }}" class="form-control" required>
                 </div>
 
-                <label for="name" class="col-sm-2 control-label">Refer Bonus <span class="text-danger">*</span></label>
+                <label for="name" class="col-sm-2 control-label">Cash back <span class="text-danger">*</span></label>
                 <div class="col-sm-3">
                     <input type="text" name="Refer" value="{{ old('Refer') }}" class="form-control" required>
                 </div>
