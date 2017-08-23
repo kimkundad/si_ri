@@ -23,6 +23,7 @@ class CategoryController extends Controller
       )
       ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
       ->where('product.first_index', 2)
+      ->orderBy('id', 'desc')
       ->paginate(12);
       $data['home'] = $home;
       return view('siri_recommend', $data);
@@ -41,7 +42,8 @@ class CategoryController extends Controller
       )
       ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
       ->where('product.hot_index', 2)
-      ->inRandomOrder()
+      ->orderBy('id', 'desc')
+      //->inRandomOrder()
       ->paginate(12);
 
       $data['home'] = $home_top;
