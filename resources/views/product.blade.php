@@ -73,13 +73,13 @@
 <div class="col-md-6 col-sm-6" style="padding-right: 3px;">
 
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[0]->image)}}" >
-  <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[0]->image)}}" alt=""></a>
+  <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[0]->image)}}" alt="" style="height: 279px;"></a>
 </div>
 
 <div class="col-md-6 col-sm-6" style="padding-left: 3px;">
 
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[1]->image)}}" >
-  <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[1]->image)}}" alt=""></a>
+  <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[1]->image)}}" alt="" style="height: 279px;"></a>
 </div>
 
 <div class="col-md-4 col-sm-4" style="padding-right: 0px; padding-top:5px">
