@@ -62,6 +62,7 @@ class PropertyController extends Controller
             )
             ->leftjoin('categorys', 'categorys.id',  'product.category_id')
             ->where('product.first_index', 2)
+            ->orderBy('id', 'desc')
             ->paginate(15);
 
 
@@ -96,6 +97,7 @@ class PropertyController extends Controller
             )
             ->leftjoin('categorys', 'categorys.id',  'product.category_id')
             ->where('product.hot_index', 2)
+            ->orderBy('id', 'desc')
             ->paginate(15);
 
 
