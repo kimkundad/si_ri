@@ -10,7 +10,7 @@
 
 @section('ogtags')
     @include('layouts.og_tags', ['title' => $home->name_pro , 'description' => strip_tags(str_limit($home->detail, 150)),
-    'image' => url('assets/cusimage/'.$home->image) ])
+    'image' => url('assets/cusimage/'.$home->image_pro) ])
 @stop
 
 @section('stylesheet')
@@ -23,7 +23,7 @@
 <div id="position">
             <div class="container">
                         <ul>
-                        <li><a href="{{url('/')}}">Home {{dd($home)}}</a></li>
+                        <li><a href="{{url('/')}}">Home </a></li>
                         <li><a href="{{url('property-2-'.$home->id_cat)}}">{{$home->name_cat}}</a></li>
                         <li>{{$home->name_pro}}</li>
                         </ul>

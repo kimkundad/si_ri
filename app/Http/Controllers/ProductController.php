@@ -57,6 +57,7 @@ class ProductController extends Controller
       'product.*',
       'product.id as id_pro',
       'product.name as name_pro',
+      'product.image as image_pro',
       'categorys.*',
       'categorys.name as name_cat',
       'categorys.id as id_cat',
