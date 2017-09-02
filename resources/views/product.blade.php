@@ -23,7 +23,7 @@
 <div id="position">
             <div class="container">
                         <ul>
-                        <li><a href="{{url('/')}}">Home {{$home->image}}</a></li>
+                        <li><a href="{{url('/')}}">Home {{dd($home)}}</a></li>
                         <li><a href="{{url('property-2-'.$home->id_cat)}}">{{$home->name_cat}}</a></li>
                         <li>{{$home->name_pro}}</li>
                         </ul>
