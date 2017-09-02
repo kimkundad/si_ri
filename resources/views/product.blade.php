@@ -10,7 +10,7 @@
 
 @section('ogtags')
     @include('layouts.og_tags', ['title' => $home->name_pro , 'description' => strip_tags(str_limit($home->detail, 150)),
-    'image' => url('assets/cusimage/'.$home->image) ])
+    'image' => url('assets/cusimage/'.$home->image2) ])
 @stop
 
 @section('stylesheet')
@@ -1050,7 +1050,7 @@ return "$strDay $strMonthThai $strYear";
 
 
                             <!--  <div class="g-recaptcha" data-sitekey="6LdHOiUUAAAAAAobn_eaNZe6ieq_s1aE9fXK26_y" style="width:100%"></div> -->
-                          
+
                             <div class="g-recaptcha" data-sitekey="6LdHOiUUAAAAAAobn_eaNZe6ieq_s1aE9fXK26_y"></div>
                               @if ($errors->has('g-recaptcha-response'))
                                   <span class="help-block">
