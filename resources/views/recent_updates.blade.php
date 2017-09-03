@@ -91,7 +91,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                             </div>
 
                             <div class="descript" style="height: 20px;">
-                              <span style="color: #e03753; font-size: 12px;"><i class="fa fa-map-marker"></i> <?=mb_strimwidth($homes->AMPHUR_NAME_ENG, 0, 25, '...');?></span>
+                              <span style="color: #e03753; font-size: 12px;"><i class="fa fa-map-marker"></i> <?=mb_strimwidth($homes->AMPHUR_NAME_ENG, 0, 15, '...');?></span>
                               <div class="descript-t">
                               <div class="postMetaInline-authorLockup">
 
