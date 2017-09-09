@@ -426,7 +426,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                     <div class="t_v_mid ">
                         <div class="g_ib">
                             <div class="t_v_mid_box">
-                              <div class="t_v_mid"><img src="http://www.learnsbuy.com/assets/images/free_point.png"></div>
+                              <div class="t_v_mid"><img src="{{url('assets/image/free_point.png')}}"></div>
                               <div class="t_v_mid t_left">
                                   <p class="t16 g_ma_8">Get CashBack</p>
                                   <p class="t14 t_gray g_ma_8">Receive When Contract Signed.</p>

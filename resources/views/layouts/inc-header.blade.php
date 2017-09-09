@@ -30,8 +30,8 @@
                 <li><a href="{{url('News')}}"><i class="fa fa-bullseye"></i> News</a></li>
 
                 @if (Auth::guest())
-                    <li><a href="{{url('login')}}"><i class="fa fa-user"></i> Login</a></li>
-                    <li><a href="{{url('register')}}"><i class="fa fa-lock"></i> Register</a></li>
+                    <li><a href="https://sirispace.com/login"><i class="fa fa-user"></i> Login</a></li>
+                    <li><a href="https://www.sirispace.com/register"><i class="fa fa-lock"></i> Register</a></li>
                 @else
                 <li><a href="{{url('my_wishlist')}}"><i class="fa fa-heart-o"></i> wishlist</a></li>
                 <li class="dropdown">
