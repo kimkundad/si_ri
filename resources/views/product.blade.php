@@ -1097,17 +1097,17 @@ return "$strDay $strMonthThai $strYear";
 <script src="{{url('assets/js/markerclusterer.js')}}"></script>
 <script>
     function initialize() {
-        var center = new google.maps.LatLng(51.5074, 0.1278);
+        var center = new google.maps.LatLng({{$home->lat}}, {{$home->lng}});
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 3,
+          zoom: 17,
           center: center,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
         var markers = [];
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(51.5074, 0.1278)
+            position: new google.maps.LatLng({{$home->lat}}, {{$home->lng}})
         });
         markers.push(marker);
 
