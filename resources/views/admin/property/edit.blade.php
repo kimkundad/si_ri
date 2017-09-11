@@ -842,7 +842,7 @@ var content = $('textarea[name="detail"]').html($('#summernote').code());
 </script>
 
 
-<script type="text/javascript" src='http://maps.google.com/maps/api/js?key=AIzaSyAsmXKbPGLn7FfOODunI5mSQp9QWnd4-Gc&libraries=places&sensor=false'></script>
+<script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyAsmXKbPGLn7FfOODunI5mSQp9QWnd4-Gc&libraries=places&sensor=false'></script>
 <script type="text/javascript">
       var map;
       var geocoder;
