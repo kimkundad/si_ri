@@ -1091,6 +1091,9 @@ return "$strDay $strMonthThai $strYear";
 @section('scripts')
 
 <script src='https://www.google.com/recaptcha/api.js?hl=th'></script>
+
+
+<script language=javascript src='https://maps.google.com/maps/api/js?key=AIzaSyDawi5qne05jM6TOClvpuN673ChaNoMVxs&callback=initMap'></script>
 <script src="{{url('assets/js/markerclusterer.js')}}"></script>
 <script>
     function initialize() {
