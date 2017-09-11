@@ -1091,29 +1091,31 @@ return "$strDay $strMonthThai $strYear";
 @section('scripts')
 
 <script src='https://www.google.com/recaptcha/api.js?hl=th'></script>
-
-
-<script language=javascript src='https://maps.google.com/maps/api/js?key=AIzaSyA89Rb8Kz1ArY3ks6sSvz2cNrn66CHKDiA&callback=initMap'></script>
+<script src="{{url('assets/js/markerclusterer.js')}}"></script>
 <script>
+    function initialize() {
+        var center = new google.maps.LatLng(51.5074, 0.1278);
 
-function initialize(){
-     var myLatlng = new google.maps.LatLng({{$home->lat}},{{$home->lng}});
-     var myOptions = {
-         zoom: 17,
-         center: myLatlng,
-         mapTypeId: google.maps.MapTypeId.ROADMAP
-         }
-      map = new google.maps.Map(document.getElementById("map"), myOptions);
-      var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-      title:"Fast marker"
-     });
-}
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: center,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
 
-google.maps.event.addDomListener(window,'load', initialize);
+        var markers = [];
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(51.5074, 0.1278)
+        });
+        markers.push(marker);
 
+        var options = {
+            imagePath: 'images/m'
+        };
 
+        var markerCluster = new MarkerClusterer(map, markers, options);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 <script>
