@@ -1093,7 +1093,7 @@ return "$strDay $strMonthThai $strYear";
 <script src='https://www.google.com/recaptcha/api.js?hl=th'></script>
 
 
-<script language=javascript src='https://maps.google.com/maps/api/js?key=AIzaSyDawi5qne05jM6TOClvpuN673ChaNoMVxs&callback=initMap'></script>
+<script language=javascript src='https://maps.google.com/maps/api/js?key=AIzaSyA89Rb8Kz1ArY3ks6sSvz2cNrn66CHKDiA&callback=initMap'></script>
 <script>
 
 function initialize(){
