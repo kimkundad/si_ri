@@ -225,7 +225,7 @@
   <p>Siri Space is giving <strong style=" color: #ff5722;">cash back</strong>.</p>
   <button type="button" class="btn btn-success btn-block " style="border-radius: 2px;"><strong style="font-size:20px;">THB {{ number_format($home->Refer) }}</strong></button>
   <p style="color:#888; font-size:12px; margin-top:10px; margin-bottom:0px;">
-    <i class="fa fa-info-circle"></i> Siri Space is giving the customer back 20% of the commission.</p>
+    <i class="fa fa-info-circle"></i> Siri Space is giving the customer back 10% of the commission.</p>
   <p style="color:#888; font-size:12px;"><i class="fa fa-tag"></i> For 1 year lease</p>
   <hr>
 
@@ -926,7 +926,7 @@ return "$strDay $strMonthThai $strYear";
             <p>Siri Space is giving <strong style=" color: #ff5722;">cash back</strong>.</p>
             <button type="button" class="btn btn-success btn-block " style="border-radius: 2px;"><strong style="font-size:20px;">THB {{ number_format($home->Refer) }}</strong></button>
             <p style="color:#888; font-size:12px; margin-top:10px; margin-bottom:0px;">
-              <i class="fa fa-info-circle"></i> Siri Space is giving the customer back 20% of the commission.</p>
+              <i class="fa fa-info-circle"></i> Siri Space is giving the customer back 10% of the commission.</p>
             <p style="color:#888; font-size:12px;"><i class="fa fa-tag"></i> For 1 year lease</p>
             <hr>
 
