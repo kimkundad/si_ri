@@ -159,8 +159,9 @@ ul#cat_nav li a  {
                             <img src="{{url('assets/images/free_point.png')}}" style="height:65px">
                             <h3><span style="color:#08a00a">WHAT </span> IS CASH BACK?</h3>
                             <p>
-                                How it works is anyone who registers an account with Siri Space is offered a 20% cash back of the applicable agent fees on a transaction. Basically, Siri Space is giving the customer back 20% of the commission.
-                              </p>
+                              How it works is anyone who registers an account with Siri Space is offered a
+                              10% cash back of the applicable agent fees on a transaction. Basically,
+                              Siri Space is giving the customer back 10% of the commission.  </p>
                         </div>
 
                       </div>
@@ -173,8 +174,7 @@ ul#cat_nav li a  {
                               <img src="{{url('assets/image/319882852_n.png')}}" style="height:65px">
                               <h3><span style="color:#08a00a">BUYING </span></h3>
                               <p>
-                                 For example, a purchase in Bangkok (3% commission) for a condo worth 10M THB. The commission for Siri Space as the agent will be 300,000 THB.
-                                 20% of the commission (60,000 THB) will be given to the buyer upon completion of the transaction.
+                                 For example, a purchase in Bangkok (3% commission) for a condo worth 10M THB. The commission for Siri Space as the agent will be 300,000 THB. 10% of the commission (30,000 THB) will be given to the buyer upon completion of the transaction.
                              </p>
                           </div>
                       </div>
@@ -186,8 +186,7 @@ ul#cat_nav li a  {
                             <img src="{{url('assets/image/288744.png')}}" style="height:65px">
                             <h3><span style="color:#08a00a">RENTING </span> </h3>
                             <p>
-                              For example, a rental in Bangkok (1 month commission) for a condo worth 50,000 THB. The commission for Siri Space as the agent will be 50,000 THB.
-                              20% of the commission (10,000 THB) will be given to the renter upon completion of the transaction.</p>
+                              For example, a rental in Bangkok (1 month commission) for a condo worth 50,000 THB. The commission for Siri Space as the agent will be 50,000 THB. 10% of the commission (5,000 THB) will be given to the renter upon completion of the transaction.</p>
                         </div>
 
                       </div>
