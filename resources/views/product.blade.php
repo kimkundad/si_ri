@@ -927,7 +927,14 @@ return "$strDay $strMonthThai $strYear";
             <button type="button" class="btn btn-success btn-block " style="border-radius: 2px;"><strong style="font-size:20px;">THB {{ number_format($home->Refer) }}</strong></button>
             <p style="color:#888; font-size:12px; margin-top:10px; margin-bottom:0px;">
               <i class="fa fa-info-circle"></i> Siri Space is giving the customer back 10% of the commission.</p>
-            <p style="color:#888; font-size:12px;"><i class="fa fa-tag"></i> For 1 year lease</p>
+
+              @if($home->For_Sale == 2)
+              <p style="color:#888; font-size:12px;"><i class="fa fa-tag"></i> For 1 year lease</p>
+              @else
+              @endif
+
+
+
             <hr>
 
             <div class="descript" style="height: 20px;">
