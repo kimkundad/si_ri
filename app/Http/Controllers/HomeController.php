@@ -109,7 +109,7 @@ class HomeController extends Controller
       )
       ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
       ->where('product.hot_index', 2)
-      ->inRandomOrder()
+      ->orderBy('product.id', 'desc')
       ->limit(4)
       ->get();
       //dd($home);
