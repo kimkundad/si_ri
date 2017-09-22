@@ -85,6 +85,7 @@ class HomeController extends Controller
             ->orderBy('id', 'asc')
             ->get();
           //  dd($slide);
+          
 
       $data['slide'] = $slide;
 
