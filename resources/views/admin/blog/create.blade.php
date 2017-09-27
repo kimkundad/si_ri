@@ -149,7 +149,7 @@
 
 @section('scripts')
 
-<script src="{{URL::asset('assets/text/dist/summernote.js?v2')}}"></script>
+<script src="{{URL::asset('assets/text/dist/summernote.js?v3')}}"></script>
 <script type="text/javascript">
 $(document).ready(function() {
   $.ajaxSetup({
