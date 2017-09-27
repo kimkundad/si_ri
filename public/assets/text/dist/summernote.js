@@ -6730,13 +6730,13 @@
 			var data = new FormData();
 		    data.append('files', files[0]);
 		    $.ajax({
-		        url: 'http://sirispace.com/admin/file/posts',
+		        url: 'https://sirispace.com/admin/file/posts',
 		        method: 'POST',
 		        data: data,
 		        processData: false,
 		        contentType: false,
 		        success: function(response) {
-              var image1 = 'http://sirispace.com/assets/blog/'+response;
+              var image1 = 'https://sirispace.com/assets/blog/'+response;
 		          $editor.summernote('insertImage', image1);
 		        }
 		    });
