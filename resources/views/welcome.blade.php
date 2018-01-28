@@ -771,9 +771,11 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
             <div class="col-md-2 col-sm-3 col-xs-6 logo-style" >
 
-              <div id="Certificate-banners"><a title="กรมพัฒนาธุรกิจการค้า sirispace" style="padding-left: 5px;">
+            <!--  <div id="Certificate-banners"><a title="กรมพัฒนาธุรกิจการค้า sirispace" style="padding-left: 5px;">
                 <img alt="กรมพัฒนาธุรกิจการค้า sirispace" src="assets/image/bns_registered.png"></a>
-              </div>
+              </div> -->
+
+              <div id="Certificate-banners" style="padding-left: 5px;"></div>
 
                 <!--  <script src="https://www.trustmarkthai.com/callbackData/initialize.js?t=14f50-15-5-837d5ecc2533522de0fc24060ca019bf16612f49" id="dbd-init"></script><div id="Certificate-banners"></div> -->
 
@@ -803,7 +805,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 @stop
 
 @section('scripts')
-
+<script src="https://www.trustmarkthai.com/callbackData/initialize.js?t=14f50-15-5-837d5ecc2533522de0fc24060ca019bf16612f49" id="dbd-init"></script>
 <script>
 var button = document.getElementById('button_open');
 
