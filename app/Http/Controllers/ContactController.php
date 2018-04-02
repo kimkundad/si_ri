@@ -1,8 +1,9 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 namespace App\Http\Controllers;
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\product;
