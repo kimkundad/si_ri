@@ -856,11 +856,9 @@ class PropertyController extends Controller
             ->where('product_id', $id)
             ->get();
 
-      foreach ($image_all as $user) {
-
+        foreach ($image_all as $user) {
         $file_path = 'assets/cusimage/'.$user->image;
         unlink($file_path);
-
       }
 
 

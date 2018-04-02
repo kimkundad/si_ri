@@ -58,10 +58,14 @@ return "$strDay $strMonthThai $strYear";
                 <h2 class="panel-title">{{$datahead}}</h2>
               </header>
               <div class="panel-body">
+
+                
                 <div class="col-md-4 ">
                   <a class="btn btn-primary " href="{{url('admin/property/create')}}" role="button">
                       <i class="fa fa-plus"></i> เพิ่มอสังหาใหม่</a>
                 </div>
+
+
                 <div class="col-md-8 ">
 
                      <div class="form-group ">

@@ -142,15 +142,15 @@ a {
                             </div>
 
                             <div class="col-md-12">
-                            <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                              <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
 
-                              <div class="g-recaptcha" data-sitekey="6LeJ1yUUAAAAACtPVyLQ5AhlsaiXX-Lv_BvAyoHM"></div>
-                              @if ($errors->has('g-recaptcha-response'))
-                                  <span class="help-block">
-                                      <strong>Robot?!</strong>
-                                  </span>
-                              @endif
-                            </div>
+                                <div class="g-recaptcha" data-sitekey="6LdHOiUUAAAAAAobn_eaNZe6ieq_s1aE9fXK26_y"></div>
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <span class="help-block">
+                                        <strong>Robot?!</strong>
+                                    </span>
+                                @endif
+                              </div>
                             </div>
 
                             <div class="col-md-12">

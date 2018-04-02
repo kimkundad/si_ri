@@ -46,7 +46,7 @@
               </header>
               <div class="panel-body">
 
-                
+
                 <table class="table table-bordered table-striped mb-none dataTable " id="datatable-default">
                   <thead>
                     <tr>
