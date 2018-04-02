@@ -1,5 +1,6 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -448,7 +449,7 @@ class ContactController extends Controller
 
 
 
-          return redirect(url('contact_success'));
+        //  return redirect(url('contact_success'));
       	} else {
       		echo "No";
       	}
