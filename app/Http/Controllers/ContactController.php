@@ -396,7 +396,8 @@ class ContactController extends Controller
 
         /*    $email_sender   = 'info@acmeinvestor.com';
             $email_pass     = 'Iaminfoacmeinvestor';  */
-            $email_to       =  'siri@sirispace.com';
+          //  $email_to       =  'siri@sirispace.com';
+          $email_to       =  'kim.kundad@gmail.com';
             //echo $admins[$idx]['email'];
             // Backup your default mailer
             $backup = \Mail::getSwiftMailer();
