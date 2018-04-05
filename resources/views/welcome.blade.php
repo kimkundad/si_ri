@@ -69,7 +69,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 @foreach($slide as $slide_show)
 #first-slider .{{$slide_show->name}} {
-    background-image: url({{url('assets/uploads/'.$slide_show->bg_image)}});
+    background-image: url({{secure_url('assets/uploads/'.$slide_show->bg_image)}});
 }
 @endforeach
 
