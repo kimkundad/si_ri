@@ -450,7 +450,7 @@ class ContactController extends Controller
 
 
 
-        //  return redirect(url('contact_success'));
+          return redirect(url('contact_success'));
       	} else {
       		echo "No";
       	}
