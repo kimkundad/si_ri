@@ -685,7 +685,7 @@ var content = $('textarea[name="detail"]').html($('#summernote').code());
         jQuery('body').on('change','#province_id',function(){
             jQuery.ajax({
                 'type':'POST',
-                'url': '{{url('admin/model_x/')}}',
+                'url': '{{secure_url('admin/model_x/')}}',
                 'cache':false,
                 'data': {PROVINCE_ID:$("#province_id").val()},
                 'success':function(html){
