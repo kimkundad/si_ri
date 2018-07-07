@@ -63,7 +63,7 @@ class HomeController extends Controller
         $posts = DB::table('MRT')->select(
               'MRT.MRT_name'
               )
-              ->where('MRT_name', $field2)
+              ->where('MRT_name', 'LIKE','%'.$field2.'%')
               ->get();
 
 
@@ -72,7 +72,7 @@ class HomeController extends Controller
         $posts = DB::table('BTS')->select(
               'BTS.BTS_name'
               )
-              ->where('BTS_name', $field2)
+              ->where('BTS_name', 'LIKE','%'.$field2.'%')
               ->get();
 
       }else{
