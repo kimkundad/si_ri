@@ -66,6 +66,10 @@ class HomeController extends Controller
               ->where('MRT_name', 'LIKE','%'.$field2.'%')
               ->get();
 
+              foreach($posts as $x){
+                $admin['value'] = $x->BTS_name;
+              }
+
 
       }elseif($mrt_count == 0 && $bts_count > 0){
 
@@ -75,11 +79,15 @@ class HomeController extends Controller
               ->where('BTS_name', 'LIKE','%'.$field2.'%')
               ->get();
 
+              foreach($posts as $x){
+                $admin['value'] = $x->MRT_name;
+              }
+
       }else{
-        $posts = null;
+        $admin = null;
       }
 
-      return response()->json($posts);
+      return response()->json($admin);
 
      }
 
