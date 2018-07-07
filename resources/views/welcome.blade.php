@@ -213,7 +213,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
         </div>
 
         <div class="filter"></div>
-        <video autoplay loop class="fillWidth">
+        <video autoplay loop class="fillWidth" autoplay="autoplay" loop="loop">
             <source src="{{url('assets/In-And-Out/MP4/In-And-Out.mp4')}}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
             <source src="{{url('assets/In-And-Out/WEBM/In-And-Out.webm')}}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
         </video>
@@ -922,9 +922,25 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 @section('scripts')
 
+<script type="text/javascript">
+$(document).ready(function(){
+    //Check if the current URL contains '#'
+    if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#".
+        url = document.URL+"#";
+        location = "#";
+
+        //Reload the page
+        location.reload(true);
+    }
+});
+</script>
 <script>
+
 //jQuery is required to run this code
 $( document ).ready(function() {
+
+
 
     scaleVideoContainer();
 
