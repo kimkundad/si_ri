@@ -44,52 +44,42 @@ class HomeController extends Controller
       $field2= $request['field2'];
 
 
-      $home_count = DB::table('categorys')
+      $bts_count = DB::table('BTS')
       ->select(
-      'categorys.*',
-      'categorys.name as cat_name*',
-      'product.*',
-      'amphures.AMPHUR_NAME_ENG'
+      'BTS.*'
       )
-      ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
-      ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-      ->where('product.name', 'like', "%$field2%")
-      ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$field2%")
-      ->orWhere('amphures.AMPHUR_NAME', 'like', "%$field2%")
-      ->orWhere('product.BTS', 'like', "%$field2%")
-      ->orWhere('product.MRT', 'like', "%$field2%")
+      ->where('BTS_name', 'like', "%$field2%")
       ->count();
 
-      if($home_count > 0){
+      $mrt_count = DB::table('MRT')
+      ->select(
+      'MRT.*'
+      )
+      ->where('MRT_name', 'like', "%$field2%")
+      ->count();
+
+      if($mrt_count > 0 && $bts_count == 0){
+
+        $posts = DB::table('MRT')->select(
+              'MRT.MRT_name'
+              )
+              ->where('MRT_name', $field2)
+              ->get();
 
 
-        $home_get = DB::table('categorys')
-        ->select(
-        'categorys.*',
-        'categorys.name as cat_name*',
-        'product.*',
-        'amphures.AMPHUR_NAME_ENG'
-        )
-        ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
-        ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-        ->where('product.name', 'like', "%$field2%")
-        ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$field2%")
-        ->orWhere('amphures.AMPHUR_NAME', 'like', "%$field2%")
-        ->orWhere('product.BTS', 'like', "%$field2%")
-        ->orWhere('product.MRT', 'like', "%$field2%")
-        ->get();
+      }elseif($mrt_count == 0 && $bts_count > 0){
 
-        foreach($home_get as $x){
-                $admin[] =
-                    $x->name
-                ;
-              }
+        $posts = DB::table('BTS')->select(
+              'BTS.BTS_name'
+              )
+              ->where('BTS_name', $field2)
+              ->get();
 
       }else{
-        $admin = null;
+        $posts = null;
       }
 
-      return Response::json(['data' => $admin]);
+      return Response::json($posts);
 
      }
 

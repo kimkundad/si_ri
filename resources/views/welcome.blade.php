@@ -67,11 +67,32 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 
 
-@foreach($slide as $slide_show)
-#first-slider .{{$slide_show->name}} {
-    background-image: url({{secure_url('assets/uploads/'.$slide_show->bg_image)}});
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
 }
-@endforeach
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
 
 
 .homepage-hero-module {
@@ -242,7 +263,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product2">
         <div class="form-group">
 
-          <input type="text" class="form-control input-lg" id="hero-demo2" style="font-size: 14px;" name="ark" placeholder="Enter Area, BTS MRT station or Property Name..."> </div>
+          <input type="text" class="form-control input-lg" id="hero-demo2" style="font-size: 14px;" name="ark2" placeholder="Enter Area, BTS MRT station or Property Name..."> </div>
 
         <div class="form-group">
         <select name="type_ark" class="form-control input-lg" style="font-size: 14px;">
@@ -367,7 +388,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product">
                         {{ csrf_field() }}
                   <div class="row">
-                    <input class="flipkart-navbar-input col-xs-6" type="" placeholder="Enter District, Area, BTS station or Property Name..." name="ark">
+                    <input class="flipkart-navbar-input col-xs-6" type="text" id="search_text" placeholder="Enter Area, BTS KRT station or Property Name..." name="ark">
 
                     <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
                         <select name="type_ark" class="list_menu_y" style="height:43px; width:110px;   cursor: pointer;  padding: 1px 18px;">
@@ -1023,25 +1044,29 @@ button.onclick = function() {
 };
 </script>
 
-<script src="{{url('autoComplete/auto-complete.js')}}"></script>
-<script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+
+<script type="text/javascript">
+
+        var url = "{{secure_url('/search/data/')}}";
+
+        $('#search_text').typeahead({
+
+            source:  function (query, process) {
+
+            return $.get(url, { query: query }, function (data) {
+
+                    return process(data);
+
+                });
+
+            }
+
+        });
+
+    </script>
 
 
-    var xhr;
-    new autoComplete({
-        selector: 'input[name="ark"]',
-        minChars: 1,
-        source: function(term, response){
-
-            xhr = $.getJSON('{{secure_url('/search/data/')}}', { field2: term }, function(data){
-              //secure_url
-              response(data.data);
-            });
-        }
-    });
-
-
-</script>
 
 
 <script>
