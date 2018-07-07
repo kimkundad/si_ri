@@ -35,6 +35,7 @@ Route::post('/wishlist', 'WishlistController@wishlist_up');
 Route::get('/News', 'ClassifiedsController@index');
 
 Route::get('/search', 'HomeController@search');
+Route::get('/404', 'HomeController@error_page');
 
 
 

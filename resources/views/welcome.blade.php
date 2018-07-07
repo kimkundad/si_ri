@@ -73,8 +73,166 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 }
 @endforeach
 
+
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
+.text-white {
+    color: #fff ;
+}
+.affix {
+    margin: 80px 10px;
+    z-index: 1020;
+}
+.affix-top {
+    position: absolute;
+    top: 35%;
+    left: 10px;
+    z-index: 1020;
+}
+.share-button-banner {
+    display: table;
+    text-align: center;
+    border: 2px solid #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    margin-bottom: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+}
+.share-button-banner .share-container {
+  padding-top: 4px;
+    display: table-cell;
+}
+.share-container .share-content {
+
+    vertical-align: middle;
+}
+.affix .share-button-banner {
+    color: #999;
+    border-color: #999;
+}
+.video-container .title-container {
+    z-index: 1000;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
 /*  */
 </style>
+
+
+<div class="hidden-sm hidden-xs">
+
+<div class="homepage-hero-module">
+    <div class="video-container">
+
+      <div class="share-buttons-group affix-top" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+            <a href="https://twitter.com/siri_space" target="_blank" class="btn-track" data-event="TwitterShare_Click">
+                <div id="twitter-button" class="share-button-banner">
+                    <div class="share-container">
+                        <i class="fa fa-twitter share-content"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/sirispace/" target="_blank" class="btn-track" data-event="FacebookShare_Click">
+                <div id="facebook-button" class="share-button-banner">
+                    <div class="share-container">
+                        <i class="fa fa-facebook share-content"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" target="_blank" class="btn-track" data-event="GoogleShare_Click">
+                <div id="google-button" class="share-button-banner">
+                    <div class="share-container">
+                        <i class="fa fa-google-plus share-content"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="title-container">
+            <div class="headline">
+                <!--Original logo height 80px-->
+                <!-- <img src="" height="80" alt=""> -->
+                <img src="{{url('assets/image/SiriSpace-Logo-cover.png')}}" height="80" alt="">
+                <h3 class="text-white text-thin" style="font-size:35px;">Let Siri Space Be Your personal assistant</h3>
+                <h5 class="text-white text-thin" style="font-size:20px;">REFER YOUR FRIEND -
+                  <a class="coverr-nav-item btn-track" href="" data-event="MondayScroll_Click"
+                  style="text-decoration: none; border-bottom: 1px dotted #fff; color: #fff;">GET REFER BONUS</a></h5>
+            </div>
+
+            <div class="text-center" id="loadBannerVideoSpinner" style="background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 4px; display: none; margin-top: 20px;">
+                <h5 class="text-thin text-primary">Loading Coverr... <i class="fa fa-circle-o-notch fa-spin"></i></h5>
+            </div>
+        </div>
+
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth">
+            <source src="{{url('assets/In-And-Out/MP4/In-And-Out.mp4')}}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="{{url('assets/In-And-Out/WEBM/In-And-Out.webm')}}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="poster hidden">
+            <img src="{{url('assets/In-And-Out/Snapshots/In-And-Out.jpg')}}" alt="">
+        </div>
+    </div>
+    <div style="position: absolute; bottom: 50px; left: 50%; margin-left: -19px;">
+            <a class="coverr-nav-item" href="#RECOMMEND" style="text-decoration: none;">
+                <h1 class="text-white" style="font-size: 65px;">
+                    <i class="fa fa-angle-down"></i>
+                </h1>
+            </a>
+        </div>
+</div>
+
+</div>
+
+
 
 
 <div class="content-section-b visible-sm visible-xs" style="padding: 20px 0 0px;">
@@ -190,52 +348,10 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 </div>
 
 
-                <div id="first-slider" class="hidden-sm hidden-xs">
-                    <div id="carousel-example-generic" class="carousel slide carousel-fade">
-                        <!-- Indicators -->
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox" style="max-height:428px">
-                            <!-- Item 1 -->
-
-
-                            @foreach($slide as $slide_show)
-
-                            <div class="item @if($slide_show->name == 'slide1') active @endif {{$slide_show->name}}">
-                                <div class="row"><div class="container">
-                                    <div class="col-md-3 text-right">
-                                        <img style="max-width: 200px;"  data-animation="animated zoomInLeft" src="{{url('assets/uploads/'.$slide_show->icon)}}">
-                                    </div>
-                                    <div class="col-md-9 text-left">
-                                        <h3 data-animation="animated bounceInDown">{{$slide_show->first_text}}</h3>
-                                        <h4 data-animation="animated bounceInUp">{{$slide_show->secend_text}}</h4>
-                                     </div>
-                                </div></div>
-                             </div>
-
-                             @endforeach
 
 
 
 
-
-
-
-
-
-
-
-
-                        </div>
-                        <!-- End Wrapper for slides-->
-                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                            <i class="fa fa-angle-left"></i><span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                            <i class="fa fa-angle-right"></i><span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
 
 
 
@@ -470,7 +586,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
           <div class="row">
             <br>
         <div class="col-md-12 " >
-          <h3>SIRI RECOMMEND</h3>
+          <h3 id="RECOMMEND">SIRI RECOMMEND</h3>
           <p>Find the hottest property in Bangkok</p>
 
 
@@ -805,8 +921,77 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 @stop
 
 @section('scripts')
+
+<script>
+//jQuery is required to run this code
+$( document ).ready(function() {
+
+    scaleVideoContainer();
+
+    initBannerVideoSize('.video-container .poster img');
+    initBannerVideoSize('.video-container .filter');
+    initBannerVideoSize('.video-container video');
+
+    $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container .poster img');
+        scaleBannerVideoSize('.video-container .filter');
+        scaleBannerVideoSize('.video-container video');
+    });
+
+});
+
+function scaleVideoContainer() {
+
+    var height = $(window).height() + 5;
+    var unitHeight = parseInt(height) + 'px';
+    $('.homepage-hero-module').css('height',unitHeight);
+
+}
+
+function initBannerVideoSize(element){
+
+    $(element).each(function(){
+        $(this).data('height', $(this).height());
+        $(this).data('width', $(this).width());
+    });
+
+    scaleBannerVideoSize(element);
+
+}
+
+function scaleBannerVideoSize(element){
+
+    var windowWidth = $(window).width(),
+    windowHeight = $(window).height() + 5,
+    videoWidth,
+    videoHeight;
+
+    // console.log(windowHeight);
+
+    $(element).each(function(){
+        var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+        $(this).width(windowWidth);
+
+        if(windowWidth < 1000){
+            videoHeight = windowHeight;
+            videoWidth = videoHeight / videoAspectRatio;
+            $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+            $(this).width(videoWidth).height(videoHeight);
+        }
+
+        $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+    });
+}
+</script>
+
 <script src="https://www.trustmarkthai.com/callbackData/initialize.js?t=14f50-15-5-837d5ecc2533522de0fc24060ca019bf16612f49" id="dbd-init"></script>
 <script>
+
+
 var button = document.getElementById('button_open');
 
 button.onclick = function() {
@@ -832,6 +1017,10 @@ button.onclick = function() {
         div.style.display = 'block';
     }
 };
+
+
+
+
 </script>
 
 

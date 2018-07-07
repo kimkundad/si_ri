@@ -34,6 +34,10 @@ class HomeController extends Controller
        return view('contact', $data);
      }
 
+     public function error_page(){
+       return view('error_page');
+     }
+
      public function terms_condition()
      {
        $setting_id = 1;
@@ -85,7 +89,7 @@ class HomeController extends Controller
             ->orderBy('id', 'asc')
             ->get();
           //  dd($slide);
-          
+
 
       $data['slide'] = $slide;
 
