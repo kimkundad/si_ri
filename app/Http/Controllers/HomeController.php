@@ -38,10 +38,10 @@ class HomeController extends Controller
      public function search_data(Request $request){
 
        $this->validate($request, [
-       'field2' => 'required'
+       'query' => 'required'
       ]);
 
-      $field2= $request['field2'];
+      $field2= $request['query'];
 
 
       $bts_count = DB::table('BTS')
