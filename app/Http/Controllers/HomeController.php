@@ -59,7 +59,7 @@ class HomeController extends Controller
       ->orWhere('product.MRT', 'like', "%$field2%")
       ->count();
 
-      if($get_user_count > 0){
+      if($home_count > 0){
 
 
         $home_get = DB::table('categorys')
