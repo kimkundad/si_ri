@@ -36,7 +36,7 @@ Route::get('/News', 'ClassifiedsController@index');
 
 Route::get('/search', 'HomeController@search');
 Route::get('/404', 'HomeController@error_page');
-
+Route::get('search/data', 'HomeController@search_data');
 
 
 Route::get('/sort_search_property-{type_ark}-{type_home}-{ark}-{sort}', 'HomeController@sort_search_property');

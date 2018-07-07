@@ -13,7 +13,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
     Thailand that helps connect property hunters with the most current database of commercial and residential properties for sale and rent, with property news and all the resources a buyer',
     'image' => url('assets/image/sirispace_facebook.png')])
 @stop
-
+<link rel="stylesheet" href="{{url('autoComplete/auto-complete.css')}}">
 @section('content')
 <style>
 .list_menu_y {
@@ -240,7 +240,9 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
     <h4 class="text-center">Siri Space Property Search</h4>
     <div class="bs-example">
       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product2">
-        <div class="form-group"> <input type="text" class="form-control input-lg" style="font-size: 14px;" name="ark" placeholder="Enter District, Area, BTS station or Property Name..."> </div>
+        <div class="form-group">
+
+          <input type="text" class="form-control input-lg" id="hero-demo2" style="font-size: 14px;" name="ark" placeholder="Enter Area, BTS MRT station or Property Name..."> </div>
 
         <div class="form-group">
         <select name="type_ark" class="form-control input-lg" style="font-size: 14px;">
@@ -1020,6 +1022,27 @@ button.onclick = function() {
     }
 };
 </script>
+
+<script src="{{url('autoComplete/auto-complete.js')}}"></script>
+<script>
+
+
+    var xhr;
+    new autoComplete({
+        selector: 'input[name="ark"]',
+        minChars: 1,
+        source: function(term, response){
+
+            xhr = $.getJSON('{{secure_url('/search/data/')}}', { field2: term }, function(data){
+              //secure_url
+              response(data.data);
+            });
+        }
+    });
+
+
+</script>
+
 
 <script>
 var button = document.getElementById('button_open_res');

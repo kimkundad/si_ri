@@ -34,8 +34,62 @@ class HomeController extends Controller
        return view('contact', $data);
      }
 
-     public function error_page(){
-       return view('error_page');
+     public function search_data(Request $request){
+
+       $this->validate($request, [
+       'field2' => 'required'
+      ]);
+
+      $field2= $request['field2'];
+
+
+      $home_count = DB::table('categorys')
+      ->select(
+      'categorys.*',
+      'categorys.name as cat_name*',
+      'product.*',
+      'amphures.AMPHUR_NAME_ENG'
+      )
+      ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+      ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+      ->where('product.name', 'like', "%$field2%")
+      ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$field2%")
+      ->orWhere('amphures.AMPHUR_NAME', 'like', "%$field2%")
+      ->orWhere('product.BTS', 'like', "%$field2%")
+      ->orWhere('product.MRT', 'like', "%$field2%")
+      ->count();
+
+      if($get_user_count > 0){
+
+
+        $home_get = DB::table('categorys')
+        ->select(
+        'categorys.*',
+        'categorys.name as cat_name*',
+        'product.*',
+        'amphures.AMPHUR_NAME_ENG'
+        )
+        ->leftjoin('product', 'product.category_id', '=', 'categorys.id')
+        ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
+        ->where('product.name', 'like', "%$field2%")
+        ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$field2%")
+        ->orWhere('amphures.AMPHUR_NAME', 'like', "%$field2%")
+        ->orWhere('product.BTS', 'like', "%$field2%")
+        ->orWhere('product.MRT', 'like', "%$field2%")
+        ->get();
+
+        foreach($home_get as $x){
+                $admin[] =
+                    $x->name
+                ;
+              }
+
+      }else{
+        $admin = null;
+      }
+
+      return Response::json(['data' => $admin]);
+
      }
 
      public function terms_condition()
@@ -475,6 +529,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.Bedrooms', $Bedrooms)
                     ->where('product.Bathrooms', $Bathroom)
                     ->where('product.For_Sale', $type_ark)
@@ -518,6 +574,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.Bathrooms', $Bathroom)
                     ->where('product.For_Sale', $type_ark)
                     ->whereBetween('product.Price', [$min_price, $max_price])
@@ -560,6 +618,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.Bedrooms', $Bedrooms)
                     ->where('product.For_Sale', $type_ark)
                     ->whereBetween('product.Price', [$min_price, $max_price])
@@ -580,6 +640,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.Bedrooms', $Bedrooms)
                     ->where('product.For_Sale', $type_ark)
                     ->whereBetween('product.Price', [$min_price, $max_price])
@@ -603,6 +665,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->whereBetween('product.Price', [$min_price, $max_price])
                     ->orderBy('product.id', 'desc')
@@ -621,6 +685,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->whereBetween('product.Price', [$min_price, $max_price])
                     ->orderBy('product.id', 'desc')
@@ -651,6 +717,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.Bedrooms', $Bedrooms)
                     ->where('product.Bathrooms', $Bathroom)
                     ->where('product.For_Sale', $type_ark)
@@ -671,6 +739,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.Bedrooms', $Bedrooms)
                     ->where('product.Bathrooms', $Bathroom)
                     ->where('product.For_Sale', $type_ark)
@@ -693,6 +763,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.Bathrooms', $Bathroom)
                     ->where('product.For_Sale', $type_ark)
                     ->orderBy('product.id', 'desc')
@@ -712,6 +784,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.Bathrooms', $Bathroom)
                     ->where('product.For_Sale', $type_ark)
                     ->orderBy('product.id', 'desc')
@@ -733,6 +807,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.Bedrooms', $Bedrooms)
                     ->where('product.For_Sale', $type_ark)
                     ->orderBy('product.id', 'desc')
@@ -752,6 +828,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.Bedrooms', $Bedrooms)
                     ->where('product.For_Sale', $type_ark)
                     ->orderBy('product.id', 'desc')
@@ -772,6 +850,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->orderBy('product.id', 'desc')
                     ->paginate(8);
@@ -789,6 +869,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->orderBy('product.id', 'desc')
                     ->count();
@@ -1144,6 +1226,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bedrooms', $Bedrooms)
                     ->where('product.Bathrooms', $Bathroom)
@@ -1164,6 +1248,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bedrooms', $Bedrooms)
                     ->where('product.Bathrooms', $Bathroom)
@@ -1186,6 +1272,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bathrooms', $Bathroom)
                     ->whereBetween('product.Price', [$min_price, $max_price])
@@ -1205,6 +1293,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bathrooms', $Bathroom)
                     ->whereBetween('product.Price', [$min_price, $max_price])
@@ -1226,6 +1316,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bedrooms', $Bedrooms)
                     ->whereBetween('product.Price', [$min_price, $max_price])
@@ -1245,6 +1337,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bedrooms', $Bedrooms)
                     ->whereBetween('product.Price', [$min_price, $max_price])
@@ -1268,6 +1362,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->whereBetween('product.Price', [$min_price, $max_price])
                     ->orderBy('product.id', 'desc')
@@ -1286,6 +1382,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->whereBetween('product.Price', [$min_price, $max_price])
                     ->orderBy('product.id', 'desc')
@@ -1315,6 +1413,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bedrooms', $Bedrooms)
                     ->where('product.Bathrooms', $Bathroom)
@@ -1334,6 +1434,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bedrooms', $Bedrooms)
                     ->where('product.Bathrooms', $Bathroom)
@@ -1355,6 +1457,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bathrooms', $Bathroom)
                     ->orderBy('product.id', 'desc')
@@ -1373,6 +1477,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bathrooms', $Bathroom)
                     ->orderBy('product.id', 'desc')
@@ -1393,6 +1499,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bedrooms', $Bedrooms)
                     ->orderBy('product.id', 'desc')
@@ -1411,6 +1519,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->where('product.Bedrooms', $Bedrooms)
                     ->orderBy('product.id', 'desc')
@@ -1431,6 +1541,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->orderBy('product.id', 'desc')
                     ->paginate(8);
@@ -1448,6 +1560,8 @@ class HomeController extends Controller
                     ->where('product.name', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
                     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+                    ->orWhere('product.BTS', 'like', "%$ark%")
+                    ->orWhere('product.MRT', 'like', "%$ark%")
                     ->where('product.For_Sale', $type_ark)
                     ->orderBy('product.id', 'desc')
                     ->count();
@@ -1681,6 +1795,8 @@ $home_count = DB::table('categorys')
       ->where('product.name', 'like', "%$ark%")
       ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
       ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+      ->orWhere('product.BTS', 'like', "%$ark%")
+      ->orWhere('product.MRT', 'like', "%$ark%")
       ->where('product.For_Sale', $type_ark)
       ->orderBy('product.Status', 'desc')
       ->paginate(8);
@@ -1700,6 +1816,8 @@ $home_count = DB::table('categorys')
       ->where('product.name', 'like', "%$ark%")
       ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
       ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+      ->orWhere('product.BTS', 'like', "%$ark%")
+      ->orWhere('product.MRT', 'like', "%$ark%")
       ->where('product.For_Sale', $type_ark)
       ->count();
     }
@@ -1721,6 +1839,8 @@ $home_count = DB::table('categorys')
     ->where('product.name', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+    ->orWhere('product.BTS', 'like', "%$ark%")
+    ->orWhere('product.MRT', 'like', "%$ark%")
     ->where('product.For_Sale', $type_ark)
     ->orderBy('product.view', 'desc')
     ->paginate(8);
@@ -1740,6 +1860,8 @@ $home_count = DB::table('categorys')
     ->where('product.name', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+    ->orWhere('product.BTS', 'like', "%$ark%")
+    ->orWhere('product.MRT', 'like', "%$ark%")
     ->where('product.For_Sale', $type_ark)
     ->count();
   }
@@ -1760,6 +1882,8 @@ $home_count = DB::table('categorys')
   ->where('product.name', 'like', "%$ark%")
   ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
   ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+  ->orWhere('product.BTS', 'like', "%$ark%")
+  ->orWhere('product.MRT', 'like', "%$ark%")
   ->where('product.For_Sale', $type_ark)
   ->orderBy('product.Price', 'asc')
   ->paginate(8);
@@ -1779,6 +1903,8 @@ $home_count = DB::table('categorys')
   ->where('product.name', 'like', "%$ark%")
   ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
   ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+  ->orWhere('product.BTS', 'like', "%$ark%")
+  ->orWhere('product.MRT', 'like', "%$ark%")
   ->where('product.For_Sale', $type_ark)
   ->count();
 }
@@ -1798,6 +1924,8 @@ $home = DB::table('categorys')
 ->where('product.name', 'like', "%$ark%")
 ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
 ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+->orWhere('product.BTS', 'like', "%$ark%")
+->orWhere('product.MRT', 'like', "%$ark%")
 ->where('product.For_Sale', $type_ark)
 ->orderBy('product.Price', 'desc')
 ->paginate(8);
@@ -1817,6 +1945,8 @@ $home_count = DB::table('categorys')
 ->where('product.name', 'like', "%$ark%")
 ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
 ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+->orWhere('product.BTS', 'like', "%$ark%")
+->orWhere('product.MRT', 'like', "%$ark%")
 ->where('product.For_Sale', $type_ark)
 ->count();
 }
@@ -1837,6 +1967,8 @@ $home = DB::table('categorys')
 ->where('product.name', 'like', "%$ark%")
 ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
 ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+->orWhere('product.BTS', 'like', "%$ark%")
+->orWhere('product.MRT', 'like', "%$ark%")
 ->where('product.For_Sale', $type_ark)
 ->orderBy('product.updated_at', 'desc')
 ->paginate(8);
@@ -1856,6 +1988,8 @@ $home_count = DB::table('categorys')
 ->where('product.name', 'like', "%$ark%")
 ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
 ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+->orWhere('product.BTS', 'like', "%$ark%")
+->orWhere('product.MRT', 'like', "%$ark%")
 ->where('product.For_Sale', $type_ark)
 ->count();
 }
@@ -1902,6 +2036,8 @@ return view('search', $data);
       ->where('product.name', 'like', "%$ark%")
       ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
       ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+      ->orWhere('product.BTS', 'like', "%$ark%")
+      ->orWhere('product.MRT', 'like', "%$ark%")
       ->where('product.For_Sale', $type_ark)
       ->orderBy('product.Status', 'desc')
       ->paginate(8);
@@ -1920,6 +2056,8 @@ return view('search', $data);
       ->where('product.name', 'like', "%$ark%")
       ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
       ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+      ->orWhere('product.BTS', 'like', "%$ark%")
+      ->orWhere('product.MRT', 'like', "%$ark%")
       ->where('product.For_Sale', $type_ark)
       ->count();
     }
@@ -1938,6 +2076,8 @@ return view('search', $data);
     ->where('product.name', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+    ->orWhere('product.BTS', 'like', "%$ark%")
+    ->orWhere('product.MRT', 'like', "%$ark%")
     ->where('product.For_Sale', $type_ark)
     ->orderBy('product.view', 'desc')
     ->paginate(8);
@@ -1956,6 +2096,8 @@ return view('search', $data);
     ->where('product.name', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+    ->orWhere('product.BTS', 'like', "%$ark%")
+    ->orWhere('product.MRT', 'like', "%$ark%")
     ->where('product.For_Sale', $type_ark)
     ->count();
     }
@@ -1975,6 +2117,8 @@ return view('search', $data);
     ->where('product.name', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+    ->orWhere('product.BTS', 'like', "%$ark%")
+    ->orWhere('product.MRT', 'like', "%$ark%")
     ->where('product.For_Sale', $type_ark)
     ->orderBy('product.Price', 'asc')
     ->paginate(8);
@@ -1993,6 +2137,8 @@ return view('search', $data);
     ->where('product.name', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+    ->orWhere('product.BTS', 'like', "%$ark%")
+    ->orWhere('product.MRT', 'like', "%$ark%")
     ->where('product.For_Sale', $type_ark)
     ->count();
     }
@@ -2012,6 +2158,8 @@ return view('search', $data);
     ->where('product.name', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+    ->orWhere('product.BTS', 'like', "%$ark%")
+    ->orWhere('product.MRT', 'like', "%$ark%")
     ->where('product.For_Sale', $type_ark)
     ->orderBy('product.Price', 'desc')
     ->paginate(8);
@@ -2030,6 +2178,8 @@ return view('search', $data);
     ->where('product.name', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+    ->orWhere('product.BTS', 'like', "%$ark%")
+    ->orWhere('product.MRT', 'like', "%$ark%")
     ->where('product.For_Sale', $type_ark)
     ->count();
     }
@@ -2049,6 +2199,8 @@ return view('search', $data);
     ->where('product.name', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+    ->orWhere('product.BTS', 'like', "%$ark%")
+    ->orWhere('product.MRT', 'like', "%$ark%")
     ->where('product.For_Sale', $type_ark)
     ->orderBy('product.updated_at', 'desc')
     ->paginate(8);
@@ -2067,6 +2219,8 @@ return view('search', $data);
     ->where('product.name', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME_ENG', 'like', "%$ark%")
     ->orWhere('amphures.AMPHUR_NAME', 'like', "%$ark%")
+    ->orWhere('product.BTS', 'like', "%$ark%")
+    ->orWhere('product.MRT', 'like', "%$ark%")
     ->where('product.For_Sale', $type_ark)
     ->count();
     }
