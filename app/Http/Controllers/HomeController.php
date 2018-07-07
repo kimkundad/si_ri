@@ -48,14 +48,14 @@ class HomeController extends Controller
       ->select(
       'BTS.*'
       )
-      ->where('BTS_name', 'like', "%$field2%")
+      ->where('BTS_name', 'LIKE','%'.$field2.'%')
       ->count();
 
       $mrt_count = DB::table('MRT')
       ->select(
       'MRT.*'
       )
-      ->where('MRT_name', 'like', "%$field2%")
+      ->where('MRT_name', 'LIKE','%'.$field2.'%')
       ->count();
 
       if($mrt_count > 0 && $bts_count == 0){
@@ -79,7 +79,7 @@ class HomeController extends Controller
         $posts = null;
       }
 
-      return Response::json($posts);
+      return response()->json($posts);
 
      }
 
