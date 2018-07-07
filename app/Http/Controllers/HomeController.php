@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\slideshow;
 use App\setting;
+use Response;
 
 class HomeController extends Controller
 {
