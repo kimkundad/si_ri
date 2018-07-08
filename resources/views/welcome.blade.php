@@ -1048,6 +1048,8 @@ button.onclick = function() {
 
 <script type="text/javascript">
 
+        var $input = $(".typeahead");
+
         var url = "{{secure_url('/search/data/')}}";
 
         $('.typeahead').typeahead({
