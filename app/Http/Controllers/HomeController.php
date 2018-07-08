@@ -67,7 +67,7 @@ class HomeController extends Controller
               ->get();
 
               foreach($posts as $x){
-                $admin['value'] = $x->BTS_name;
+                $admin['value'] = $x->MRT_name;
               }
 
 
@@ -80,7 +80,7 @@ class HomeController extends Controller
               ->get();
 
               foreach($posts as $x){
-                $admin['value'] = $x->MRT_name;
+                $admin['value'] = $x->BTS_name;
               }
 
       }else{
