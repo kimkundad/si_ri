@@ -1054,14 +1054,14 @@ button.onclick = function() {
 
             source:  function (query, process) {
             return $.get(url, { query: query }, function (data) {
-                    autoSelect: true,
+        
                     return data.value;
 
                 });
 
             }
 
-          
+
 
         });
 
