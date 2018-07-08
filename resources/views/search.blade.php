@@ -58,6 +58,7 @@ ul#cat_nav li a  {
 	width: 422px;
 }
 .tt-suggestion {
+  color: #999999;
 	font-size: 15px;  /* Set suggestion dropdown font size */
 	padding: 2px 15px;
 }
