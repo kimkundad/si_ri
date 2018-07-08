@@ -67,25 +67,9 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 
 
-.typeahead, .tt-query, .tt-hint {
-	border: 2px solid #CCCCCC;
-	border-radius: 8px;
-	font-size: 22px; /* Set input font size */
-	height: 30px;
-	line-height: 30px;
-	outline: medium none;
-	padding: 8px 12px;
-	width: 396px;
-}
-.typeahead {
-	background-color: #FFFFFF;
-}
-.typeahead:focus {
-	border: 2px solid #0097CF;
-}
-.tt-query {
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-}
+
+
+
 .tt-hint {
 	color: #999999;
 }
@@ -99,8 +83,8 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 	width: 422px;
 }
 .tt-suggestion {
-	font-size: 22px;  /* Set suggestion dropdown font size */
-	padding: 3px 20px;
+	font-size: 15px;  /* Set suggestion dropdown font size */
+	padding: 2px 15px;
 }
 .tt-suggestion:hover {
 	cursor: pointer;
@@ -409,7 +393,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product">
                         {{ csrf_field() }}
                   <div class="row">
-                    <input autocomplete="off" spellcheck="false" class="typeahead tt-query flipkart-navbar-input col-xs-6" type="text" placeholder="Enter Area, BTS KRT station or Property Name..." name="ark">
+                    <input autocomplete="off" spellcheck="false" class="flipkart-navbar-input typeahead col-xs-6" type="text" placeholder="Enter Area, BTS KRT station or Property Name..." name="ark">
 
                     <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
                         <select name="type_ark" class="list_menu_y" style="height:43px; width:110px;   cursor: pointer;  padding: 1px 18px;">
@@ -1070,7 +1054,13 @@ button.onclick = function() {
 <script type="text/javascript">
 $(document).ready(function(){
     // Defining the local dataset
-    var cars = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
+    var cars = ['BTS Mo Chit', 'BTS Saphan Khwai', 'BTS Ari">BTS Ari', 'BTS Sanam Pao', 'BTS Victory Monument', 'BTS Phaya Thai', 'BTS Ratchathewi', 'BTS Siam', 'BTS Chit Lom', 'BTS Ploen Chit', 'BTS Nana'
+    'BTS Asoke', 'BTS Phrom Phong', 'BTS Thong Lo', 'BTS Ekkamai', 'BTS Phra Khanong', 'BTS On Nut', 'BTS Bang Chak', 'BTS Punnawithi', 'BTS Udom Suk', 'BTS Bang Na', 'BTS Bearing',
+    'BTS National Stadium', 'BTS Ratchadamri', 'BTS Sala Daeng', 'BTS Chong Nonsi', 'BTS Surasak', 'BTS Saphan Taksin', 'BTS Krung Thon Buri', 'BTS Wongwian Yai', 'BTS Pho Nimit"',
+    'BTS Talat Phlu', 'BTS Wutthakat', 'BTS Bang Wa', 'MRT Bang Sue', 'MRT Kamphaeng Phet', 'MRT Chatuchak Park', 'MRT Phahon Yothin', 'MRT Lat Phrao', 'MRT Ratchadaphisek', 'MRT Sutthisan',
+    'MRT Huai Khwang', 'MRT Thailand Cultural Centre', 'MRT Phra ram 9', 'MRT Phetchaburi', 'MRT Sukhumvit', 'MRT Queen Sirikit', 'MRT Khlong Toei', 'MRT Lumphini',
+    'MRT Silom', 'MRT Sam Yan', 'MRT Hua Lamphong'
+    ];
 
     // Constructing the suggestion engine
     var cars = new Bloodhound({
