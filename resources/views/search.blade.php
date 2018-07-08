@@ -61,7 +61,7 @@ ul#cat_nav li a  {
             <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product">
               {{ csrf_field() }}
         <div class="row">
-          <input class="flipkart-navbar-input col-xs-6" type="" placeholder="Search for Products, Brands and more" name="ark">
+          <input class="flipkart-navbar-input col-xs-6" type="" placeholder="Search for Products, Brands and more" name="ark" value="{{$ark}}">
 
           <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
               <select name="type_ark" class="list_menu_y" style="height:43px; width:120px;     padding: 1px 18px;">
