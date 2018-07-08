@@ -1049,7 +1049,7 @@ button.onclick = function() {
 };
 </script>
 
-<script  type="text/javascript" src="{{url('assets/js/typeahead.bundle.js')}}"></script>
+<script  type="text/javascript" src="{{url('assets/js/typeahead.bundle.js')}}?v1"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){
