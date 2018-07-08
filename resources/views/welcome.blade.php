@@ -67,32 +67,53 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 
 
-.autocomplete-items {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  border-bottom: none;
-  border-top: none;
-  z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
-  top: 100%;
-  left: 0;
-  right: 0;
+.typeahead, .tt-query, .tt-hint {
+	border: 2px solid #CCCCCC;
+	border-radius: 8px;
+	font-size: 22px; /* Set input font size */
+	height: 30px;
+	line-height: 30px;
+	outline: medium none;
+	padding: 8px 12px;
+	width: 396px;
 }
-.autocomplete-items div {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  border-bottom: 1px solid #d4d4d4;
+.typeahead {
+	background-color: #FFFFFF;
 }
-.autocomplete-items div:hover {
-  /*when hovering an item:*/
-  background-color: #e9e9e9;
+.typeahead:focus {
+	border: 2px solid #0097CF;
 }
-.autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important;
-  color: #ffffff;
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 }
+.tt-hint {
+	color: #999999;
+}
+.tt-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 12px;
+	padding: 8px 0;
+	width: 422px;
+}
+.tt-suggestion {
+	font-size: 22px;  /* Set suggestion dropdown font size */
+	padding: 3px 20px;
+}
+.tt-suggestion:hover {
+	cursor: pointer;
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.tt-suggestion p {
+	margin: 0;
+}
+
+
+
+
 
 
 .homepage-hero-module {
@@ -388,7 +409,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product">
                         {{ csrf_field() }}
                   <div class="row">
-                    <input class="typeahead flipkart-navbar-input col-xs-6" type="text" id="search_text" placeholder="Enter Area, BTS KRT station or Property Name..." name="ark">
+                    <input autocomplete="off" spellcheck="false" class="typeahead tt-query flipkart-navbar-input col-xs-6" type="text" placeholder="Enter Area, BTS KRT station or Property Name..." name="ark">
 
                     <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
                         <select name="type_ark" class="list_menu_y" style="height:43px; width:110px;   cursor: pointer;  padding: 1px 18px;">
@@ -1044,44 +1065,33 @@ button.onclick = function() {
 };
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+<script  type="text/javascript" src="{{url('assets/js/typeahead.bundle.js')}}"></script>
 
 <script type="text/javascript">
+$(document).ready(function(){
+    // Defining the local dataset
+    var cars = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
 
-        var $input = $(".typeahead");
+    // Constructing the suggestion engine
+    var cars = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        local: cars
+    });
 
-        var url = "{{secure_url('/search/data/')}}";
+    // Initializing the typeahead
+    $('.typeahead').typeahead({
+        hint: true,
+        highlight: true, /* Enable substring highlighting */
+        minLength: 1 /* Specify minimum characters required for showing result */
+    },
+    {
+        name: 'cars',
+        source: cars
+    });
+});
+</script>
 
-        $('.typeahead').typeahead({
-
-            source:  function (query, process) {
-
-            return $.get(url, { query: query }, function (data) {
-
-                    return process(data);
-
-                });
-
-            }
-
-        });
-
-        $input.change(function() {
-          var current = $input.typeahead("getActive");
-          if (current) {
-            // Some item from your model is active!
-            if (current.name == $input.val()) {
-              // This means the exact match is found. Use toLowerCase() if you want case insensitive match.
-            } else {
-              // This means it is only a partial match, you can either add a new item
-              // or take the active if you don't want new items
-            }
-          } else {
-            // Nothing is active so it is a new value (or maybe empty value)
-          }
-        });
-
-    </script>
 
 
 
