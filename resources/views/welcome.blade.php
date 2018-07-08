@@ -388,7 +388,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product">
                         {{ csrf_field() }}
                   <div class="row">
-                    <input class="flipkart-navbar-input col-xs-6" type="text" id="search_text" placeholder="Enter Area, BTS KRT station or Property Name..." name="ark">
+                    <input class="typeahead flipkart-navbar-input col-xs-6" type="text" id="search_text" placeholder="Enter Area, BTS KRT station or Property Name..." name="ark">
 
                     <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
                         <select name="type_ark" class="list_menu_y" style="height:43px; width:110px;   cursor: pointer;  padding: 1px 18px;">
@@ -1043,24 +1043,25 @@ button.onclick = function() {
     }
 };
 </script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 
 <script type="text/javascript">
 
         var url = "{{secure_url('/search/data/')}}";
 
-        $('#search_text').typeahead({
+        $('.typeahead').typeahead({
 
             source:  function (query, process) {
-
             return $.get(url, { query: query }, function (data) {
-
-                    return process(data);
+                    autoSelect: true,
+                    return data.value;
 
                 });
 
             }
+
+          
 
         });
 
