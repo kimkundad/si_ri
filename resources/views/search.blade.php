@@ -44,6 +44,31 @@ ul#cat_nav li a  {
     font-size: 12px;
 
 }
+
+.tt-hint {
+	color: #999999;
+}
+.tt-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 12px;
+	padding: 8px 0;
+	width: 422px;
+}
+.tt-suggestion {
+	font-size: 15px;  /* Set suggestion dropdown font size */
+	padding: 2px 15px;
+}
+.tt-suggestion:hover {
+	cursor: pointer;
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.tt-suggestion p {
+	margin: 0;
+}
 .active_li{
   background: #f9f9f9;
   color: #f90 !important;
@@ -61,7 +86,7 @@ ul#cat_nav li a  {
             <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product">
               {{ csrf_field() }}
         <div class="row">
-          <input class="flipkart-navbar-input col-xs-6" type="" placeholder="Search for Products, Brands and more" name="ark" value="{{$ark}}">
+          <input class="flipkart-navbar-input typeahead col-xs-6" type="" placeholder="Search for Products, Brands and more" name="ark" value="{{$ark}}">
 
           <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
               <select name="type_ark" class="list_menu_y" style="height:43px; width:120px;     padding: 1px 18px;">
@@ -681,6 +706,40 @@ ul#cat_nav li a  {
             div.style.display = 'block';
         }
     };
+    </script>
+
+
+    <script  type="text/javascript" src="{{url('assets/js/typeahead.bundle.js')}}"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        // Defining the local dataset
+        var cars = ['BTS Mo Chit', 'BTS Saphan Khwai', 'BTS Ari">BTS Ari', 'BTS Sanam Pao', 'BTS Victory Monument', 'BTS Phaya Thai', 'BTS Ratchathewi', 'BTS Siam', 'BTS Chit Lom', 'BTS Ploen Chit', 'BTS Nana',
+        'BTS Asoke', 'BTS Phrom Phong', 'BTS Thong Lo', 'BTS Ekkamai', 'BTS Phra Khanong', 'BTS On Nut', 'BTS Bang Chak', 'BTS Punnawithi', 'BTS Udom Suk', 'BTS Bang Na', 'BTS Bearing',
+        'BTS National Stadium', 'BTS Ratchadamri', 'BTS Sala Daeng', 'BTS Chong Nonsi', 'BTS Surasak', 'BTS Saphan Taksin', 'BTS Krung Thon Buri', 'BTS Wongwian Yai', 'BTS Pho Nimit"',
+        'BTS Talat Phlu', 'BTS Wutthakat', 'BTS Bang Wa', 'MRT Bang Sue', 'MRT Kamphaeng Phet', 'MRT Chatuchak Park', 'MRT Phahon Yothin', 'MRT Lat Phrao', 'MRT Ratchadaphisek', 'MRT Sutthisan',
+        'MRT Huai Khwang', 'MRT Thailand Cultural Centre', 'MRT Phra ram 9', 'MRT Phetchaburi', 'MRT Sukhumvit', 'MRT Queen Sirikit', 'MRT Khlong Toei', 'MRT Lumphini',
+        'MRT Silom', 'MRT Sam Yan', 'MRT Hua Lamphong'
+        ];
+
+        // Constructing the suggestion engine
+        var cars = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.whitespace,
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            local: cars
+        });
+
+        // Initializing the typeahead
+        $('.typeahead').typeahead({
+            hint: true,
+            highlight: true, /* Enable substring highlighting */
+            minLength: 1 /* Specify minimum characters required for showing result */
+        },
+        {
+            name: 'cars',
+            source: cars
+        });
+    });
     </script>
 
 
