@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{url('/')}}">
-                <img src="{{url('assets/image/SiriSpace-Logo.png')}}" height="45" title="logo">
+                <img src="{{url('assets/image/SiriSpace-Logo.png')}}" height="50" title="logo">
             </a>
         </div>
 
@@ -23,7 +23,24 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links Classifieds-->
 
+                <style>
+                .with-icon{
+                  margin-right: 0;
+                    min-width: 130px;
+                    text-align: center;
+                    position: relative !important;
+                    line-height: 26px !important;
+                    font-weight: 500;
 
+                    border-radius: 50px;
+                }
+                a.button.border {
+                    background-color: transparent;
+                    color: #66676b !important;
+                    border: 1px solid #ffe11b;
+                    padding: 9px 21px;
+                }
+                </style>
 
 
                 <li><a href="{{url('Refer')}}"><i class="fa fa-paper-plane "></i> Refer</a></li>
@@ -31,7 +48,9 @@
 
                 @if (Auth::guest())
                     <li><a href="https://sirispace.com/login"><i class="fa fa-user"></i> Login</a></li>
-                    <li><a href="https://www.sirispace.com/register"><i class="fa fa-lock"></i> Register</a></li>
+
+                    <li><a href="https://www.sirispace.com/register" class="button border with-icon"><i class="fa fa-lock"></i> Register</a></li>
+
                 @else
                 <li><a href="{{url('my_wishlist')}}"><i class="fa fa-heart-o"></i> wishlist</a></li>
                 <li class="dropdown">

@@ -239,13 +239,14 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
         </div>
 
         <div class="filter"></div>
-        <video autoplay loop class="fillWidth" autoplay="autoplay" loop="loop">
-            <source src="{{url('assets/In-And-Out/MP4/In-And-Out.mp4')}}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            <source src="{{url('assets/In-And-Out/WEBM/In-And-Out.webm')}}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-        </video>
-        <div class="poster hidden">
-            <img src="{{url('assets/In-And-Out/Snapshots/In-And-Out.jpg')}}" alt="">
-        </div>
+
+
+        <video class="fillWidth"  poster="{{url('assets/In-And-Out/Snapshots/main-search-video-poster.jpg')}}" loop autoplay muted>
+    			<source src="{{url('assets/In-And-Out/MP4/main-search-video.mp4')}}" type="video/mp4">
+    		</video>
+
+
+
     </div>
     <div style="position: absolute; bottom: 50px; left: 50%; margin-left: -19px;">
             <a class="coverr-nav-item" href="#RECOMMEND" style="text-decoration: none;">
@@ -268,7 +269,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product2">
         <div class="form-group">
 
-          <input type="text" class=" form-control input-lg"  style="font-size: 14px;" name="ark" placeholder="Enter Area, BTS MRT station or Property Name..."> </div>
+          <input type="text" class=" form-control input-lg"  style="font-size: 14px; " name="ark" placeholder="Enter Area, BTS MRT station or Property Name..."> </div>
 
         <div class="form-group">
         <select name="type_ark" class="form-control input-lg" style="font-size: 14px;">
@@ -393,7 +394,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                       <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data" name="product">
                         {{ csrf_field() }}
                   <div class="row">
-                    <input autocomplete="off" spellcheck="false" class="flipkart-navbar-input typeahead col-xs-6" type="text" placeholder="Enter Area, BTS KRT station or Property Name..." name="ark">
+                    <input autocomplete="off" spellcheck="false" class="flipkart-navbar-input typeahead col-xs-6" type="text" style="height:43px" placeholder="Enter Area, BTS KRT station or Property Name..." name="ark">
 
                     <div class="col-xs-2 col-lg-2 hidden-xs hidden-sm no-padding" style="border-left:solid 1px #999999;     background: rgba(255, 255, 255, 1);">
                         <select name="type_ark" class="list_menu_y" style="height:43px; width:110px;   cursor: pointer;  padding: 1px 18px;">
@@ -950,19 +951,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 @section('scripts')
 
-<script type="text/javascript">
-$(document).ready(function(){
-    //Check if the current URL contains '#'
-    if(document.URL.indexOf("#")==-1){
-        // Set the URL to whatever it was plus "#".
-        url = document.URL+"#";
-        location = "#";
 
-        //Reload the page
-        location.reload(true);
-    }
-});
-</script>
 <script>
 
 //jQuery is required to run this code

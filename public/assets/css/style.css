@@ -3,7 +3,8 @@
     border-color: #00c402;
 }
 .navbar-default .navbar-nav>li>a {
-    color: #666 !important;
+    color: #666;
+    font-size: 16px;
 }
 .navbar-default .navbar-nav>li>a:hover {
     color: #118213 !important;
@@ -15,12 +16,13 @@
     color: #FFF;
 }
 .navbar-brand img {
-	margin-top: -13px;
+    margin-top: -20px;
 }
+
 .intro-header {
     padding-top: 50px;
     padding-bottom: 50px;
-   
+
     color: #f8f8f8;
     background: url(../images/Untitled-1.png) no-repeat center center;
     background-size: cover;
@@ -29,7 +31,8 @@
     position: relative;
     min-height: 50px;
     margin-bottom: 0px;
- 
+    padding: 18px 0 8px 0;
+
 }
 .btn-success1{
 	color: #fff;
@@ -54,12 +57,12 @@
     border-color: #ccc;
 }
 .intro-message {
-   
+
     padding-top: 10%;
     padding-bottom: 10%;
 }
 .banner{
-	
+
     border-bottom: 1px solid #e0e0e0;
     background-color: #00c402;
 }
@@ -154,7 +157,7 @@
 }
 
 footer {
-  
+
     color: #fff;
     background-color: #777;
 }
@@ -168,13 +171,13 @@ footer .footer-mailchimp {
     background-image: url(../images/connected.png);
 }
 footer .footer-menu {
-   
+
     background-color: #222;
     padding-top: 60px;
     border-top: 4px solid #555;
     color: #ccc;
 
-   
+
 }
 footer .footer-menu ul {
     padding: 0;
@@ -294,7 +297,7 @@ ul.social-icons li {
 }
 .content-section-b {
     padding: 50px 0;
-     background-color: #f5f5f5; 
+     background-color: #f5f5f5;
 }
 .head-line {
     position: absolute;
@@ -363,14 +366,14 @@ ul.social-icons li {
 
 #kimkundad .ap-comments.have-comments {
     background: #f8f8f8 none repeat scroll 0 0;
-   
+
     margin: 11px -11px -11px;
     padding-top: 8px;
     position: relative;
 }
 #kimkundad .ap-comments.have-comments {
     background: #fff none repeat scroll 0 0;
- 
+
     margin: 10px -21px -21px;
 }
 
