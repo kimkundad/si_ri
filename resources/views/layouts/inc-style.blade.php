@@ -4,7 +4,7 @@
 
 <!-- Styles -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/style.css?v2')}}">
 <link href="{{url('assets/css/select-project.css')}}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{url('assets/magnific-popup/magnific-popup.css')}}">
 <link rel="stylesheet" href="{{url('assets/font/fontello/css/icon_set_1.css')}}">
@@ -12,5 +12,5 @@
 
 <link href="{{url('assets/css/animate.min.css')}}" rel="stylesheet" type="text/css">
 <link href="{{url('assets/css/slide-show.css')}}" rel="stylesheet" type="text/css">
-<link href="{{url('assets/css/golf-style.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url('assets/css/golf-style.css?v2')}}" rel="stylesheet" type="text/css">
 <link href="{{url('assets/css/bootstrap-select.css')}}" rel="stylesheet" type="text/css">
