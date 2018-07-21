@@ -527,17 +527,9 @@
                         <div class="col-sm-3">
                               <select id="BTS" name="BTS" class="form-control " required="">
 
-                                <option value="@if($objs->BTS != '-')
-                                {{$objs->BTS}}
-                                @else
-                                -
-                                @endif" >@if($objs->BTS != '-')
-                                {{$objs->BTS}}
-                                @else
-                                Choose BTS
-                                @endif</option>
 
-                  <option value="-" selected="selected">Choose BTS</option>
+
+                  <option value="{{$objs->BTS}}" selected="selected">{{$objs->BTS}}</option>
                   <option value="BTS Mo Chit">BTS Mo Chit</option><option value="BTS Saphan Khwai">BTS Saphan Khwai</option>
                   <option value="BTS Ari">BTS Ari</option><option value="BTS Sanam Pao">BTS Sanam Pao</option>
                   <option value="BTS Victory Monument">BTS Victory Monument</option><option value="BTS Phaya Thai">BTS Phaya Thai</option>
@@ -570,16 +562,8 @@
                             <label class="col-md-1 control-label">MRT</label>
                         <div class="col-sm-3">
                               <select id="MRT" name="MRT" class="form-control " required="">
-                                <option value="@if($objs->MRT != '-')
-                                {{$objs->MRT}}
-                                @else
-                                -
-                                @endif" >@if($objs->MRT != '-')
-                                {{$objs->MRT}}
-                                @else
-                                Choose MRT
-                                @endif</option>
-                  <option value="-" selected="selected">Choose MRT</option>
+                                
+                  <option value="$objs->MR" selected="selected">$objs->MR</option>
                   <option value="MRT Bang Sue">MRT Bang Sue</option><option value="MRT Kamphaeng Phet">MRT Kamphaeng Phet</option>
                   <option value="MRT Chatuchak Park">MRT Chatuchak Park</option><option value="MRT Phahon Yothin">MRT Phahon Yothin</option>
                   <option value="MRT Lat Phrao">MRT Lat Phrao</option><option value="MRT Ratchadaphisek">MRT Ratchadaphisek</option>
