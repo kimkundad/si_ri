@@ -562,8 +562,8 @@
                             <label class="col-md-1 control-label">MRT</label>
                         <div class="col-sm-3">
                               <select id="MRT" name="MRT" class="form-control " required="">
-                                
-                  <option value="$objs->MR" selected="selected">$objs->MR</option>
+
+                  <option value="{{$objs->MRT}}" selected="selected">{{$objs->MRT}}</option>
                   <option value="MRT Bang Sue">MRT Bang Sue</option><option value="MRT Kamphaeng Phet">MRT Kamphaeng Phet</option>
                   <option value="MRT Chatuchak Park">MRT Chatuchak Park</option><option value="MRT Phahon Yothin">MRT Phahon Yothin</option>
                   <option value="MRT Lat Phrao">MRT Lat Phrao</option><option value="MRT Ratchadaphisek">MRT Ratchadaphisek</option>
