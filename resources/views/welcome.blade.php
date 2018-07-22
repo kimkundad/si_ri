@@ -672,7 +672,14 @@ figure:hover+span {
 
                   <div class="col-sm-4 col-md-3">
 
+                    <?php
+                      $data = getimagesize(url('assets/cusimage/'.$homes->image));
+                      echo $height = $data[1];
+                     ?>
+
                         <div class="thumbnail a_sd_move">
+
+
 
                           <div class="hover01" style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
                           <a href="{{url('asset-'.$homes->id)}}" >
