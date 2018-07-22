@@ -286,7 +286,7 @@ footer {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    position: relative;
+  /*  position: relative; */
 }
 .promo_full_wp {
     display: table;
