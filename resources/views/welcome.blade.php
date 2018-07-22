@@ -684,7 +684,7 @@ figure:hover+span {
                           <div class="hover01" style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
                           <a href="{{url('asset-'.$homes->id)}}" >
                           <figure><img src="{{url('assets/cusimage/'.$homes->image)}}" class="img-responsive"
-                            @if($height < 400)
+                            @if($height < 450)
                             style="height: 183px;"
                             @endif
                             ></figure>
@@ -874,7 +874,7 @@ figure:hover+span {
                                   <a href="{{url('asset-'.$home_tops->id)}}" >
 
                                   <figure><img src="{{url('assets/cusimage/'.$home_tops->image)}}" class="img-responsive"
-                                    @if($height2 < 400)
+                                    @if($height2 < 440)
                                     style="height: 183px;"
                                     @endif
                                     ></figure>
