@@ -674,7 +674,7 @@ figure:hover+span {
 
                     <?php
                       $data = getimagesize(url('assets/cusimage/'.$homes->image));
-                      echo $height = $data[1];
+                       $height = $data[1];
                      ?>
 
                         <div class="thumbnail a_sd_move">
@@ -864,7 +864,7 @@ figure:hover+span {
 
                           <?php
                             $data2 = getimagesize(url('assets/cusimage/'.$home_tops->image));
-                            echo $height2 = $data2[1];
+                             $height2 = $data2[1];
                            ?>
 
                           <div class="col-sm-4 col-md-3">
