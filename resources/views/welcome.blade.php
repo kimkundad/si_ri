@@ -594,7 +594,42 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 
 
+<style>
+h3 span, h2 span{
+    color: #e04f67;
+}
+.head-text{
+  margin-bottom: 4px;
+}
+figure {
 
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+figure:hover+span {
+	bottom: -36px;
+	opacity: 1;
+}
+
+/* Zoom In #1 */
+.hover01 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover01 figure:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+.main_title h3{
+    text-align: center;
+
+
+}
+</style>
 
 
 
@@ -604,19 +639,27 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 <div class="content-section-b">
         <div class="container" >
 
-          <div class="row hidden-sm hidden-xs">
+      <!--    <div class="row hidden-sm hidden-xs">
         <div class="col-md-12 " >
           <a href="#" style="width:100%;height:180px;display:block;">
             <img src="{{url('assets/banner/'.$setting->image)}}" class="img-responsive" style="border: 1px solid #e0e0e0; margin: 0 auto;">
           </a>
         </div>
+      </div> -->
+
+        <div class="row">
+
         </div>
 
           <div class="row">
             <br>
         <div class="col-md-12 " >
-          <h3 id="RECOMMEND">SIRI RECOMMEND</h3>
-          <p>Find the hottest property in Bangkok</p>
+
+          <div class="text-center">
+            <h3 id="RECOMMEND" class="head-text"><span>SIRI</span> RECOMMEND</h3>
+            <p>Find the hottest property in Bangkok</p>
+          </div>
+
 
 
 
@@ -630,9 +673,10 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                   <div class="col-sm-4 col-md-3">
 
                         <div class="thumbnail a_sd_move">
-                          <div style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
+
+                          <div class="hover01" style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
                           <a href="{{url('asset-'.$homes->id)}}" >
-                          <img src="{{url('assets/cusimage/'.$homes->image)}}" >
+                          <figure><img src="{{url('assets/cusimage/'.$homes->image)}}" class="img-responsive"></figure>
                           <div class="g_l_box">
                                 <div class="t_white">
                                 <p>
@@ -640,7 +684,9 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                                 </p>
                                   </div>
                               </div>
-                          </a></div>
+                          </a>
+                        </div>
+
                           <div class="caption" style="padding: 3px;">
                             <div class="descript bold">
                                 <a href="{{url('asset-'.$homes->id)}}"><?=mb_strimwidth($homes->name, 0, 29, '...');?></a>
@@ -789,8 +835,13 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
               <div class="row">
                 <br>
             <div class="col-md-12 " >
-              <h3>RECENT UPDATES </h3>
-              <p>We're update a fresh listing everyday!</p>
+
+
+
+              <div class="text-center">
+                <h3 id="RECOMMEND" class="head-text"><span>RECENT</span> UPDATES</h3>
+                <p>We're update a fresh listing everyday!</p>
+              </div>
 
 
               <div class="body-project">
@@ -803,9 +854,10 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
                           <div class="col-sm-4 col-md-3">
 
                                 <div class="thumbnail a_sd_move">
-                                  <div style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
+                                  <div class="hover01" style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
                                   <a href="{{url('asset-'.$home_tops->id)}}" >
-                                  <img src="{{url('assets/cusimage/'.$home_tops->image)}}" >
+
+                                  <figure><img src="{{url('assets/cusimage/'.$home_tops->image)}}" ></figure>
                                   <div class="g_l_box">
                                         <div class="t_white">
                                         <p>

@@ -154,7 +154,7 @@ class HomeController extends Controller
       ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
       ->where('product.first_index', 2)
       ->orderBy('id', 'desc')
-      ->limit(8)
+      ->limit(12)
       ->get();
       //dd($home);
       $data['home'] = $home;
