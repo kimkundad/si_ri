@@ -176,7 +176,7 @@ class HomeController extends Controller
       $categorys = DB::table('categorys')->get();
 
     $data['category'] = $categorys;
-    return view('test', $data);
+    return view('welcome', $data);
     }
 
     public function search(Request $request)
