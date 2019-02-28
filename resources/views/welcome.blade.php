@@ -193,6 +193,183 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 
 
+<div class="homepage-hero-module hidden-sm hidden-xs">
+    <div class="video-container">
+
+      <div class="share-buttons-group affix-top" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+            <a href="https://twitter.com/siri_space" target="_blank" class="btn-track" data-event="TwitterShare_Click">
+                <div id="twitter-button" class="share-button-banner">
+                    <div class="share-container">
+                        <i class="fa fa-twitter share-content"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/sirispace/" target="_blank" class="btn-track" data-event="FacebookShare_Click">
+                <div id="facebook-button" class="share-button-banner">
+                    <div class="share-container">
+                        <i class="fa fa-facebook share-content"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" target="_blank" class="btn-track" data-event="GoogleShare_Click">
+                <div id="google-button" class="share-button-banner">
+                    <div class="share-container">
+                        <i class="fa fa-google-plus share-content"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="title-container">
+            <div class="headline">
+                <!--Original logo height 80px-->
+                <!-- <img src="" height="80" alt=""> -->
+                <img src="{{url('assets/image/SiriSpace-Logo-cover.png')}}" height="80" alt="">
+                <h3 class="text-white text-thin" style="font-size:35px;">Let Siri Space Be Your personal assistant</h3>
+                <h5 class="text-white text-thin" style="font-size:20px;">REFER YOUR FRIEND -
+                  <a class="coverr-nav-item btn-track" href="" data-event="MondayScroll_Click"
+                  style="text-decoration: none; border-bottom: 1px dotted #fff; color: #fff;">GET REFER BONUS</a></h5>
+            </div>
+
+            <div class="text-center" id="loadBannerVideoSpinner" style="background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 4px; display: none; margin-top: 20px;">
+                <h5 class="text-thin text-primary">Loading Coverr... <i class="fa fa-circle-o-notch fa-spin"></i></h5>
+            </div>
+        </div>
+
+        <div class="filter"></div>
+
+      <!--  <video autoplay loop muted playsinline id="video" class="fillWidth"></video>
+          <div class="poster">
+            <img src="{{url('assets/In-And-Out/Snapshots/main-search-video-poster.jpg')}}" alt="home video">
+          </div> -->
+
+    <!--    <video class="fillWidth"  poster="{{url('assets/In-And-Out/Snapshots/main-search-video-poster.jpg')}}" loop autoplay muted>
+    			<source src="{{url('assets/In-And-Out/MP4/main-search-video.mp4')}}" type="video/mp4">
+    		</video> -->
+
+
+
+    </div>
+    <div style="position: absolute; bottom: 50px; left: 50%; margin-left: -19px;">
+            <a class="coverr-nav-item" href="#RECOMMEND" style="text-decoration: none;">
+                <div class='icon-scroll'></div>
+            </a>
+        </div>
+</div>
+
+
+
+
+
+
+
+<div class="content-section-b">
+        <div class="container" >
+
+      <!--    <div class="row hidden-sm hidden-xs">
+        <div class="col-md-12 " >
+          <a href="#" style="width:100%;height:180px;display:block;">
+            <img src="{{url('assets/banner/'.$setting->image)}}" class="img-responsive" style="border: 1px solid #e0e0e0; margin: 0 auto;">
+          </a>
+        </div>
+      </div> -->
+
+        <div class="row">
+
+        </div>
+
+          <div class="row">
+            <br>
+        <div class="col-md-12 " >
+
+          <div class="text-center">
+            <h3 id="RECOMMEND" class="head-text"><span>SIRI</span> RECOMMEND</h3>
+            <p>Find the hottest property in Bangkok</p>
+          </div>
+
+
+
+
+          <div class="body-project">
+
+                    <div class="row">
+
+
+                  @foreach($home as $homes)
+
+                  <div class="col-sm-4 col-md-3">
+
+                    <?php
+                      $data = getimagesize(url('assets/cusimage/'.$homes->image));
+                       $height = $data[1];
+                     ?>
+
+                        <div class="thumbnail a_sd_move">
+
+
+
+                          <div class="hover01" style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
+                          <a href="{{url('asset-'.$homes->id)}}" >
+                          <figure><img src="{{url('assets/cusimage/'.$homes->image)}}" class="img-responsive"
+                            @if($height < 450)
+                            style="height: 183px;"
+                            @endif
+                            ></figure>
+                          <div class="g_l_box">
+                                <div class="t_white">
+                                <p>
+                              <b class="t18 t_white">฿{{$homes->Price}}</b>
+                                </p>
+                                  </div>
+                              </div>
+                          </a>
+                        </div>
+
+                          <div class="caption" style="padding: 3px;">
+                            <div class="descript bold">
+                                <a href="{{url('asset-'.$homes->id)}}"><?=mb_strimwidth($homes->name, 0, 29, '...');?></a>
+                            </div>
+                            <div class="descript" style="padding-bottom: 5px;color: #777; font-size: 12px;border-bottom: 1px dashed #dff0d8;">
+                              <?=mb_strimwidth($homes->shortdetail, 0, 32, '...');?>
+                            </div>
+
+                            <div class="descript" style="height: 20px;">
+                              <span style="color: #e03753; font-size: 12px;"><i class="fa fa-map-marker"></i> <?=mb_strimwidth($homes->AMPHUR_NAME_ENG, 0, 15, '...');?></span>
+                              <div class="descript-t">
+                              <div class="postMetaInline-authorLockup">
+
+                                @if($homes->rating == 5)
+                                <div class="rating">
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <span style="color: #777; font-size: 12px;">{{$homes->rating}}.0</span>
+                                </div>
+                                @else
+                                <div class="rating">
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <span style="color: #777; font-size: 12px;">{{$homes->rating}}.0</span>
+                                </div>
+                                @endif
+
+                              </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
+
+                      @endforeach
 
 
 
@@ -201,6 +378,76 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 
 
+                    </div>
+
+
+
+          </div>
+        <!--    <div class="panel panel-default">
+                <div class="panel-heading">Welcome</div>
+
+                <div class="panel-body">
+                    Your Application's Landing Page.
+                </div>
+            </div> -->
+
+
+
+        </div>
+
+
+<style>
+.view-more-wrapper {
+    margin-bottom: 0px;
+}
+.view-more-wrapper {
+    text-align: center;
+    margin-top: 22px;
+}
+.view-more {
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 30px !important;
+    color: #666 !important;
+    border-color: #666 !important;
+    display: inline-block;
+}
+.view-more .plus-sign {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px solid #666;
+    font-size: 46px;
+    font-weight: 100;
+    line-height: 46px;
+    text-align: center;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+}
+.view-more .view-more-text {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+</style>
+
+        <div class="col-xs-12">
+                <div class="view-more-wrapper"><a href="{{url('siri_recommend')}}" class="view-more"><span class="plus-sign">+</span><span class="view-more-text">View More Posts</span></a></div>
+              </div>
+
+
+
+    </div>
+
+
+
+        </div>
+</div>
 
 
 
