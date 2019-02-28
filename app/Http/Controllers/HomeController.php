@@ -136,7 +136,7 @@ class HomeController extends Controller
 
 
 
-      $slide = DB::table('slideshows')->select(
+    /*  $slide = DB::table('slideshows')->select(
             'slideshows.*'
             )
             ->orderBy('id', 'asc')
@@ -144,7 +144,7 @@ class HomeController extends Controller
           //  dd($slide);
 
 
-      $data['slide'] = $slide;
+      $data['slide'] = $slide; */
 
       $home = DB::table('product')
       ->select(
