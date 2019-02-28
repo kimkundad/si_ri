@@ -151,8 +151,8 @@ class HomeController extends Controller
       'product.*',
       'amphures.AMPHUR_NAME_ENG'
       )
-      ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
       ->where('product.first_index', 2)
+      ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
       ->orderBy('id', 'desc')
       ->limit(12)
       ->get();
@@ -165,8 +165,8 @@ class HomeController extends Controller
       'product.*',
       'amphures.AMPHUR_NAME_ENG'
       )
+      ->where('product.first_index', 2)
       ->leftjoin('amphures', 'amphures.AMPHUR_ID', '=', 'product.amphur_id')
-      ->where('product.hot_index', 2)
       ->orderBy('product.id', 'desc')
       ->limit(4)
       ->get();
