@@ -238,9 +238,9 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
             </div>
         </div>
 
-        <div class="filter"></div> 
+        <div class="filter"></div>
 
-        <video autoplay loop muted playsinline src="{{url('assets/In-And-Out/MP4/main-search-video.mp4')}}" class="fillWidth"></video>
+        <video autoplay loop muted playsinline id="video" class="fillWidth"></video>
           <div class="poster hidden">
             <img src="{{url('assets/In-And-Out/Snapshots/main-search-video-poster.jpg')}}" alt="home video">
           </div>
@@ -1093,6 +1093,28 @@ function scaleBannerVideoSize(element){
 
     });
 }
+</script>
+
+<script>
+console.log("Downloading video...hellip;Please wait...")
+var xhr = new XMLHttpRequest();
+xhr.open('GET', '{{url('assets/In-And-Out/MP4/main-search-video.mp4')}}', true);
+xhr.responseType = 'blob';
+xhr.onload = function(e) {
+  if (this.status == 200) {
+    console.log("got it");
+    var myBlob = this.response;
+    var vid = (window.webkitURL || window.URL).createObjectURL(myBlob);
+    // myBlob is now the blob that the object URL pointed to.
+    var video = document.getElementById("video");
+    console.log("Loading video into element");
+    video.src = vid;
+    // not needed if autoplay is set for the video element
+    // video.play()
+   }
+  }
+
+xhr.send();
 </script>
 
 <script src="https://www.trustmarkthai.com/callbackData/initialize.js?t=14f50-15-5-837d5ecc2533522de0fc24060ca019bf16612f49" id="dbd-init"></script>
