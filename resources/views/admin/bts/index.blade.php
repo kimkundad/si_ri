@@ -154,40 +154,40 @@
 
                 <div class="row">
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/1.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/1.jpg')}}" class="img-responsive" style="max-height:155px;" />
                   </div>
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/2.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/2.jpg')}}" class="img-responsive" style="max-height:155px;"/>
                   </div>
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/3.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/3.jpg')}}" class="img-responsive" style="max-height:155px;"/>
                   </div>
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/4.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/4.jpg')}}" class="img-responsive" style="max-height:155px;"/>
                   </div>
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/5.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/5.jpg')}}" class="img-responsive" style="max-height:155px;"/>
                   </div>
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/6.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/6.jpg')}}" class="img-responsive" style="max-height:155px;"/>
                   </div>
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/7.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/7.jpg')}}" class="img-responsive" style="max-height:155px;"/>
                   </div>
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/8.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/8.jpg')}}" class="img-responsive" style="max-height:155px;"/>
                   </div>
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/9.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/9.jpg')}}" class="img-responsive" style="max-height:155px;"/>
                   </div>
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/10.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/10.jpg')}}" class="img-responsive" style="max-height:155px;"/>
                   </div>
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/11.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/11.jpg')}}" class="img-responsive" style="max-height:155px;"/>
                   </div>
                   <div class="col-md-3">
-                    <img src="{{url('assets/image/bts/12.jpg')}}" class="img-responsive" />
+                    <img src="{{url('assets/image/bts/12.jpg')}}" class="img-responsive" style="max-height:155px;"/>
                   </div>
                 </div>
 
