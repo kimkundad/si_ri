@@ -480,7 +480,7 @@
                                 <option value="-">-- เลือกสถานีรถไฟฟ้าหลัก 1 --</option>
                                 @if(isset($bts))
                                 @foreach($bts as $bts_r)
-                                    <option value="$bts_r->name_bts_en" >{{$bts_r->name_bts_en}}</option>
+                                    <option value="{{$bts_r->name_bts_en}}" >{{$bts_r->name_bts_en}}</option>
                                 @endforeach
                               @endif
 
@@ -496,7 +496,7 @@
                                     <option value="-">-- เลือกสถานีรถไฟฟ้าหลัก 2 --</option>
                                     @if(isset($bts))
                                     @foreach($bts as $bts_r)
-                                        <option value="$bts_r->name_bts_en" >{{$bts_r->name_bts_en}}</option>
+                                        <option value="{{$bts_r->name_bts_en}}" >{{$bts_r->name_bts_en}}</option>
                                     @endforeach
                                   @endif
 
