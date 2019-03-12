@@ -78,6 +78,13 @@ html.no-overflowscrolling .nano > .nano-pane > .nano-slider {
 										</a>
 									</li>
 
+                  <li {{ (Request::is('admin/bts*') ? 'class=nav-expanded' : '') }} >
+										<a href="{{url('admin/bts/')}}"  >
+											<i class="fa fa-train" aria-hidden="true"></i>
+											<span>รถไฟฟ้า</span>
+										</a>
+									</li>
+
                   <li {{ (Request::is('admin/envelope*') ? 'class=nav-expanded' : '') }} >
 										<a href="{{url('admin/envelope/')}}"  >
 											<i class="fa fa-envelope-o" aria-hidden="true"></i>

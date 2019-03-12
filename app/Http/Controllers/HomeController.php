@@ -35,6 +35,50 @@ class HomeController extends Controller
        return view('contact', $data);
      }
 
+     public function typeahead(Request $request){
+
+       $this->validate($request, [
+       'field2' => 'required'
+      ]);
+
+      $field2= $request['field2'];
+
+       $mrt_check = DB::table('main_bts')->select(
+             'main_bts.name_bts_en'
+             )
+             ->Where('name_bts_en', 'LIKE','%'.$field2.'%')
+             ->count();
+
+
+
+             if($mrt_check > 0){
+
+               $mrt = DB::table('main_bts')->select(
+                     'main_bts.name_bts_en'
+                     )
+                     ->Where('name_bts_en', 'LIKE','%'.$field2.'%')
+                     ->get();
+
+                     foreach($mrt as $x){
+                        $admin[] =
+                            $x->name_bts_en
+                        ;
+                      }
+
+
+             }else{
+
+
+
+                          //  $admin = null;
+
+                          }
+
+
+
+       return Response::json(['data' => $admin]);
+     }
+
      public function search_data(Request $request){
 
        $this->validate($request, [

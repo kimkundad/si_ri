@@ -523,35 +523,22 @@
 
 
                 <div class="form-group">
-                <label class="col-md-3 control-label">BTS</label>
+                <label class="col-md-3 control-label">เลือกถสานีรถไฟฟ้า 1</label>
                         <div class="col-sm-3">
-                              <select id="BTS" name="BTS" class="form-control " required="">
+                              <select id="BTS" name="BTS" class="form-control ">
 
 
+                                <option value="-">-- เลือกสถานีรถไฟฟ้าหลัก 1--</option>
+                                @if(isset($bts))
+                                @foreach($bts as $bts_r)
+                                    <option value="$bts_r->name_bts_en"  @if($objs->BTS == $bts_r->name_bts_en)
+                      selected='selected'
+                      @endif
+                      >{{$bts_r->name_bts_en}}</option>
+                                @endforeach
+                              @endif
 
-                  <option value="{{$objs->BTS}}" selected="selected">{{$objs->BTS}}</option>
-                  <option value="BTS Mo Chit">BTS Mo Chit</option><option value="BTS Saphan Khwai">BTS Saphan Khwai</option>
-                  <option value="BTS Ari">BTS Ari</option><option value="BTS Sanam Pao">BTS Sanam Pao</option>
-                  <option value="BTS Victory Monument">BTS Victory Monument</option><option value="BTS Phaya Thai">BTS Phaya Thai</option>
-                  <option value="BTS Ratchathewi">BTS Ratchathewi</option><option value="BTS Siam">BTS Siam</option>
-                  <option value="BTS Chit Lom">BTS Chit Lom</option><option value="BTS Ploen Chit">BTS Ploen Chit</option>
-                  <option value="BTS Nana">BTS Nana</option><option value="BTS Asoke">BTS Asoke</option>
-                  <option value="BTS Phrom Phong">BTS Phrom Phong</option><option value="BTS Thong Lo">BTS Thong Lo</option>
-                  <option value="BTS Ekkamai">BTS Ekkamai</option><option value="BTS Phra Khanong">BTS Phra Khanong</option>
-                  <option value="BTS On Nut">BTS On Nut</option><option value="BTS Bang Chak">BTS Bang Chak</option>
-                  <option value="BTS Punnawithi">BTS Punnawithi</option><option value="BTS Udom Suk">BTS Udom Suk</option>
 
-                  <option value="BTS Bang Na">BTS Bang Na</option><option value="BTS Bearing">BTS Bearing</option>
-                  <option value="BTS National Stadium">BTS National Stadium</option><option value="BTS Ratchadamri">BTS Ratchadamri</option>
-                  <option value="BTS Sala Daeng">BTS Sala Daeng</option><option value="BTS Chong Nonsi">BTS Chong Nonsi</option>
-                  <option value="BTS Surasak">BTS Surasak</option><option value="BTS Saphan Taksin">BTS Saphan Taksin</option>
-
-                  <option value="BTS Krung Thon Buri">BTS Krung Thon Buri</option>
-                  <option value="BTS Wongwian Yai">BTS Wongwian Yai</option>
-                  <option value="BTS Pho Nimit">BTS Pho Nimit</option>
-                  <option value="BTS Talat Phlu">BTS Talat Phlu</option>
-                  <option value="BTS Wutthakat">BTS Wutthakat</option>
-                  <option value="BTS Bang Wa">BTS Bang Wa</option>
 
 
                 </select>
@@ -559,24 +546,27 @@
                             </div>
 
 
-                            <label class="col-md-1 control-label">MRT</label>
-                        <div class="col-sm-3">
-                              <select id="MRT" name="MRT" class="form-control " required="">
+                            <label class="col-md-3 control-label">เลือกถสานีรถไฟฟ้า 2</label>
+                            <div class="col-sm-3">
+                                  <select id="MRT" name="MRT" class="form-control ">
 
-                  <option value="{{$objs->MRT}}" selected="selected">{{$objs->MRT}}</option>
-                  <option value="MRT Bang Sue">MRT Bang Sue</option><option value="MRT Kamphaeng Phet">MRT Kamphaeng Phet</option>
-                  <option value="MRT Chatuchak Park">MRT Chatuchak Park</option><option value="MRT Phahon Yothin">MRT Phahon Yothin</option>
-                  <option value="MRT Lat Phrao">MRT Lat Phrao</option><option value="MRT Ratchadaphisek">MRT Ratchadaphisek</option>
-                  <option value="MRT Sutthisan">MRT Sutthisan</option><option value="MRT Huai Khwang">MRT Huai Khwang</option>
-                  <option value="MRT Thailand Cultural Centre">MRT Thailand Cultural Centre</option><option value="MRT Phra ram 9">MRT Phra ram 9</option>
-                  <option value="MRT Phetchaburi">MRT Phetchaburi</option><option value="MRT Sukhumvit">MRT Sukhumvit</option>
-                  <option value="MRT Queen Sirikit">MRT Queen Sirikit</option><option value="MRT Khlong Toei">MRT Khlong Toei</option>
-                  <option value="MRT Lumphini">MRT Lumphini</option><option value="MRT Silom">MRT Silom</option>
-                  <option value="MRT Sam Yan">MRT Sam Yan</option><option value="MRT Hua Lamphong">MRT Hua Lamphong</option>
 
-                </select>
+                                    <option value="-">-- เลือกสถานีรถไฟฟ้าหลัก 2 --</option>
+                                    @if(isset($bts))
+                                    @foreach($bts as $bts_r)
+                                        <option value="$bts_r->name_bts_en"  @if($objs->MRT == $bts_r->name_bts_en)
+                          selected='selected'
+                          @endif
+                          >{{$bts_r->name_bts_en}}</option>
+                                    @endforeach
+                                  @endif
 
-                            </div>
+
+
+
+                    </select>
+
+                                </div>
                       </div>
 
 

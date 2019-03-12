@@ -117,6 +117,12 @@ class PropertyController extends Controller
     {
       $dataProvince = Province::all();
 
+
+      $cat_bts = DB::table('main_bts')
+            ->get();
+
+            $data['bts'] = $cat_bts;
+
       //dd($dataProvince);
     //  return View::make('example.index')->with('rowsProvince', $rowsProvince);
 
@@ -379,6 +385,13 @@ class PropertyController extends Controller
       //dd($cat);
 
       $dataProvince = Province::all();
+
+
+
+      $cat_bts = DB::table('main_bts')
+            ->get();
+
+            $data['bts'] = $cat_bts;
 
       $data['rowsProvince'] = $dataProvince;
       $category = category::all();

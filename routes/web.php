@@ -29,6 +29,8 @@ Route::post('/contact_refer', 'ContactController@refer');
 
 Route::get('/siri_recommend', 'CategoryController@siri_recommend');
 Route::get('/recent_updates', 'CategoryController@recent_updates');
+Route::get('/typeahead', 'HomeController@typeahead');
+
 
 Route::post('/wishlist', 'WishlistController@wishlist_up');
 
@@ -97,7 +99,7 @@ Route::group(['middleware' => 'admin'], function() {
   Route::resource('admin/envelope', 'EnvelopeController');
   Route::resource('admin/slideshows', 'SlideshowsController');
   Route::resource('admin/setting', 'SettingController');
-
+  Route::resource('admin/bts', 'BtsController');
 
 });
 

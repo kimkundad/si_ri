@@ -15,6 +15,7 @@ class VerifyCsrfToken extends BaseVerifier
         //
         'admin/property*',
         'file/post',
+        'typeahead',
         'admin/classifieds*'
     ];
 }

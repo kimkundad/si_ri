@@ -1107,37 +1107,57 @@ button.onclick = function() {
     }
 };
 </script>
-
-<script  type="text/javascript" src="{{url('assets/js/typeahead.bundle.js')}}?v1"></script>
+<link rel="stylesheet" href="{{url('autoComplete/auto-complete.css')}}">
+<script src="{{url('autoComplete/auto-complete.js')}}"></script>
 
 <script type="text/javascript">
+
 $(document).ready(function(){
     // Defining the local dataset
+
+
+/*
     var cars = ['BTS Mo Chit', 'BTS Saphan Khwai', 'BTS Ari', 'BTS Sanam Pao', 'BTS Victory Monument', 'BTS Phaya Thai', 'BTS Ratchathewi', 'BTS Siam', 'BTS Chit Lom', 'BTS Ploen Chit', 'BTS Nana',
     'BTS Asoke', 'BTS Phrom Phong', 'BTS Thong Lo', 'BTS Ekkamai', 'BTS Phra Khanong', 'BTS On Nut', 'BTS Bang Chak', 'BTS Punnawithi', 'BTS Udom Suk', 'BTS Bang Na', 'BTS Bearing',
-    'BTS National Stadium', 'BTS Ratchadamri', 'BTS Sala Daeng', 'BTS Chong Nonsi', 'BTS Surasak', 'BTS Saphan Taksin', 'BTS Krung Thon Buri', 'BTS Wongwian Yai', 'BTS Pho Nimit"',
-    'BTS Talat Phlu', 'BTS Wutthakat', 'BTS Bang Wa', 'MRT Bang Sue', 'MRT Kamphaeng Phet', 'MRT Chatuchak Park', 'MRT Phahon Yothin', 'MRT Lat Phrao', 'MRT Ratchadaphisek', 'MRT Sutthisan',
+    'BTS National Stadium', 'BTS Samrong', 'BTS Pu Chao', 'BTS Chang Erawan', 'BTS Royal Thai Naval Academy', 'BTS Pak Nam', 'BTS Srinagarindra', 'BTS Phraek Sa', 'BTS Sai Luat', 'BTS Kheha', 'BTS Ratchadamri',
+    'BTS Sala Daeng', 'BTS Chong Nonsi', 'BTS Surasak', 'BTS Saphan Taksin', 'BTS Krung Thon Buri', 'BTS Wongwian Yai', 'BTS Pho Nimit',
+    'BTS Talat Phlu', 'BTS Wutthakat', 'BTS Bang Wa', 'MRT Tao Poon', 'MRT Bang Sue', 'MRT Kamphaeng Phet', 'MRT Chatuchak Park', 'MRT Phahon Yothin', 'MRT Lat Phrao', 'MRT Ratchadaphisek', 'MRT Sutthisan',
     'MRT Huai Khwang', 'MRT Thailand Cultural Centre', 'MRT Phra ram 9', 'MRT Phetchaburi', 'MRT Sukhumvit', 'MRT Queen Sirikit', 'MRT Khlong Toei', 'MRT Lumphini',
-    'MRT Silom', 'MRT Sam Yan', 'MRT Hua Lamphong'
+    'MRT Silom', 'MRT Sam Yan', 'MRT Hua Lamphong', 'MRT Khlong Bang Phai', 'MRT Talad Bang Yai', 'MRT Sam Yaek Bang Yai', 'MRT Bang Phlu', 'MRT Bang Rak Yai', 'MRT Bang Rak Noi Tha It', 'MRT Sai Ma', 'MRT Phra Nang klao Bridge',
+     'MRT Yaek Nonthaburi', 'MRT Bang Kraso', 'MRT Nonthaburi Civic Center', 'MRT Ministry of Public Health',
+    'MRT Yaek Tiwanon', 'MRT Wong Sawang', 'MRT Bang Son'
     ];
 
-    // Constructing the suggestion engine
+
     var cars = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.whitespace,
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         local: cars
     });
 
-    // Initializing the typeahead
+
     $('.typeahead').typeahead({
         hint: true,
-        highlight: true, /* Enable substring highlighting */
-        minLength: 1 /* Specify minimum characters required for showing result */
+        highlight: true,
+        minLength: 1
     },
     {
         name: 'cars',
         source: cars
-    });
+    }); */
+
+    var xhr3;
+  new autoComplete({
+      selector: 'input[name="ark"]',
+      minChars: 1,
+      source: function(term, response){
+
+          xhr3 = $.getJSON('{{url('typeahead')}}', { field2: term }, function(data){
+            //secure_url
+            response(data.data);
+          });
+      }
+  });
 
 });
 </script>
