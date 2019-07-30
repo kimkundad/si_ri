@@ -98,7 +98,7 @@
 <div class="col-md-4 col-sm-4" style="padding-left: 0px; padding-top:5px">
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[4]->image)}}" >
   <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[4]->image)}}" alt="">
-  <div class="see-all-overlay"><span class="see-all-overlay-text">ดูทั้งหมด {{$home_image_count}} รูป</span></div></a>
+  <div class="see-all-overlay"><span class="see-all-overlay-text">More photos {{$home_image_count}}</span></div></a>
 </div>
 
 @else
@@ -170,7 +170,7 @@
 <div class="col-md-4 col-sm-4" style="margin-bottom: 8px;">
 <a class="example-image-link" href="{{url('assets/cusimage/'.$home_image[4]->image)}}" >
   <img class="img-responsive example-image" src="{{url('assets/cusimage/'.$home_image[4]->image)}}" alt="">
-  <div class="see-all-overlay" style="width: 90%;"><span class="see-all-overlay-text">ดูทั้งหมด {{$home_image_count}} รูป</span></div></a>
+  <div class="see-all-overlay" style="width: 90%;"><span class="see-all-overlay-text">More photos {{$home_image_count}} </span></div></a>
 </div>
 
 @else
