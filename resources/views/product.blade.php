@@ -17,6 +17,24 @@
 <link href="{{url('assets/bootstrap-sweetalert-master/dist/sweetalert.css')}}" rel="stylesheet" type="text/css" />
 <link href="{{url('assets/css/css-stars.css')}}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{url('assets/css/fontawesome-stars.css')}}">
+
+<style>
+.see-all-overlay {
+    top: 1%;
+    position: absolute;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    width: 94%;
+    height: 100%;
+    text-align: center;
+    display: table;
+    background-color: rgba(0,0,0,.5);
+    transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+</style>
 @stop('stylesheet')
 @section('content')
 
