@@ -193,65 +193,8 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
 
 
 
-<div class="homepage-hero-module hidden-sm hidden-xs">
-    <div class="video-container">
-
-      <div class="share-buttons-group affix-top" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
-            <a href="https://twitter.com/siri_space" target="_blank" class="btn-track" data-event="TwitterShare_Click">
-                <div id="twitter-button" class="share-button-banner">
-                    <div class="share-container">
-                        <i class="fa fa-twitter share-content"></i>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://www.facebook.com/sirispace/" target="_blank" class="btn-track" data-event="FacebookShare_Click">
-                <div id="facebook-button" class="share-button-banner">
-                    <div class="share-container">
-                        <i class="fa fa-facebook share-content"></i>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" target="_blank" class="btn-track" data-event="GoogleShare_Click">
-                <div id="google-button" class="share-button-banner">
-                    <div class="share-container">
-                        <i class="fa fa-google-plus share-content"></i>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="title-container">
-            <div class="headline">
-                <!--Original logo height 80px-->
-                <!-- <img src="" height="80" alt=""> -->
-                <img src="{{url('assets/image/SiriSpace-Logo-cover.png')}}" height="80" alt="">
-                <h3 class="text-white text-thin" style="font-size:35px;">Let Siri Space Be Your personal assistant</h3>
-                <h5 class="text-white text-thin" style="font-size:20px;">REFER YOUR FRIEND -
-                  <a class="coverr-nav-item btn-track" href="" data-event="MondayScroll_Click"
-                  style="text-decoration: none; border-bottom: 1px dotted #fff; color: #fff;">GET REFER BONUS</a></h5>
-            </div>
-
-            <div class="text-center" id="loadBannerVideoSpinner" style="background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 4px; display: none; margin-top: 20px;">
-                <h5 class="text-thin text-primary">Loading Coverr... <i class="fa fa-circle-o-notch fa-spin"></i></h5>
-            </div>
-        </div>
-
-        <div class="filter"></div>
 
 
-        
-
-
-
-    </div>
-    <div style="position: absolute; bottom: 50px; left: 50%; margin-left: -19px;">
-            <a class="coverr-nav-item" href="#RECOMMEND" style="text-decoration: none;">
-                <div class='icon-scroll'></div>
-            </a>
-        </div>
-</div>
 
 </div>
 
