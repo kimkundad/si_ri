@@ -661,7 +661,91 @@ figure:hover+span {
 
 
 
-        
+          <div class="body-project">
+
+                    <div class="row">
+
+
+                  @foreach($home as $homes)
+
+                  <div class="col-sm-4 col-md-3">
+
+
+                        <div class="thumbnail a_sd_move">
+
+
+
+                          <div class="hover01" style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
+                          <a href="{{url('asset-'.$homes->id)}}" >
+                          <figure><img src="{{url('assets/cusimage/'.$homes->image)}}" class="img-responsive"
+
+                            ></figure>
+                          <div class="g_l_box">
+                                <div class="t_white">
+                                <p>
+                              <b class="t18 t_white">฿{{$homes->Price}}</b>
+                                </p>
+                                  </div>
+                              </div>
+                          </a>
+                        </div>
+
+                          <div class="caption" style="padding: 3px;">
+                            <div class="descript bold">
+                                <a href="{{url('asset-'.$homes->id)}}"><?=mb_strimwidth($homes->name, 0, 29, '...');?></a>
+                            </div>
+                            <div class="descript" style="padding-bottom: 5px;color: #777; font-size: 12px;border-bottom: 1px dashed #dff0d8;">
+                              <?=mb_strimwidth($homes->shortdetail, 0, 32, '...');?>
+                            </div>
+
+                            <div class="descript" style="height: 20px;">
+                              <span style="color: #e03753; font-size: 12px;"><i class="fa fa-map-marker"></i> <?=mb_strimwidth($homes->AMPHUR_NAME_ENG, 0, 15, '...');?></span>
+                              <div class="descript-t">
+                              <div class="postMetaInline-authorLockup">
+
+                                @if($homes->rating == 5)
+                                <div class="rating">
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <span style="color: #777; font-size: 12px;">{{$homes->rating}}.0</span>
+                                </div>
+                                @else
+                                <div class="rating">
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star voted"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <span style="color: #777; font-size: 12px;">{{$homes->rating}}.0</span>
+                                </div>
+                                @endif
+
+                              </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
+
+                      @endforeach
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+          </div>
         <!--    <div class="panel panel-default">
                 <div class="panel-heading">Welcome</div>
 
@@ -763,7 +847,76 @@ figure:hover+span {
               </div>
 
 
+              <div class="body-project">
 
+                        <div class="row">
+
+
+                          @foreach($home_top as $home_tops)
+
+
+
+                          <div class="col-sm-4 col-md-3">
+
+                                <div class="thumbnail a_sd_move">
+                                  <div class="hover01" style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
+                                  <a href="{{url('asset-'.$home_tops->id)}}" >
+
+                                  <figure><img src="{{url('assets/cusimage/'.$home_tops->image)}}" class="img-responsive"
+
+                                    ></figure>
+                                  <div class="g_l_box">
+                                        <div class="t_white">
+                                        <p>
+                                      <b class="t18 t_white">฿{{$home_tops->Price}}</b>
+                                        </p>
+                                          </div>
+                                      </div>
+                                  </a>
+                                </div>
+                                  <div class="caption" style="padding: 3px;">
+                                    <div class="descript bold">
+                                        <a href="{{url('asset-'.$home_tops->id)}}" data-dismiss="modal" data-toggle="modal" data-target="#show_detail54"><?=mb_strimwidth($home_tops->name, 0, 29, '...');?></a>
+                                    </div>
+                                    <div class="descript" style="padding-bottom: 5px;color: #777; font-size: 12px;border-bottom: 1px dashed #dff0d8;">
+                                      <?=mb_strimwidth($home_tops->shortdetail, 0, 38, '...');?>
+                                    </div>
+
+                                    <div class="descript" style="height: 20px;">
+                                      <span style="color: #e03753; font-size: 12px;"><i class="fa fa-map-marker"></i> {{$home_tops->AMPHUR_NAME_ENG}}</span>
+                                      <div class="descript-t">
+                                      <div class="postMetaInline-authorLockup">
+
+                                        @if($home_tops->rating == 5)
+                                        <div class="rating">
+                                            <i class="fa fa-star voted"></i>
+                                            <i class="fa fa-star voted"></i>
+                                            <i class="fa fa-star voted"></i>
+                                            <i class="fa fa-star voted"></i>
+                                            <i class="fa fa-star voted"></i>
+                                            <span style="color: #777; font-size: 12px;">{{$home_tops->rating}}.0</span>
+                                        </div>
+                                        @else
+                                        <div class="rating">
+                                            <i class="fa fa-star voted"></i>
+                                            <i class="fa fa-star voted"></i>
+                                            <i class="fa fa-star voted"></i>
+                                            <i class="fa fa-star voted"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <span style="color: #777; font-size: 12px;">{{$home_tops->rating}}.0</span>
+                                        </div>
+                                        @endif
+
+                                      </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                              @endforeach
+                        </div>
+              </div>
 
 
 
