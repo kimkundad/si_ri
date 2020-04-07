@@ -214,7 +214,7 @@ class HomeController extends Controller
       ->orderBy('product.id', 'desc')
       ->limit(4)
       ->get();
-      dd($home);
+    //  dd($home);
       $data['home_top'] = $home_top;
       //dd($home_top);
       $categorys = DB::table('categorys')->get();
