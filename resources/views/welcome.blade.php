@@ -14,6 +14,7 @@ SIRISPACE.com is a real estate company located in Bangkok, Thailand that helps c
     'image' => url('assets/image/sirispace_facebook.png')])
 @stop
 
+
 @section('content')
 <style>
 .list_menu_y {
