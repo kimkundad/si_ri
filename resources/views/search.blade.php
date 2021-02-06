@@ -555,7 +555,7 @@ ul#cat_nav li a  {
                             <div class="g_l_box">
                                   <div class="t_white">
                                   <p>
-                                <b class="t18 t_white">฿{{$homes->Price}}</b>
+                                <b class="t18 t_white">฿{{number_format($homes->Price)}}</b>
                                   </p>
                                     </div>
                                 </div>
